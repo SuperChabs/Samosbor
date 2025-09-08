@@ -1,0 +1,7 @@
+/home/tymur52/Samosbor/build/CMakeFiles/Samosbor.dir
+/home/tymur52/Samosbor/build/CMakeFiles/edit_cache.dir
+/home/tymur52/Samosbor/build/CMakeFiles/rebuild_cache.dir
+/home/tymur52/Samosbor/build/CMakeFiles/list_install_components.dir
+/home/tymur52/Samosbor/build/CMakeFiles/install.dir
+/home/tymur52/Samosbor/build/CMakeFiles/install/local.dir
+/home/tymur52/Samosbor/build/CMakeFiles/install/strip.dir

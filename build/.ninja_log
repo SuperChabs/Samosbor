@@ -1,0 +1,9 @@
+# ninja log v6
+1	27	1757351433447404671	build.ninja	3d2990159443f697
+1	27	1757351433446733504	/home/tymur52/Samosbor/build/cmake_install.cmake	3d2990159443f697
+1	117	1757351335695816845	CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o	b6b2398698459e6a
+1	117	1757351335695666549	CMakeFiles/Samosbor.dir/src/player/player.cpp.o	9eaa0d094f4f8491
+2	343	1757351377708613673	CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o	8fc7142877e4253a
+1	440	1757351335694640243	CMakeFiles/Samosbor.dir/src/main.cpp.o	e897d5e540a3f223
+1	458	1757351335695414634	CMakeFiles/Samosbor.dir/src/game.cpp.o	82ce365ca7d671f5
+343	574	1757351378049605356	Samosbor	b6fee4fb7c8b4790
