@@ -19,3 +19,5 @@ public:
     virtual void Remove(const std::string& name);
     virtual void Clear();
 };
+
+#include "resourcemanager.tpp"

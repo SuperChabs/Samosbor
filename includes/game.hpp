@@ -7,7 +7,7 @@
 
 #include "player.hpp"
 #include "monster.hpp"
-
+#include "inputmanager.hpp"
 
 class Game 
 {
@@ -32,6 +32,8 @@ private:
 
     Player player;
     Monster monster;
+    InputManager input;
+
     bool running;
 
 };

@@ -1,4 +1,5 @@
 #include "game.hpp"
+#include "inputmanager.hpp"
 
 #include <notcurses/notcurses.h>
 #include <iostream>
@@ -38,10 +39,12 @@ Game::~Game(void)
 
 void Game::Run(void)
 {
+    HandleInput();
+
     while(running) 
     {
         Render();
-        HandleInput();
+        input.UpdateOnce(nc);
         Update();
     }
 }
@@ -82,29 +85,20 @@ void Game::Render()
 
 void Game::HandleInput()
 {
-    struct ncinput ni;
-    char c = notcurses_get_blocking(nc, &ni);
-    switch(c) 
-    {
-        case 'q': running = false; break;
-        case 'w': player.Move(0, -1, mapWidth, rows); break;
-        case 's': player.Move(0,  1, mapWidth, rows); break;
-        case 'a': player.Move(-1, 0, mapWidth, rows); break;
-        case 'd': player.Move( 1, 0, mapWidth, rows); break;
-        case 'e': // атака
-            if(monster.IsAlive() && 
-                abs(player.GetX() - monster.GetX()) + abs(player.GetY() - monster.GetY()) == 1) 
-            {
-                monster.Kill();
-            }
-            break;
-    }
+    input.Bind('q', [&](){ running = false; });
+    input.Bind('w', [&](){ player.Move(0, -1, mapWidth, rows); monster.Update(player.GetX(), player.GetY());});
+    input.Bind('s', [&](){ player.Move(0,  1, mapWidth, rows); monster.Update(player.GetX(), player.GetY());});
+    input.Bind('a', [&](){ player.Move(-1, 0, mapWidth, rows); monster.Update(player.GetX(), player.GetY());});
+    input.Bind('d', [&](){ player.Move( 1, 0, mapWidth, rows); monster.Update(player.GetX(), player.GetY());});
+    input.Bind('e', [&](){ 
+        if(monster.IsAlive() &&
+           abs(player.GetX() - monster.GetX()) + abs(player.GetY() - monster.GetY()) == 1)
+        {
+            monster.Kill();
+        }
+    });
 }
 
 void Game::Update()
-{
-    if(monster.IsAlive()) 
-    {
-        monster.Update(player.GetX(), player.GetY());
-    }
-}
+{}
+
