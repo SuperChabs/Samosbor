@@ -7,29 +7,22 @@
 #include <vector>
 #include <notcurses/notcurses.h>
 
-class Scene {
+class Scene 
+{
 public:
-    explicit Scene(const std::string& name);
+
+    explicit Scene(const std::string& name, int height, int width);
     virtual ~Scene();
 
     std::string GetName() const;
-
-    // Методи, які можна перевизначати
-    virtual void Load(struct notcurses* nc);   
+  
     virtual void Update(struct notcurses* nc); 
     virtual void Render(struct notcurses* nc); 
-    virtual void Unload(struct notcurses* nc); 
+    virtual void OnEnter() = 0;    
+    virtual void OnExit() =  0;
 
 private:
     std::string name;
-
-    enum TileType 
-    {
-        FLOOR,
-        WALL
-    };
-
-    std::vector<std::vector<TileType>> mapTiles;
 };
 
 #endif

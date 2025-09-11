@@ -4,6 +4,7 @@
 #define GAME_H
 
 #include <notcurses/notcurses.h>
+#include <vector>
 
 #include "player.hpp"
 #include "monster.hpp"

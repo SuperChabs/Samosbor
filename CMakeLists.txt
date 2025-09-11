@@ -15,10 +15,14 @@ add_executable(Samosbor
     src/entity/entity.cpp                           includes/entity/entity.hpp
     src/player/player.cpp                           includes/player/player.hpp
     src/monster/monster.cpp                         includes/monster/monster.hpp
+
     core/scene/scene.cpp                            core/scene/scene.hpp
     core/managers/scenemanager/scenemanager.hpp     core/managers/scenemanager/scenemanager.cpp
     core/managers/resourcemanager.hpp               core/managers/resourcemanager.tpp
     core/managers/input/inputmanager.hpp            core/managers/input/inputmanager.cpp
+    core/managers/event/eventmanager.hpp            core/managers/event/eventmanager.cpp
+
+    gamescene/gamescene.hpp                         gamescene/gamescene.cpp
 )
 
 target_include_directories(Samosbor PRIVATE
@@ -36,6 +40,8 @@ target_include_directories(Samosbor PRIVATE
     ${CMAKE_SOURCE_DIR}/core/managers
     ${CMAKE_SOURCE_DIR}/core/managers/scenemanager
     ${CMAKE_SOURCE_DIR}/core/managers/input
+
+    ${CMAKE_SOURCE_DIR}/gamescene
 )
 
 

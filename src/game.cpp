@@ -18,16 +18,21 @@ Game::Game()
         panelWidth = cols / 4;
         mapWidth   = cols - panelWidth;
 
+        //панель з праву, поотрібно створити свій клас, наслідуючи з класу сцени
+        //формально це і є сцена
         struct ncplane_options panel_opts = { .y=0, .x=mapWidth, .rows=rows, .cols=panelWidth };
         panel = ncplane_create(stdn, &panel_opts);
 
+        //перемістити в базовий клас сцени
         struct ncplane_options map_opts = { .y=0, .x=0, .rows=rows, .cols=mapWidth };
         map = ncplane_create(stdn, &map_opts);
 
-        // Початкові позиції
+        //перенести у базовий клас сцени
         player = Player(mapWidth/2, rows/2);
+
+        //тільки в нащадках базової сцени
         monster = Monster(mapWidth/4, rows/4);
-    }
+}
 
 Game::~Game(void)
 {
@@ -64,6 +69,7 @@ void Game::Render()
         }
     }
 
+
     // малюємо гравця та монстра
     player.Render(map);
     monster.Render(map);
@@ -85,11 +91,15 @@ void Game::Render()
 
 void Game::HandleInput()
 {
-    input.Bind('q', [&](){ running = false; });
+    input.Bind('q', [&](){ running = false; }); //залишається тут
+
+    //створити та перемістити в клас переміщення гравця. Не знаю що робити монстром
     input.Bind('w', [&](){ player.Move(0, -1, mapWidth, rows); monster.Update(player.GetX(), player.GetY());});
     input.Bind('s', [&](){ player.Move(0,  1, mapWidth, rows); monster.Update(player.GetX(), player.GetY());});
     input.Bind('a', [&](){ player.Move(-1, 0, mapWidth, rows); monster.Update(player.GetX(), player.GetY());});
     input.Bind('d', [&](){ player.Move( 1, 0, mapWidth, rows); monster.Update(player.GetX(), player.GetY());});
+    
+    //мабуть треба буде модифікувати для зручності
     input.Bind('e', [&](){ 
         if(monster.IsAlive() &&
            abs(player.GetX() - monster.GetX()) + abs(player.GetY() - monster.GetY()) == 1)
