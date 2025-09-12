@@ -1,27 +1,18 @@
-#pragma once 
-
-#ifndef GAMESCENE_HPP
-#define GAMESCENE_HPP
-
+#pragma once
 #include "scene.hpp"
+#include "player.hpp"
+#include "monster.hpp"
 
-class GameScene : public Scene 
-{
+class GameScene : public Scene {
 public:
-    virtual void LoadLevel() = 0;
-    virtual void SaveProgress() = 0;
-    virtual void PauseGame() = 0;
-    virtual void ResumeGame() = 0;
+    GameScene(struct notcurses* nc, int h, int w);
+
+    void Update() override;
+    void Render() override;
+    void OnEnter() override;
+    void OnExit() override;
 
 private:
-
-    enum TileType 
-    {
-        FLOOR,
-        WALL
-    };
-
-    std::vector<std::vector<TileType>> mapTiles;
+    Player player;
+    Monster monster;
 };
-
-#endif

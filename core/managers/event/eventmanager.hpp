@@ -6,19 +6,15 @@
 #include <functional>
 #include <typeindex>
 
-class Event {
-
+class Event 
+{
 public:
     virtual ~Event() = default;
 };
 
-class PlayerMovedEvent : public Event {
-public:
-    int x, y;
-    PlayerMovedEvent(int x, int y) : x(x), y(y) {}
-};
 
-class EventManager {
+class EventManager 
+{
 private:
     std::unordered_map<std::type_index, std::vector<std::function<void(const Event&)>>> listeners;
 
@@ -29,5 +25,7 @@ public:
     template<typename T>
     void Publish(const T& event);
 };
+
+#include "eventmanager.tpp"
 
 #endif // EVENT_SYSTEM_H

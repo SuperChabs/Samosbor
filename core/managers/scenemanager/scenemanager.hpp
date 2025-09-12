@@ -4,14 +4,14 @@
 
 class SceneManager : public ResourceManager<Scene> {
 public:
-    SceneManager();
-    ~SceneManager() override;
+    SceneManager() = default;
+    ~SceneManager() override = default;
 
-    void SetActive(const std::string& name, struct notcurses* nc);
+    void SetActive(const std::string& name);
     Scene* GetActive() const;
 
-    void Update(struct notcurses* nc);
-    void Render(struct notcurses* nc);
+    void Update();
+    void Render();
 
 private:
     std::shared_ptr<Scene> activeScene;

@@ -4,25 +4,27 @@
 #define SCENE_HPP
 
 #include <string>
-#include <vector>
 #include <notcurses/notcurses.h>
 
 class Scene 
 {
 public:
-
-    explicit Scene(const std::string& name, int height, int width);
+    Scene(const std::string& name, struct notcurses* nc, unsigned int y, unsigned int x, unsigned int h, unsigned int w);
     virtual ~Scene();
 
     std::string GetName() const;
-  
-    virtual void Update(struct notcurses* nc); 
-    virtual void Render(struct notcurses* nc); 
-    virtual void OnEnter() = 0;    
-    virtual void OnExit() =  0;
 
-private:
+    // базові методи
+    virtual void Update() = 0; 
+    virtual void Render() = 0;
+    virtual void OnEnter() = 0;    
+    virtual void OnExit() = 0;
+
+protected:
     std::string name;
+    struct notcurses* nc;
+    struct ncplane* plane;  // головний плейн для цієї сцени
+    int y, x, h, w;         // позиція та розміри
 };
 
 #endif

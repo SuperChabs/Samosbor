@@ -1,12 +1,14 @@
 # ninja log v6
-1	27	1757606640377199492	build.ninja	3d2990159443f697
-1	27	1757606640375701803	/home/tymur52/Samosbor/build/cmake_install.cmake	3d2990159443f697
-3	783	1757440689892821810	CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o	bae9036105e86283
-2	393	1757435770273802771	CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o	f029a827e4c7bda
-2	144	1757434565518185395	CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o	e65c1436bd03ef5e
-2	351	1757440901503440401	CMakeFiles/Samosbor.dir/src/player/player.cpp.o	dbf75c9d1478cfa5
-2	445	1757434565517848567	CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o	fd0108a4548a4db6
-2	506	1757440901502457045	CMakeFiles/Samosbor.dir/src/main.cpp.o	d72743772877fe09
-2	561	1757536096134632723	CMakeFiles/Samosbor.dir/src/game.cpp.o	bc06cbeeed56e2f8
-561	839	1757536096693626133	Samosbor	15c2a79716075b9f
-3	871	1757440689892964275	CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o	299c366721d61ce3
+3	995	1757665438659689845	CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o	cdc2d3446885b61d
+10	620	1757665438666049607	CMakeFiles/Samosbor.dir/panelscene/panelscene.cpp.o	ecaa9f38537d938e
+343	585	1757665527609983155	Samosbor	e4260153aa96e7cb
+2	966	1757665438658883622	CMakeFiles/Samosbor.dir/src/game.cpp.o	fa4a21dbe863dd82
+2	914	1757665438658049456	CMakeFiles/Samosbor.dir/src/main.cpp.o	1732aa1bcac43356
+2	582	1757665438659040228	CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o	1f1062995e008fe5
+7	790	1757665438663049550	CMakeFiles/Samosbor.dir/gamescene/gamescene.cpp.o	bdc03e5586a8052a
+2	776	1757665438659169582	CMakeFiles/Samosbor.dir/src/player/player.cpp.o	ba21bb34dc296a29
+3	251	1757665438659331839	CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o	3472fd0a49f4f926
+3	642	1757665438659821975	CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o	46873558545de252
+2	343	1757665527268715436	CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o	974d99f46525eaa7
+1	29	1757665580500988344	/home/tymur52/Samosbor/build/cmake_install.cmake	3d2990159443f697
+1	29	1757665580502483189	build.ninja	3d2990159443f697

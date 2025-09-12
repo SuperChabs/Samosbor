@@ -1,35 +1,32 @@
 #include "scenemanager.hpp"
 #include <stdexcept>
-#include <iostream>
 
-SceneManager::SceneManager() = default;
-SceneManager::~SceneManager() = default;
-
-void SceneManager::SetActive(const std::string& name, struct notcurses* nc) {
-    if (!Has(name)) {
-        throw std::runtime_error("Scene not found: " + name);
+void SceneManager::SetActive(const std::string& name) {
+    auto it = resources.find(name);
+    if (it == resources.end()) {
+        throw std::runtime_error("Сцена з ім'ям '" + name + "' не знайдена");
     }
 
     if (activeScene) {
-        activeScene->Unload(nc);
+        activeScene->OnExit();
     }
 
-    activeScene = Get(name);
-    activeScene->Load(nc);
+    activeScene = it->second;
+    activeScene->OnEnter();
 }
 
 Scene* SceneManager::GetActive() const {
     return activeScene.get();
 }
 
-void SceneManager::Update(struct notcurses* nc) {
+void SceneManager::Update() {
     if (activeScene) {
-        activeScene->Update(nc);
+        activeScene->Update();
     }
 }
 
-void SceneManager::Render(struct notcurses* nc) {
+void SceneManager::Render() {
     if (activeScene) {
-        activeScene->Render(nc);
+        activeScene->Render();
     }
 }
