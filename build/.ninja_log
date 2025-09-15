@@ -1,14 +1,14 @@
 # ninja log v6
-3	995	1757665438659689845	CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o	cdc2d3446885b61d
-10	620	1757665438666049607	CMakeFiles/Samosbor.dir/panelscene/panelscene.cpp.o	ecaa9f38537d938e
-343	585	1757665527609983155	Samosbor	e4260153aa96e7cb
-2	966	1757665438658883622	CMakeFiles/Samosbor.dir/src/game.cpp.o	fa4a21dbe863dd82
-2	914	1757665438658049456	CMakeFiles/Samosbor.dir/src/main.cpp.o	1732aa1bcac43356
-2	582	1757665438659040228	CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o	1f1062995e008fe5
-7	790	1757665438663049550	CMakeFiles/Samosbor.dir/gamescene/gamescene.cpp.o	bdc03e5586a8052a
-2	776	1757665438659169582	CMakeFiles/Samosbor.dir/src/player/player.cpp.o	ba21bb34dc296a29
-3	251	1757665438659331839	CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o	3472fd0a49f4f926
-3	642	1757665438659821975	CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o	46873558545de252
-2	343	1757665527268715436	CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o	974d99f46525eaa7
-1	29	1757665580500988344	/home/tymur52/Samosbor/build/cmake_install.cmake	3d2990159443f697
-1	29	1757665580502483189	build.ninja	3d2990159443f697
+3	850	1757682988028400553	CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o	fc7828c09db3526a
+3	920	1757682666290602423	CMakeFiles/Samosbor.dir/panelscene/panelscene.cpp.o	ecaa9f38537d938e
+969	1201	1757682285457014789	Samosbor	e4260153aa96e7cb
+2	969	1757682284490023463	CMakeFiles/Samosbor.dir/src/game.cpp.o	fa4a21dbe863dd82
+2	621	1757683003602657992	CMakeFiles/Samosbor.dir/src/main.cpp.o	b33fbfb38de61f5c
+3	599	1757682988027672618	CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o	bdd0e74c95ebf6c0
+5	866	1757682988028621062	CMakeFiles/Samosbor.dir/gamescene/gamescene.cpp.o	568d1e1280256b0d
+3	543	1757682988027872222	CMakeFiles/Samosbor.dir/src/player/player.cpp.o	454ddd1ae4dfd1bc
+3	136	1757682988028080513	CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o	3103459093b7c238
+3	707	1757682988028530276	CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o	2b59cd2d9a758884
+3	933	1757682988028246203	CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o	e6d1ceeb13e6b05b
+1	29	1757934973844405981	/home/tymur52/Samosbor/build/cmake_install.cmake	3d2990159443f697
+1	29	1757934973844921204	build.ninja	3d2990159443f697

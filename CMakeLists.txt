@@ -24,7 +24,7 @@ add_executable(Samosbor
 
     gamescene/gamescene.hpp                         gamescene/gamescene.cpp
 
-    panelscene/panelscene.hpp                       panelscene/panelscene.cpp
+    #panelscene/panelscene.hpp                       panelscene/panelscene.cpp
 )
 
 target_include_directories(Samosbor PRIVATE
@@ -46,7 +46,7 @@ target_include_directories(Samosbor PRIVATE
 
     ${CMAKE_SOURCE_DIR}/gamescene
 
-    ${CMAKE_SOURCE_DIR}/panelscene  
+    #${CMAKE_SOURCE_DIR}/panelscene  
 )
 
 

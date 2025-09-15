@@ -1,17 +1,13 @@
-#pragma once 
-
-#ifndef GAME_H
-#define GAME_H
+#pragma once
 
 #include <notcurses/notcurses.h>
-#include <vector>
+#include <memory>
 
+#include "inputmanager.hpp"
 #include "player.hpp"
 #include "monster.hpp"
-#include "inputmanager.hpp"
 
-class Game 
-{
+class Game {
 public:
     Game();
     ~Game();
@@ -19,24 +15,20 @@ public:
     void Run();
 
 private:
-    void Render();
-    void HandleInput(); 
-    void Update();
+    void HandleInput();
 
-private:
-    struct notcurses* nc;
-    struct ncplane* stdn;
-    struct ncplane* map;
-    struct ncplane* panel;
-    unsigned int rows, cols;
-    unsigned int mapWidth, panelWidth;
+    struct notcurses* nc = nullptr;
+    struct ncplane* stdn = nullptr;
+
+    unsigned int rows = 0;
+    unsigned int cols = 0;
+    unsigned int mapWidth = 0;
+    unsigned int panelWidth = 0;
+
+    bool running = true;
+
+    InputManager input;
 
     Player player;
     Monster monster;
-    InputManager input;
-
-    bool running;
-
 };
-
-#endif

@@ -53,7 +53,7 @@ build CMakeFiles/Samosbor.dir/src/main.cpp.o: CXX_COMPILER__Samosbor_unscanned_D
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Samosbor.dir/src/main.cpp.o.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene -I/home/tymur52/Samosbor/panelscene
+  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene
   OBJECT_DIR = CMakeFiles/Samosbor.dir
   OBJECT_FILE_DIR = CMakeFiles/Samosbor.dir/src
 
@@ -61,7 +61,7 @@ build CMakeFiles/Samosbor.dir/src/game.cpp.o: CXX_COMPILER__Samosbor_unscanned_D
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Samosbor.dir/src/game.cpp.o.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene -I/home/tymur52/Samosbor/panelscene
+  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene
   OBJECT_DIR = CMakeFiles/Samosbor.dir
   OBJECT_FILE_DIR = CMakeFiles/Samosbor.dir/src
 
@@ -69,7 +69,7 @@ build CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o: CXX_COMPILER__Samosbor_un
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene -I/home/tymur52/Samosbor/panelscene
+  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene
   OBJECT_DIR = CMakeFiles/Samosbor.dir
   OBJECT_FILE_DIR = CMakeFiles/Samosbor.dir/src/entity
 
@@ -77,7 +77,7 @@ build CMakeFiles/Samosbor.dir/src/player/player.cpp.o: CXX_COMPILER__Samosbor_un
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Samosbor.dir/src/player/player.cpp.o.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene -I/home/tymur52/Samosbor/panelscene
+  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene
   OBJECT_DIR = CMakeFiles/Samosbor.dir
   OBJECT_FILE_DIR = CMakeFiles/Samosbor.dir/src/player
 
@@ -85,7 +85,7 @@ build CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o: CXX_COMPILER__Samosbor_
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene -I/home/tymur52/Samosbor/panelscene
+  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene
   OBJECT_DIR = CMakeFiles/Samosbor.dir
   OBJECT_FILE_DIR = CMakeFiles/Samosbor.dir/src/monster
 
@@ -93,7 +93,7 @@ build CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o: CXX_COMPILER__Samosbor_uns
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene -I/home/tymur52/Samosbor/panelscene
+  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene
   OBJECT_DIR = CMakeFiles/Samosbor.dir
   OBJECT_FILE_DIR = CMakeFiles/Samosbor.dir/core/scene
 
@@ -101,7 +101,7 @@ build CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o: CXX
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene -I/home/tymur52/Samosbor/panelscene
+  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene
   OBJECT_DIR = CMakeFiles/Samosbor.dir
   OBJECT_FILE_DIR = CMakeFiles/Samosbor.dir/core/managers/scenemanager
 
@@ -109,7 +109,7 @@ build CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o: CXX_COMPIL
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene -I/home/tymur52/Samosbor/panelscene
+  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene
   OBJECT_DIR = CMakeFiles/Samosbor.dir
   OBJECT_FILE_DIR = CMakeFiles/Samosbor.dir/core/managers/input
 
@@ -117,17 +117,9 @@ build CMakeFiles/Samosbor.dir/gamescene/gamescene.cpp.o: CXX_COMPILER__Samosbor_
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Samosbor.dir/gamescene/gamescene.cpp.o.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene -I/home/tymur52/Samosbor/panelscene
+  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene
   OBJECT_DIR = CMakeFiles/Samosbor.dir
   OBJECT_FILE_DIR = CMakeFiles/Samosbor.dir/gamescene
-
-build CMakeFiles/Samosbor.dir/panelscene/panelscene.cpp.o: CXX_COMPILER__Samosbor_unscanned_Debug /home/tymur52/Samosbor/panelscene/panelscene.cpp || cmake_object_order_depends_target_Samosbor
-  CONFIG = Debug
-  DEP_FILE = CMakeFiles/Samosbor.dir/panelscene/panelscene.cpp.o.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/scenemanager -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/event -I/home/tymur52/Samosbor/gamescene -I/home/tymur52/Samosbor/panelscene
-  OBJECT_DIR = CMakeFiles/Samosbor.dir
-  OBJECT_FILE_DIR = CMakeFiles/Samosbor.dir/panelscene
 
 
 # =============================================================================
@@ -137,7 +129,7 @@ build CMakeFiles/Samosbor.dir/panelscene/panelscene.cpp.o: CXX_COMPILER__Samosbo
 #############################################
 # Link the executable Samosbor
 
-build Samosbor: CXX_EXECUTABLE_LINKER__Samosbor_Debug CMakeFiles/Samosbor.dir/src/main.cpp.o CMakeFiles/Samosbor.dir/src/game.cpp.o CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o CMakeFiles/Samosbor.dir/src/player/player.cpp.o CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o CMakeFiles/Samosbor.dir/gamescene/gamescene.cpp.o CMakeFiles/Samosbor.dir/panelscene/panelscene.cpp.o | /usr/lib/libnotcurses-core.so /usr/lib/libnotcurses.so
+build Samosbor: CXX_EXECUTABLE_LINKER__Samosbor_Debug CMakeFiles/Samosbor.dir/src/main.cpp.o CMakeFiles/Samosbor.dir/src/game.cpp.o CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o CMakeFiles/Samosbor.dir/src/player/player.cpp.o CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o CMakeFiles/Samosbor.dir/gamescene/gamescene.cpp.o | /usr/lib/libnotcurses-core.so /usr/lib/libnotcurses.so
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Samosbor.dir/link.d
   FLAGS = -g
