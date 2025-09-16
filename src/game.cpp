@@ -18,7 +18,7 @@ Game::Game()
         panelWidth = cols / 4;
         mapWidth   = cols - panelWidth;
 
-        struct ncplane_options panel_opts = { .y=0, .x=mapWidth, .rows=rows, .cols=panelWidth };
+        struct ncplane_options panel_opts = { .y=0, .x=(int)mapWidth, .rows=rows, .cols=panelWidth };
         panel = ncplane_create(stdn, &panel_opts);
 
         struct ncplane_options map_opts = { .y=0, .x=0, .rows=rows, .cols=mapWidth };
