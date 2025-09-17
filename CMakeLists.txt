@@ -17,6 +17,7 @@ add_executable(Samosbor
     src/monster/monster.cpp                         includes/monster/monster.hpp
     core/managers/resourcemanager.hpp               core/managers/resourcemanager.tpp
     core/managers/input/inputmanager.hpp            core/managers/input/inputmanager.cpp
+    core/scene/scene.hpp                            core/scene/scene.cpp
 )
 
 target_include_directories(Samosbor PRIVATE

@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Samosbor.dir/link.d"
   "CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o"
   "CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o.d"
+  "CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o"
+  "CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o.d"
   "CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o"
   "CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o.d"
   "CMakeFiles/Samosbor.dir/src/game.cpp.o"

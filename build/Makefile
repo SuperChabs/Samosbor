@@ -198,6 +198,30 @@ core/managers/input/inputmanager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.s
 .PHONY : core/managers/input/inputmanager.cpp.s
 
+core/scene/scene.o: core/scene/scene.cpp.o
+.PHONY : core/scene/scene.o
+
+# target to build an object file
+core/scene/scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o
+.PHONY : core/scene/scene.cpp.o
+
+core/scene/scene.i: core/scene/scene.cpp.i
+.PHONY : core/scene/scene.i
+
+# target to preprocess a source file
+core/scene/scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/scene/scene.cpp.i
+.PHONY : core/scene/scene.cpp.i
+
+core/scene/scene.s: core/scene/scene.cpp.s
+.PHONY : core/scene/scene.s
+
+# target to generate assembly for a file
+core/scene/scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/scene/scene.cpp.s
+.PHONY : core/scene/scene.cpp.s
+
 src/entity/entity.o: src/entity/entity.cpp.o
 .PHONY : src/entity/entity.o
 
@@ -334,6 +358,9 @@ help:
 	@echo "... core/managers/input/inputmanager.o"
 	@echo "... core/managers/input/inputmanager.i"
 	@echo "... core/managers/input/inputmanager.s"
+	@echo "... core/scene/scene.o"
+	@echo "... core/scene/scene.i"
+	@echo "... core/scene/scene.s"
 	@echo "... src/entity/entity.o"
 	@echo "... src/entity/entity.i"
 	@echo "... src/entity/entity.s"

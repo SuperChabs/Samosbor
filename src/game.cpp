@@ -23,8 +23,7 @@ Game::Game()
 
         struct ncplane_options map_opts = { .y=0, .x=0, .rows=rows, .cols=mapWidth };
         map = ncplane_create(stdn, &map_opts);
-
-        // Початкові позиції
+        
         player = Player(mapWidth/2, rows/2);
         monster = Monster(mapWidth/4, rows/4);
     }

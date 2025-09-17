@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/tymur52/Samosbor/core/managers/input/inputmanager.cpp" "CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o.d"
+  "/home/tymur52/Samosbor/core/scene/scene.cpp" "CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o.d"
   "/home/tymur52/Samosbor/src/entity/entity.cpp" "CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o.d"
   "/home/tymur52/Samosbor/src/game.cpp" "CMakeFiles/Samosbor.dir/src/game.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/src/game.cpp.o.d"
   "/home/tymur52/Samosbor/src/main.cpp" "CMakeFiles/Samosbor.dir/src/main.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/src/main.cpp.o.d"
