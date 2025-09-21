@@ -25,6 +25,35 @@ Scene::Scene(notcurses *nc, ncplane *stdn, unsigned int rows, unsigned int cols,
          .cols=mapWidth 
     };
     map = ncplane_create(stdn, &map_opts);
+
+    level.resize(rows, std::wstring(mapWidth, L'.'));
+
+    // червона "стіна" @
+    for(int y = 28; y < 29; y++) {
+        for(int x = 0; x < mapWidth; x++) {
+            level[y][x] = L'@';
+        }
+    }
+
+    for(int y = 31; y < 32; y++) {
+        for(int x = 2; x < mapWidth; x++) {
+            level[y][x] = L'@';
+        }
+    }
+
+    for (int x = 0; x < mapWidth; x++) 
+    {
+        level[0][x] = L'\u2581';
+        level[rows-1][x] = L'\u2581'; 
+    }
+
+    for (int y = 0; y < rows; y++) 
+    {
+        level[y][0] = L'\u258F';          
+        level[y][mapWidth-1] = L'\u258F'; 
+    }
+
+    monster.Kill();
 }
 
 void Scene::Render()
@@ -32,15 +61,20 @@ void Scene::Render()
     ncplane_erase(map);
     ncplane_erase(panel);
 
-    // фон карти
-    for(int y = 0; y < rows; y++) 
-    {
-        for(int x = 0; x < mapWidth; x++) 
-        {
-            ncplane_set_fg_rgb8(map, 60, 60, 60);
-            ncplane_putstr_yx(map, y, x, ".");
+    for (int y = 0; y < rows; y++) {
+        for (int x = 0; x < mapWidth; x++) {
+            wchar_t c = level[y][x];
+            if (c == '@') ncplane_set_fg_rgb8(map, 53, 62, 67);
+            else if (c == L'%') ncplane_set_fg_rgb8(map, 125, 213, 60);
+            else if (c == L'%') ncplane_set_fg_rgb8(map, 125, 213, 60);
+            else if (c == L'\u2581') ncplane_set_fg_rgb8(map, 60, 60, 60);
+            else if (c == L'\u258F') ncplane_set_fg_rgb8(map, 60, 60, 60);
+            else ncplane_set_fg_rgb8(map, 60, 60, 60);
+
+            ncplane_putwc_yx(map, y, x, c);
         }
     }
+    
 
     // малюємо гравця та монстра
     player.Render(map);
@@ -63,10 +97,10 @@ void Scene::Render()
 
 void Scene::HandleInput()
 {
-    input.Bind('w', [&](){ player.Move(0, -1, mapWidth, rows); monster.Update(player.GetX(), player.GetY());});
-    input.Bind('s', [&](){ player.Move(0,  1, mapWidth, rows); monster.Update(player.GetX(), player.GetY());});
-    input.Bind('a', [&](){ player.Move(-1, 0, mapWidth, rows); monster.Update(player.GetX(), player.GetY());});
-    input.Bind('d', [&](){ player.Move( 1, 0, mapWidth, rows); monster.Update(player.GetX(), player.GetY());});
+    input.Bind('w', [&](){ player.Move(0, -1, level); monster.Update(player.GetX(), player.GetY());});
+    input.Bind('s', [&](){ player.Move(0,  1, level); monster.Update(player.GetX(), player.GetY());});
+    input.Bind('a', [&](){ player.Move(-1, 0, level); monster.Update(player.GetX(), player.GetY());});
+    input.Bind('d', [&](){ player.Move( 1, 0, level); monster.Update(player.GetX(), player.GetY());});
     input.Bind('e', [&](){ 
         if(monster.IsAlive() &&
            abs(player.GetX() - monster.GetX()) + abs(player.GetY() - monster.GetY()) == 1)

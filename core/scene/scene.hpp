@@ -3,6 +3,9 @@
 #ifndef SCENE_HPP
 #define SCENE_HPP
 
+#include <vector>
+#include <string>
+
 #include "inputmanager.hpp"
 #include "monster.hpp"
 #include "player.hpp"
@@ -25,6 +28,8 @@ private:
     Player player;
     Monster monster;
     InputManager& input;
+
+    std::vector<std::wstring> level;
 
 };
 

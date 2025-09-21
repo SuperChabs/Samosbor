@@ -20,7 +20,7 @@ public:
 
     virtual void Render(struct ncplane* plane);
     
-    void Move(int dx, int dy, int maxX, int maxY);
+    virtual void Move(int dx, int dy, int maxX, int maxY);
 
     void Kill() { alive = false; }
     bool IsAlive() const { return alive; }
