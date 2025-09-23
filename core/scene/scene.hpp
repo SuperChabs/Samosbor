@@ -5,10 +5,12 @@
 
 #include <vector>
 #include <string>
+#include <memory>
 
 #include "inputmanager.hpp"
 #include "monster.hpp"
 #include "player.hpp"
+#include "entity.hpp"
 
 class Scene 
 {
@@ -19,24 +21,24 @@ private:
     unsigned int rows, cols;
     unsigned int mapWidth, panelWidth;
 
-    Player player;
-    Monster monster;
+    std::shared_ptr<Player> player;
+    //Monster monster;
     InputManager& input;
 
     std::vector<std::wstring> level;
+
+    std::vector<std::shared_ptr<Monster>> monsters;
 
 public:
     Scene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
 
     void Render();
-    
-private:
     virtual void HandleInput(); 
+
+protected:
     virtual void Draw();
     virtual void PanelDraw();
     virtual void Update(ncplane* map);
-    
-
 };
 
 #endif

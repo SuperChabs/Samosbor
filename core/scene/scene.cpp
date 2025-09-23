@@ -1,9 +1,11 @@
 #include "scene.hpp"
+#include "monster.hpp"
+#include "player.hpp"
 
 #include <notcurses/notcurses.h>
 
 Scene::Scene(notcurses *nc, ncplane *stdn, unsigned int rows, unsigned int cols, InputManager& input)
-        : player(10, 30), monster(5, 50), nc(nc), rows(rows), cols(cols), input(input)
+        : nc(nc), rows(rows), cols(cols), input(input)
 {
     panelWidth = cols / 4;
     mapWidth   = cols - panelWidth;
@@ -26,9 +28,13 @@ Scene::Scene(notcurses *nc, ncplane *stdn, unsigned int rows, unsigned int cols,
     };
     map = ncplane_create(stdn, &map_opts);
 
+    player = std::make_shared<Player>(10, 30);
+
+    monsters.push_back(std::make_shared<Monster>(10, 10));
+    monsters.push_back(std::make_shared<Monster>(15, 7));
+
     level.resize(rows, std::wstring(mapWidth, L'.'));
 
-    monster.Kill();
 }
 
 void Scene::Render()
@@ -61,17 +67,44 @@ void Scene::Render()
 
 void Scene::HandleInput()
 {
-    input.Bind('w', [&](){ player.Move(0, -1, level); monster.Update(player.GetX(), player.GetY());});
-    input.Bind('s', [&](){ player.Move(0,  1, level); monster.Update(player.GetX(), player.GetY());});
-    input.Bind('a', [&](){ player.Move(-1, 0, level); monster.Update(player.GetX(), player.GetY());});
-    input.Bind('d', [&](){ player.Move( 1, 0, level); monster.Update(player.GetX(), player.GetY());});
-    input.Bind('e', [&](){ 
-        if(monster.IsAlive() &&
-           abs(player.GetX() - monster.GetX()) + abs(player.GetY() - monster.GetY()) == 1)
-        {
-            monster.Kill();
-        }
-    });
+	input.Bind('w', [&](){ 
+		player->Move(0, -1, level); 
+		for(auto& m : monsters){
+			m->Update(player->GetX(), player->GetY());
+		}
+	});
+
+	input.Bind('s', [&](){ 
+		player->Move(0, 1, level); 
+		for(auto& m : monsters){
+			m->Update(player->GetX(), player->GetY());
+		}
+	});
+
+	input.Bind('a', [&](){ 
+		player->Move(-1, 0, level); 
+		for(auto& m : monsters){
+			m->Update(player->GetX(), player->GetY());
+		}
+	});
+
+	input.Bind('d', [&](){ 
+		player->Move(1, 0, level); 
+		for(auto& m : monsters){
+			m->Update(player->GetX(), player->GetY());
+		}
+	});
+
+	input.Bind('e', [&](){ 
+		for(auto& m : monsters){
+			int dx = abs(player->GetX() - m->GetX());
+			int dy = abs(player->GetY() - m->GetY());
+			if(m->IsAlive() && dx + dy == 1){
+				m->Kill();
+			}
+		}
+	});
+
 }
 
 void Scene::Draw()
@@ -109,7 +142,7 @@ void Scene::PanelDraw()
     ncplane_putstr_yx(panel, 5, 1, "Інвентар:");
     ncplane_putstr_yx(panel, 6, 3, "- Меч");
     ncplane_putstr_yx(panel, 8, 1, "Коментар:");
-    if(!monster.IsAlive())
+    if(false /*!monster.IsAlive()*/)
         ncplane_putstr_yx(panel, 9, 3, "Монстр переможений!");
     else
         ncplane_putstr_yx(panel, 9, 3, "Монстр поруч...");
@@ -117,6 +150,9 @@ void Scene::PanelDraw()
 
 void Scene::Update(ncplane *map)
 {
-    player.Render(map);
-    monster.Render(map);
+    player->Render(map);
+    for (auto monster : monsters) 
+    {
+        monster->Render(map);
+    }
 }
