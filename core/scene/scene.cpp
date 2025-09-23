@@ -49,7 +49,6 @@ void Scene::Render()
             wchar_t c = level[y][x];
             if (c == '@') ncplane_set_fg_rgb8(map, 53, 62, 67);
             else if (c == L'%') ncplane_set_fg_rgb8(map, 125, 213, 60);
-            else if (c == L'%') ncplane_set_fg_rgb8(map, 125, 213, 60);
             else if (c == L'\u2581') ncplane_set_fg_rgb8(map, 60, 60, 60);
             else if (c == L'\u258F') ncplane_set_fg_rgb8(map, 60, 60, 60);
             else ncplane_set_fg_rgb8(map, 60, 60, 60);
