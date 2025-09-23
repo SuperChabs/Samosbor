@@ -12,12 +12,6 @@
 
 class Scene 
 {
-public:
-    Scene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
-
-    void Render();
-    void HandleInput();
-    
 private:
     struct notcurses* nc;
     struct ncplane* map;
@@ -30,6 +24,18 @@ private:
     InputManager& input;
 
     std::vector<std::wstring> level;
+
+public:
+    Scene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
+
+    void Render();
+    
+private:
+    virtual void HandleInput(); 
+    virtual void Draw();
+    virtual void PanelDraw();
+    virtual void Update(ncplane* map);
+    
 
 };
 
