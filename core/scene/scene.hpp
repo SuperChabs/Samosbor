@@ -14,14 +14,14 @@
 
 class Scene 
 {
-private:
+protected:
     struct notcurses* nc;
     struct ncplane* map;
     struct ncplane* panel;
+    
     unsigned int rows, cols;
     unsigned int mapWidth, panelWidth;
 
-    std::shared_ptr<Player> player;
     //Monster monster;
     InputManager& input;
 
@@ -29,13 +29,18 @@ private:
 
     std::vector<std::shared_ptr<Monster>> monsters;
 
+    std::shared_ptr<Player> player;
+
 public:
     Scene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
+    virtual ~Scene() = default;
+
 
     void Render();
     virtual void HandleInput(); 
 
 protected:
+    virtual void InitEntitys();
     virtual void Draw();
     virtual void PanelDraw();
     virtual void Update(ncplane* map);

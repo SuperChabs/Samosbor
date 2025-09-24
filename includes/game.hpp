@@ -10,6 +10,7 @@
 #include "monster.hpp"
 #include "inputmanager.hpp"
 #include "scene.hpp"
+#include "scenemanager.hpp"
 
 class Game 
 {
@@ -30,6 +31,7 @@ private:
     unsigned int rows, cols;
 
     InputManager input;
+    SceneManager scenemanager;
 
     std::unique_ptr<Scene> scene;
 

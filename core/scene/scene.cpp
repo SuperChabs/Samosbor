@@ -28,10 +28,7 @@ Scene::Scene(notcurses *nc, ncplane *stdn, unsigned int rows, unsigned int cols,
     };
     map = ncplane_create(stdn, &map_opts);
 
-    player = std::make_shared<Player>(10, 30);
-
-    monsters.push_back(std::make_shared<Monster>(10, 10));
-    monsters.push_back(std::make_shared<Monster>(15, 7));
+    InitEntitys();
 
     level.resize(rows, std::wstring(mapWidth, L'.'));
 
@@ -103,6 +100,15 @@ void Scene::HandleInput()
 			}
 		}
 	});
+
+}
+
+void Scene::InitEntitys()
+{
+    player = std::make_shared<Player>(10, 30);
+
+    monsters.push_back(std::make_shared<Monster>(10, 10));
+    monsters.push_back(std::make_shared<Monster>(15, 7));
 
 }
 

@@ -1,4 +1,5 @@
 #include "game.hpp"
+#include "level1.hpp"
 
 #include <notcurses/notcurses.h>
 #include <iostream>
@@ -7,17 +8,20 @@
 
 Game::Game()
         : running(true)
-    {
-        struct notcurses_options opts = {};
-        nc = notcurses_init(&opts, NULL);
-        if(!nc) throw std::runtime_error("Не вдалося ініціалізувати notcurses");
+{
+    struct notcurses_options opts = {};
+    nc = notcurses_init(&opts, NULL);
+    if(!nc) throw std::runtime_error("He вдалося ініціалізувати notcurses");
 
-        stdn = notcurses_stddim_yx(nc, NULL, NULL);
-        ncplane_dim_yx(stdn, &rows, &cols);
+    stdn = notcurses_stddim_yx(nc, NULL, NULL);
+    ncplane_dim_yx(stdn, &rows, &cols);
 
+    scene = std::make_unique<Scene>(nc, stdn, rows, cols, input);
 
-        scene = std::make_unique<Scene>(nc, stdn, rows, cols, input);
-    }
+    scenemanager.Add("level1", std::make_shared<Level1>(nc, stdn, rows, cols, input));
+
+    scenemanager.SetActiveScene("level1");
+}
 
 Game::~Game(void)
 {
@@ -33,8 +37,8 @@ void Game::Run(void)
 
     while(running) 
     {
-        Render();
-        input.UpdateOnce(nc);
+        scenemanager.Update();
+        scenemanager.Render();
         Update();
     }
 }
