@@ -539,6 +539,7 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o
 CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o
  /home/tymur52/Samosbor/core/scene/gamescenes/level1/level1.cpp
  /home/tymur52/Samosbor/core/managers/input/inputmanager.hpp
+ /home/tymur52/Samosbor/core/scene/map_utils.hpp
  /home/tymur52/Samosbor/core/scene/gamescenes/level1/level1.hpp
  /home/tymur52/Samosbor/core/scene/scene.hpp
  /home/tymur52/Samosbor/includes/entity/entity.hpp
@@ -1403,6 +1404,9 @@ CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o
 CMakeFiles/Samosbor.dir/src/game.cpp.o
  /home/tymur52/Samosbor/src/game.cpp
  /home/tymur52/Samosbor/core/managers/input/inputmanager.hpp
+ /home/tymur52/Samosbor/core/managers/resourcemanager.hpp
+ /home/tymur52/Samosbor/core/managers/resourcemanager.tpp
+ /home/tymur52/Samosbor/core/managers/scenemanager/scenemanager.hpp
  /home/tymur52/Samosbor/core/scene/gamescenes/level1/level1.hpp
  /home/tymur52/Samosbor/core/scene/scene.hpp
  /home/tymur52/Samosbor/includes/entity/entity.hpp
@@ -1729,6 +1733,9 @@ CMakeFiles/Samosbor.dir/src/game.cpp.o
 CMakeFiles/Samosbor.dir/src/main.cpp.o
  /home/tymur52/Samosbor/src/main.cpp
  /home/tymur52/Samosbor/core/managers/input/inputmanager.hpp
+ /home/tymur52/Samosbor/core/managers/resourcemanager.hpp
+ /home/tymur52/Samosbor/core/managers/resourcemanager.tpp
+ /home/tymur52/Samosbor/core/managers/scenemanager/scenemanager.hpp
  /home/tymur52/Samosbor/core/scene/scene.hpp
  /home/tymur52/Samosbor/includes/entity/entity.hpp
  /home/tymur52/Samosbor/includes/game.hpp

@@ -536,6 +536,7 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o: /home/tym
 
 CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o: /home/tymur52/Samosbor/core/scene/gamescenes/level1/level1.cpp \
   /home/tymur52/Samosbor/core/managers/input/inputmanager.hpp \
+  /home/tymur52/Samosbor/core/scene/map_utils.hpp \
   /home/tymur52/Samosbor/core/scene/gamescenes/level1/level1.hpp \
   /home/tymur52/Samosbor/core/scene/scene.hpp \
   /home/tymur52/Samosbor/includes/entity/entity.hpp \
@@ -1397,6 +1398,9 @@ CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o: /home/tymur52/Samosbor/src/enti
 
 CMakeFiles/Samosbor.dir/src/game.cpp.o: /home/tymur52/Samosbor/src/game.cpp \
   /home/tymur52/Samosbor/core/managers/input/inputmanager.hpp \
+  /home/tymur52/Samosbor/core/managers/resourcemanager.hpp \
+  /home/tymur52/Samosbor/core/managers/resourcemanager.tpp \
+  /home/tymur52/Samosbor/core/managers/scenemanager/scenemanager.hpp \
   /home/tymur52/Samosbor/core/scene/gamescenes/level1/level1.hpp \
   /home/tymur52/Samosbor/core/scene/scene.hpp \
   /home/tymur52/Samosbor/includes/entity/entity.hpp \
@@ -1722,6 +1726,9 @@ CMakeFiles/Samosbor.dir/src/game.cpp.o: /home/tymur52/Samosbor/src/game.cpp \
 
 CMakeFiles/Samosbor.dir/src/main.cpp.o: /home/tymur52/Samosbor/src/main.cpp \
   /home/tymur52/Samosbor/core/managers/input/inputmanager.hpp \
+  /home/tymur52/Samosbor/core/managers/resourcemanager.hpp \
+  /home/tymur52/Samosbor/core/managers/resourcemanager.tpp \
+  /home/tymur52/Samosbor/core/managers/scenemanager/scenemanager.hpp \
   /home/tymur52/Samosbor/core/scene/scene.hpp \
   /home/tymur52/Samosbor/includes/entity/entity.hpp \
   /home/tymur52/Samosbor/includes/game.hpp \
@@ -2719,6 +2726,8 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /usr/lib32/libgobject-2.0.so.0:
 
+/usr/lib32/libglib-2.0.so.0:
+
 /usr/include/c++/15.2.1/bits/cxxabi_forced.h:
 
 /usr/include/c++/15.2.1/bits/ranges_cmp.h:
@@ -3089,8 +3098,6 @@ CMakeFiles/Samosbor.dir/src/game.cpp.o:
 
 /usr/lib32/libbrotlidec.so.1:
 
-/usr/lib32/libglib-2.0.so.0:
-
 /usr/include/c++/15.2.1/bits/max_size_type.h:
 
 /usr/include/c++/15.2.1/ext/atomicity.h:
@@ -3288,6 +3295,8 @@ CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o:
 /usr/lib32/libbrotlienc.so.1:
 
 /usr/include/c++/15.2.1/bits/concept_check.h:
+
+/home/tymur52/Samosbor/core/scene/map_utils.hpp:
 
 /usr/include/c++/15.2.1/bits/hash_bytes.h:
 
