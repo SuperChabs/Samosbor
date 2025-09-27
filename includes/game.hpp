@@ -6,10 +6,15 @@
 #include <notcurses/notcurses.h>
 #include <memory>
 
+// * Entitys
+
 #include "player.hpp"
 #include "monster.hpp"
+
+// * Managers
+
 #include "inputmanager.hpp"
-#include "scene.hpp"
+#include "scenemanager.hpp"
 
 class Game 
 {
@@ -30,8 +35,7 @@ private:
     unsigned int rows, cols;
 
     InputManager input;
-
-    std::unique_ptr<Scene> scene;
+    SceneManager sm;
 
     bool running;
 

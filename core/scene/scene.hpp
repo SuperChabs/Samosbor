@@ -14,7 +14,7 @@
 
 class Scene 
 {
-private:
+protected:
     struct notcurses* nc;
     struct ncplane* map;
     struct ncplane* panel;
@@ -31,14 +31,15 @@ private:
 
 public:
     Scene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
+    virtual ~Scene();
 
     void Render();
     virtual void HandleInput(); 
 
 protected:
-    virtual void Draw();
+    virtual void DrawMap();
     virtual void PanelDraw();
-    virtual void Update(ncplane* map);
+    virtual void Update(ncplane* map) = 0;
 };
 
 #endif

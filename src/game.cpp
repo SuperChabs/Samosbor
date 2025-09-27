@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <memory>
 
+#include "level1.hpp"
+
 Game::Game()
         : running(true)
     {
@@ -15,8 +17,10 @@ Game::Game()
         stdn = notcurses_stddim_yx(nc, NULL, NULL);
         ncplane_dim_yx(stdn, &rows, &cols);
 
+        sm.Add("level1", std::make_shared<Level1>(nc, stdn, rows, cols, input));
 
-        scene = std::make_unique<Scene>(nc, stdn, rows, cols, input);
+        sm.SetActiveScene("level1");
+
     }
 
 Game::~Game(void)
@@ -41,13 +45,13 @@ void Game::Run(void)
 
 void Game::Render()
 {
-    scene->Render();
+    sm.Render();
 }
 
 void Game::HandleInput()
 {
     input.Bind('q', [&](){ running = false; });
-    scene->HandleInput();
+    sm.HandleInput();
 
 }
 
