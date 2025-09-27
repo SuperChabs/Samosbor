@@ -68,34 +68,34 @@ void Scene::HandleInput()
 {
 	input.Bind('w', [this](){ 
 		player->Move(0, -1, level); 
-		for(auto& m : monsters)
+        for(auto& m : monsters)
         {
-			m->Update(player->GetX(), player->GetY());
-		}
+            m->Update(player->GetX(), player->GetY(), level);
+        }
 	});
 
 	input.Bind('s', [this](){ 
 		player->Move(0, 1, level); 
-		for(auto& m : monsters)
+        for(auto& m : monsters)
         {
-			m->Update(player->GetX(), player->GetY());
-		}
+            m->Update(player->GetX(), player->GetY(), level);
+        }
 	});
 
 	input.Bind('a', [this](){ 
 		player->Move(-1, 0, level); 
-		for(auto& m : monsters)
+        for(auto& m : monsters)
         {
-			m->Update(player->GetX(), player->GetY());
-		}
+            m->Update(player->GetX(), player->GetY(), level);
+        }
 	});
 
 	input.Bind('d', [this](){ 
 		player->Move(1, 0, level); 
-		for(auto& m : monsters)
+        for(auto& m : monsters)
         {
-			m->Update(player->GetX(), player->GetY());
-		}
+            m->Update(player->GetX(), player->GetY(), level);
+        }
 	});
 
 	input.Bind('e', [this](){ 

@@ -14,18 +14,17 @@ Level1::Level1(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, un
 void Level1::InitEntitys()
 {
     player = std::make_shared<Player>(36, 23);
+    monsters.push_back(std::make_shared<Monster>(10, 10));
 }
 
 void Level1::DrawMap()
 {
-    // draw an outlined rectangle (could be a square) using the shared MapUtils helper
-    int topY = 20;
-    int leftX = 30;
-    int width = static_cast<int>(mapWidth) - 5 * leftX; // width between left and right margins
-    int height = 8; // example height (20..31 inclusive gives 12 rows)
+    MapUtils::DrawRect(level, rows, mapWidth, 20, 30, static_cast<int>(mapWidth) - 5 * 30, 9, L'@', false);
+    level[24][30] = '.';
 
-    MapUtils::DrawRect(level, rows, mapWidth, topY, leftX, width, height, L'@', false);
-
+    MapUtils::DrawRect(level, rows, mapWidth, 18, 58, static_cast<int>(mapWidth) - 5 * 30, 13, L'@', false);
+    level[24][58] = '.';
+    
     for (int x = 0; x < mapWidth; x++) 
     {
         level[0][x] = L'\u2581';
@@ -41,11 +40,15 @@ void Level1::DrawMap()
 
 void Level1::PanelDraw()
 {
-    ncplane_set_fg_rgb8(panel, 255, 255, 255);
-    ncplane_putstr_yx(panel, 1, 1, "Bro`s typing shit😂😂😂");
+    ncplane_set_fg_rgb8(panel, 255, 0, 255);
+    ncplane_putstr_yx(panel, 1, 1, "Bro just typing shit😂😂😂");
 }
 
 void Level1::Update(ncplane *map)
 {
     player->Render(map);
+    for (auto monster : monsters) 
+    {
+        monster->Render(map);
+    }
 }

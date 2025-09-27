@@ -1313,17 +1313,21 @@ CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o: /home/tymur52/Samosbor/src/enti
   /usr/include/c++/15.2.1/bits/requires_hosted.h \
   /usr/include/c++/15.2.1/bits/std_abs.h \
   /usr/include/c++/15.2.1/bits/stl_algobase.h \
+  /usr/include/c++/15.2.1/bits/stl_bvector.h \
   /usr/include/c++/15.2.1/bits/stl_construct.h \
   /usr/include/c++/15.2.1/bits/stl_function.h \
   /usr/include/c++/15.2.1/bits/stl_iterator.h \
   /usr/include/c++/15.2.1/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/15.2.1/bits/stl_iterator_base_types.h \
   /usr/include/c++/15.2.1/bits/stl_pair.h \
+  /usr/include/c++/15.2.1/bits/stl_uninitialized.h \
+  /usr/include/c++/15.2.1/bits/stl_vector.h \
   /usr/include/c++/15.2.1/bits/string_view.tcc \
   /usr/include/c++/15.2.1/bits/stringfwd.h \
   /usr/include/c++/15.2.1/bits/uses_allocator.h \
   /usr/include/c++/15.2.1/bits/uses_allocator_args.h \
   /usr/include/c++/15.2.1/bits/utility.h \
+  /usr/include/c++/15.2.1/bits/vector.tcc \
   /usr/include/c++/15.2.1/bits/version.h \
   /usr/include/c++/15.2.1/cctype \
   /usr/include/c++/15.2.1/cerrno \
@@ -1350,6 +1354,7 @@ CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o: /home/tymur52/Samosbor/src/enti
   /usr/include/c++/15.2.1/string_view \
   /usr/include/c++/15.2.1/tuple \
   /usr/include/c++/15.2.1/type_traits \
+  /usr/include/c++/15.2.1/vector \
   /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++allocator.h \
   /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
   /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++locale.h \
@@ -2053,10 +2058,13 @@ CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o: /home/tymur52/Samosbor/src/mo
   /home/tymur52/Samosbor/includes/monster/monster.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
   /usr/include/asm-generic/posix_types.h \
   /usr/include/asm-generic/socket.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/asm/bitsperlong.h \
+  /usr/include/asm/errno.h \
   /usr/include/asm/posix_types.h \
   /usr/include/asm/posix_types_64.h \
   /usr/include/asm/socket.h \
@@ -2067,6 +2075,7 @@ CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o: /home/tymur52/Samosbor/src/mo
   /usr/include/bits/endian.h \
   /usr/include/bits/endianness.h \
   /usr/include/bits/environments.h \
+  /usr/include/bits/errno.h \
   /usr/include/bits/floatn-common.h \
   /usr/include/bits/floatn.h \
   /usr/include/bits/getopt_core.h \
@@ -2074,6 +2083,7 @@ CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o: /home/tymur52/Samosbor/src/mo
   /usr/include/bits/in.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/local_lim.h \
+  /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
   /usr/include/bits/posix1_lim.h \
   /usr/include/bits/posix2_lim.h \
@@ -2122,6 +2132,7 @@ CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o: /home/tymur52/Samosbor/src/mo
   /usr/include/bits/types/clock_t.h \
   /usr/include/bits/types/clockid_t.h \
   /usr/include/bits/types/cookie_io_functions_t.h \
+  /usr/include/bits/types/error_t.h \
   /usr/include/bits/types/locale_t.h \
   /usr/include/bits/types/mbstate_t.h \
   /usr/include/bits/types/sig_atomic_t.h \
@@ -2151,24 +2162,113 @@ CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o: /home/tymur52/Samosbor/src/mo
   /usr/include/bits/wordsize.h \
   /usr/include/bits/xopen_lim.h \
   /usr/include/byteswap.h \
+  /usr/include/c++/15.2.1/algorithm \
+  /usr/include/c++/15.2.1/backward/binders.h \
+  /usr/include/c++/15.2.1/bit \
+  /usr/include/c++/15.2.1/bits/algorithmfwd.h \
+  /usr/include/c++/15.2.1/bits/alloc_traits.h \
+  /usr/include/c++/15.2.1/bits/allocator.h \
+  /usr/include/c++/15.2.1/bits/basic_string.h \
+  /usr/include/c++/15.2.1/bits/basic_string.tcc \
+  /usr/include/c++/15.2.1/bits/char_traits.h \
+  /usr/include/c++/15.2.1/bits/charconv.h \
+  /usr/include/c++/15.2.1/bits/concept_check.h \
+  /usr/include/c++/15.2.1/bits/cpp_type_traits.h \
+  /usr/include/c++/15.2.1/bits/cxxabi_forced.h \
+  /usr/include/c++/15.2.1/bits/exception.h \
+  /usr/include/c++/15.2.1/bits/exception_defines.h \
+  /usr/include/c++/15.2.1/bits/functexcept.h \
+  /usr/include/c++/15.2.1/bits/functional_hash.h \
+  /usr/include/c++/15.2.1/bits/hash_bytes.h \
+  /usr/include/c++/15.2.1/bits/invoke.h \
+  /usr/include/c++/15.2.1/bits/iterator_concepts.h \
+  /usr/include/c++/15.2.1/bits/localefwd.h \
+  /usr/include/c++/15.2.1/bits/max_size_type.h \
+  /usr/include/c++/15.2.1/bits/memory_resource.h \
+  /usr/include/c++/15.2.1/bits/memoryfwd.h \
+  /usr/include/c++/15.2.1/bits/move.h \
+  /usr/include/c++/15.2.1/bits/new_allocator.h \
+  /usr/include/c++/15.2.1/bits/ostream_insert.h \
+  /usr/include/c++/15.2.1/bits/postypes.h \
+  /usr/include/c++/15.2.1/bits/predefined_ops.h \
+  /usr/include/c++/15.2.1/bits/ptr_traits.h \
+  /usr/include/c++/15.2.1/bits/range_access.h \
+  /usr/include/c++/15.2.1/bits/ranges_algo.h \
+  /usr/include/c++/15.2.1/bits/ranges_algobase.h \
+  /usr/include/c++/15.2.1/bits/ranges_base.h \
+  /usr/include/c++/15.2.1/bits/ranges_cmp.h \
+  /usr/include/c++/15.2.1/bits/ranges_util.h \
+  /usr/include/c++/15.2.1/bits/refwrap.h \
+  /usr/include/c++/15.2.1/bits/requires_hosted.h \
   /usr/include/c++/15.2.1/bits/std_abs.h \
+  /usr/include/c++/15.2.1/bits/stl_algo.h \
+  /usr/include/c++/15.2.1/bits/stl_algobase.h \
+  /usr/include/c++/15.2.1/bits/stl_bvector.h \
+  /usr/include/c++/15.2.1/bits/stl_construct.h \
+  /usr/include/c++/15.2.1/bits/stl_function.h \
+  /usr/include/c++/15.2.1/bits/stl_heap.h \
+  /usr/include/c++/15.2.1/bits/stl_iterator.h \
+  /usr/include/c++/15.2.1/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/15.2.1/bits/stl_iterator_base_types.h \
+  /usr/include/c++/15.2.1/bits/stl_pair.h \
+  /usr/include/c++/15.2.1/bits/stl_tempbuf.h \
+  /usr/include/c++/15.2.1/bits/stl_uninitialized.h \
+  /usr/include/c++/15.2.1/bits/stl_vector.h \
+  /usr/include/c++/15.2.1/bits/string_view.tcc \
+  /usr/include/c++/15.2.1/bits/stringfwd.h \
+  /usr/include/c++/15.2.1/bits/uniform_int_dist.h \
+  /usr/include/c++/15.2.1/bits/uses_allocator.h \
+  /usr/include/c++/15.2.1/bits/uses_allocator_args.h \
+  /usr/include/c++/15.2.1/bits/utility.h \
+  /usr/include/c++/15.2.1/bits/vector.tcc \
+  /usr/include/c++/15.2.1/bits/version.h \
+  /usr/include/c++/15.2.1/cctype \
+  /usr/include/c++/15.2.1/cerrno \
+  /usr/include/c++/15.2.1/clocale \
+  /usr/include/c++/15.2.1/compare \
+  /usr/include/c++/15.2.1/concepts \
+  /usr/include/c++/15.2.1/cstddef \
+  /usr/include/c++/15.2.1/cstdio \
   /usr/include/c++/15.2.1/cstdlib \
+  /usr/include/c++/15.2.1/cwchar \
+  /usr/include/c++/15.2.1/debug/assertions.h \
+  /usr/include/c++/15.2.1/debug/debug.h \
+  /usr/include/c++/15.2.1/ext/alloc_traits.h \
+  /usr/include/c++/15.2.1/ext/numeric_traits.h \
+  /usr/include/c++/15.2.1/ext/string_conversions.h \
+  /usr/include/c++/15.2.1/ext/type_traits.h \
+  /usr/include/c++/15.2.1/initializer_list \
+  /usr/include/c++/15.2.1/iosfwd \
+  /usr/include/c++/15.2.1/new \
+  /usr/include/c++/15.2.1/numbers \
+  /usr/include/c++/15.2.1/pstl/execution_defs.h \
+  /usr/include/c++/15.2.1/pstl/glue_algorithm_defs.h \
   /usr/include/c++/15.2.1/pstl/pstl_config.h \
   /usr/include/c++/15.2.1/stdlib.h \
+  /usr/include/c++/15.2.1/string \
+  /usr/include/c++/15.2.1/string_view \
+  /usr/include/c++/15.2.1/tuple \
+  /usr/include/c++/15.2.1/type_traits \
+  /usr/include/c++/15.2.1/vector \
+  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++allocator.h \
   /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
+  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++locale.h \
   /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/cpu_defines.h \
   /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
   /usr/include/ctype.h \
   /usr/include/endian.h \
+  /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
   /usr/include/limits.h \
   /usr/include/linux/close_range.h \
+  /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
   /usr/include/linux/posix_types.h \
   /usr/include/linux/stddef.h \
+  /usr/include/locale.h \
   /usr/include/netinet/in.h \
   /usr/include/notcurses/nckeys.h \
   /usr/include/notcurses/ncport.h \
@@ -2728,6 +2828,16 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /usr/lib32/libglib-2.0.so.0:
 
+/usr/lib32/libgio-2.0.so.0:
+
+/usr/lib32/libfreetype.so.6:
+
+/usr/lib32/libmount.so.1:
+
+/usr/lib32/libfontconfig.so.1:
+
+/usr/lib32/libdbus-1.so.3:
+
 /usr/include/c++/15.2.1/bits/cxxabi_forced.h:
 
 /usr/include/c++/15.2.1/bits/ranges_cmp.h:
@@ -2754,10 +2864,6 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /usr/lib/libtheoraenc.so.2:
 
-/usr/lib32/libmount.so.1:
-
-/usr/lib32/libfontconfig.so.1:
-
 /usr/include/bits/locale.h:
 
 /usr/include/asm/types.h:
@@ -2775,6 +2881,8 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 /usr/include/asm-generic/bitsperlong.h:
 
 /usr/include/c++/15.2.1/exception:
+
+/usr/include/c++/15.2.1/bits/stl_heap.h:
 
 /usr/include/asm-generic/errno-base.h:
 
@@ -2801,8 +2909,6 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 /usr/include/bits/wordsize.h:
 
 /usr/include/notcurses/notcurses.h:
-
-/usr/include/c++/15.2.1/bits/memoryfwd.h:
 
 /usr/include/notcurses/nckeys.h:
 
@@ -2960,6 +3066,10 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /usr/include/c++/15.2.1/array:
 
+/usr/include/c++/15.2.1/bits/memoryfwd.h:
+
+/usr/include/c++/15.2.1/bits/algorithmfwd.h:
+
 /usr/lib/libva-x11.so.2:
 
 /usr/include/c++/15.2.1/bits/cxxabi_init_exception.h:
@@ -3088,8 +3198,6 @@ CMakeFiles/Samosbor.dir/src/game.cpp.o:
 
 /usr/include/errno.h:
 
-/usr/lib32/libfreetype.so.6:
-
 /usr/include/bits/byteswap.h:
 
 /usr/lib/libOpenCL.so.1:
@@ -3137,6 +3245,8 @@ CMakeFiles/Samosbor.dir/src/game.cpp.o:
 /usr/lib/libfribidi.so.0:
 
 /usr/include/c++/15.2.1/cwchar:
+
+/usr/include/c++/15.2.1/bits/uniform_int_dist.h:
 
 /usr/include/bits/sigstack.h:
 
@@ -3474,6 +3584,16 @@ CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o:
 
 /usr/include/c++/15.2.1/ostream:
 
+/usr/include/c++/15.2.1/algorithm:
+
+/usr/include/c++/15.2.1/bits/shared_ptr_atomic.h:
+
+/usr/lib/libtheoradec.so.2:
+
+/usr/include/c++/15.2.1/bits/ranges_algo.h:
+
+/usr/include/c++/15.2.1/pstl/glue_algorithm_defs.h:
+
 /home/tymur52/Samosbor/src/player/player.cpp:
 
 /usr/lib/Scrt1.o:
@@ -3551,6 +3671,8 @@ CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o:
 /usr/include/c++/15.2.1/bits/predefined_ops.h:
 
 /usr/lib/libasound.so.2:
+
+/usr/include/c++/15.2.1/bits/stl_algo.h:
 
 /usr/lib/libass.so.9:
 
@@ -3750,12 +3872,6 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o:
 
 /usr/lib/libthai.so.0:
 
-/usr/lib32/libdbus-1.so.3:
-
-/usr/include/c++/15.2.1/bits/shared_ptr_atomic.h:
-
-/usr/lib/libtheoradec.so.2:
-
 /usr/lib/libtiff.so.6:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h:
@@ -3835,5 +3951,3 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o:
 /usr/lib32/libXfixes.so.3:
 
 /usr/lib32/libcap.so.2:
-
-/usr/lib32/libgio-2.0.so.0:

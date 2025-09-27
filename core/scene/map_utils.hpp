@@ -37,9 +37,11 @@ inline void DrawRect(std::vector<std::wstring>& level,
     if (draw_left > draw_right || draw_top > draw_bottom) return; // fully outside
 
     // draw filled or outline
-    for (int y = draw_top; y <= draw_bottom; ++y) {
+    for (int y = draw_top; y <= draw_bottom; ++y) 
+    {
         // safe row exists
-        for (int x = draw_left; x <= draw_right; ++x) {
+        for (int x = draw_left; x <= draw_right; ++x) 
+        {
             bool on_border = (y == draw_top || y == draw_bottom || x == draw_left || x == draw_right);
             if (fill) level[y][x] = ch;
             else if (on_border) level[y][x] = ch;

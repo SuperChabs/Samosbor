@@ -3,6 +3,9 @@
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
 
+#include <vector>
+#include <string>
+
 class Entity 
 {
 protected:
@@ -16,7 +19,8 @@ public:
 
     virtual ~Entity() = default;
 
-    virtual void Update(int targetX, int targetY) {}
+    // Level-aware update: provide player's position and level so entities can avoid walls
+    virtual void Update(int targetX, int targetY, const std::vector<std::wstring>& level) {}
 
     virtual void Render(struct ncplane* plane);
     
