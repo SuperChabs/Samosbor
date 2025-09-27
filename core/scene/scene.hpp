@@ -33,17 +33,17 @@ protected:
 
 public:
     Scene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
-    virtual ~Scene() = default;
+    virtual ~Scene();
 
 
     void Render();
     virtual void HandleInput(); 
 
 protected:
-    virtual void InitEntitys();
-    virtual void Draw();
-    virtual void PanelDraw();
+    virtual void DrawMap() = 0;
+    virtual void PanelDraw() = 0;
     virtual void Update(ncplane* map);
+    virtual void SetupInput();
 };
 
 #endif

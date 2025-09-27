@@ -10,8 +10,11 @@ class Level1 : public Scene
 public:
     Level1(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
 
+    void Update(ncplane* map) override;
+
 private:
-    void InitEntitys() override;
-    void Draw() override;
+    void InitEntitys();
+    void DrawMap() override;
     void PanelDraw() override;
+
 };

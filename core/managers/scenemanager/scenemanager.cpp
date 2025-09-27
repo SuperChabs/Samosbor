@@ -30,7 +30,7 @@ void SceneManager::Update()
 {
     if (currentScene) 
     {
-
+        
     }
 }
 

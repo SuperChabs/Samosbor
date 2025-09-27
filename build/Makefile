@@ -198,6 +198,30 @@ core/managers/input/inputmanager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.s
 .PHONY : core/managers/input/inputmanager.cpp.s
 
+core/managers/scenemanager/scenemanager.o: core/managers/scenemanager/scenemanager.cpp.o
+.PHONY : core/managers/scenemanager/scenemanager.o
+
+# target to build an object file
+core/managers/scenemanager/scenemanager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o
+.PHONY : core/managers/scenemanager/scenemanager.cpp.o
+
+core/managers/scenemanager/scenemanager.i: core/managers/scenemanager/scenemanager.cpp.i
+.PHONY : core/managers/scenemanager/scenemanager.i
+
+# target to preprocess a source file
+core/managers/scenemanager/scenemanager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.i
+.PHONY : core/managers/scenemanager/scenemanager.cpp.i
+
+core/managers/scenemanager/scenemanager.s: core/managers/scenemanager/scenemanager.cpp.s
+.PHONY : core/managers/scenemanager/scenemanager.s
+
+# target to generate assembly for a file
+core/managers/scenemanager/scenemanager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.s
+.PHONY : core/managers/scenemanager/scenemanager.cpp.s
+
 core/scene/gamescenes/level1/level1.o: core/scene/gamescenes/level1/level1.cpp.o
 .PHONY : core/scene/gamescenes/level1/level1.o
 
@@ -245,6 +269,30 @@ core/scene/gamescenes/level2/level2.s: core/scene/gamescenes/level2/level2.cpp.s
 core/scene/gamescenes/level2/level2.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/scene/gamescenes/level2/level2.cpp.s
 .PHONY : core/scene/gamescenes/level2/level2.cpp.s
+
+core/scene/gamescenes/menu/menu.o: core/scene/gamescenes/menu/menu.cpp.o
+.PHONY : core/scene/gamescenes/menu/menu.o
+
+# target to build an object file
+core/scene/gamescenes/menu/menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/scene/gamescenes/menu/menu.cpp.o
+.PHONY : core/scene/gamescenes/menu/menu.cpp.o
+
+core/scene/gamescenes/menu/menu.i: core/scene/gamescenes/menu/menu.cpp.i
+.PHONY : core/scene/gamescenes/menu/menu.i
+
+# target to preprocess a source file
+core/scene/gamescenes/menu/menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/scene/gamescenes/menu/menu.cpp.i
+.PHONY : core/scene/gamescenes/menu/menu.cpp.i
+
+core/scene/gamescenes/menu/menu.s: core/scene/gamescenes/menu/menu.cpp.s
+.PHONY : core/scene/gamescenes/menu/menu.s
+
+# target to generate assembly for a file
+core/scene/gamescenes/menu/menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/scene/gamescenes/menu/menu.cpp.s
+.PHONY : core/scene/gamescenes/menu/menu.cpp.s
 
 core/scene/scene.o: core/scene/scene.cpp.o
 .PHONY : core/scene/scene.o
@@ -406,12 +454,18 @@ help:
 	@echo "... core/managers/input/inputmanager.o"
 	@echo "... core/managers/input/inputmanager.i"
 	@echo "... core/managers/input/inputmanager.s"
+	@echo "... core/managers/scenemanager/scenemanager.o"
+	@echo "... core/managers/scenemanager/scenemanager.i"
+	@echo "... core/managers/scenemanager/scenemanager.s"
 	@echo "... core/scene/gamescenes/level1/level1.o"
 	@echo "... core/scene/gamescenes/level1/level1.i"
 	@echo "... core/scene/gamescenes/level1/level1.s"
 	@echo "... core/scene/gamescenes/level2/level2.o"
 	@echo "... core/scene/gamescenes/level2/level2.i"
 	@echo "... core/scene/gamescenes/level2/level2.s"
+	@echo "... core/scene/gamescenes/menu/menu.o"
+	@echo "... core/scene/gamescenes/menu/menu.i"
+	@echo "... core/scene/gamescenes/menu/menu.s"
 	@echo "... core/scene/scene.o"
 	@echo "... core/scene/scene.i"
 	@echo "... core/scene/scene.s"
