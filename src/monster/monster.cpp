@@ -32,7 +32,7 @@ static bool HasLineOfSight(int sx, int sy, int tx, int ty, const std::vector<std
             if (err >= absDx) { err -= absDx; y += signY; }
             // Перевіряємо, що координати в межах рівня та клітинка прохідна
             if (y >= 0 && y < (int)level.size() && x >= 0 && x < (int)level[0].size()) {
-                if (level[y][x] != L'.') return false; // зустріли перешкоду
+                if (level[y][x] != L'.' || level[y][x] != L'^' || level[y][x] != L'v') return false; // зустріли перешкоду
             } else return false; // поза межами — не бачимо
         }
     } else {

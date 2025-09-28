@@ -50,3 +50,70 @@ inline void DrawRect(std::vector<std::wstring>& level,
 }
 
 } // namespace MapUtils
+
+// --- Template helpers ---
+namespace MapUtils {
+
+// A small alias for a room/template: rows of wchar_t
+using Room = std::vector<std::wstring>;
+
+// Create a rectangular room template of given height/width.
+// - border: character used for the walls
+// - floor: character used for the interior
+// - filled: if true, interior will also be filled with border; otherwise with floor
+inline Room MakeRectRoom(int height, int width, wchar_t border = L'\u2501', wchar_t floor = L'.', bool filled = false)
+{
+    Room room;
+    if (height <= 0 || width <= 0) return room;
+    room.resize(height, std::wstring(width, floor));
+
+    for (int x = 0; x < width; ++x) {
+        room[0][x] = border;
+        room[height - 1][x] = border;
+    }
+    for (int y = 0; y < height; ++y) {
+        room[y][0] = border;
+        room[y][width - 1] = border;
+    }
+
+    if (filled) {
+        for (int y = 0; y < height; ++y) {
+            for (int x = 0; x < width; ++x) {
+                room[y][x] = border;
+            }
+        }
+    }
+
+    return room;
+}
+
+// Insert a template into the main level buffer at (top,left).
+// If overwrite==false, characters in the template that are L' ' will be treated as transparent.
+inline void InsertTemplate(std::vector<std::wstring>& level,
+                           unsigned int rows,
+                           unsigned int mapWidth,
+                           const Room& tpl,
+                           int top, int left,
+                           bool overwrite = true)
+{
+    if (tpl.empty()) return;
+    int tpl_h = static_cast<int>(tpl.size());
+    int tpl_w = static_cast<int>(tpl[0].size());
+
+    int rows_i = static_cast<int>(rows);
+    int mapw_i = static_cast<int>(mapWidth);
+
+    for (int ty = 0; ty < tpl_h; ++ty) {
+        int y = top + ty;
+        if (y < 0 || y >= rows_i) continue;
+        for (int tx = 0; tx < tpl_w; ++tx) {
+            int x = left + tx;
+            if (x < 0 || x >= mapw_i) continue;
+            wchar_t c = tpl[ty][tx];
+            if (!overwrite && c == L' ') continue;
+            level[y][x] = c;
+        }
+    }
+}
+
+} // namespace MapUtils

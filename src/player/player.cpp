@@ -10,7 +10,8 @@ void Player::Move(int dx, int dy, const std::vector<std::wstring>& level) {
     if (newX < 0 || newX >= (int)level[0].size()) return;
 
     // Якщо символ прохідний
-    if (level[newY][newX] == '.') {
+    if (level[newY][newX] == '.' || level[newY][newX] == L'^' || level[newY][newX] == L'v') 
+    {
         x = newX;
         y = newY;
     }

@@ -16,5 +16,8 @@ private:
     void InitEntitys();
     void DrawMap() override;
     void PanelDraw() override;
+    void GenerateAutoDungeon(int roomCount = 12);
+    // centers of rooms generated in GenerateComplexMap (x,y) pairs
+    std::vector<std::pair<int,int>> roomCenters;
 
 };

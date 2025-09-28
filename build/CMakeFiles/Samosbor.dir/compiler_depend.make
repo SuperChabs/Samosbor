@@ -570,13 +570,23 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o: /home/tymur52
   /usr/include/bits/errno.h \
   /usr/include/bits/floatn-common.h \
   /usr/include/bits/floatn.h \
+  /usr/include/bits/flt-eval-method.h \
+  /usr/include/bits/fp-fast.h \
+  /usr/include/bits/fp-logb.h \
   /usr/include/bits/getopt_core.h \
   /usr/include/bits/getopt_posix.h \
   /usr/include/bits/in.h \
+  /usr/include/bits/iscanonical.h \
   /usr/include/bits/libc-header-start.h \
+  /usr/include/bits/libm-simd-decl-stubs.h \
   /usr/include/bits/local_lim.h \
   /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
+  /usr/include/bits/math-vector.h \
+  /usr/include/bits/mathcalls-helper-functions.h \
+  /usr/include/bits/mathcalls-macros.h \
+  /usr/include/bits/mathcalls-narrow.h \
+  /usr/include/bits/mathcalls.h \
   /usr/include/bits/posix1_lim.h \
   /usr/include/bits/posix2_lim.h \
   /usr/include/bits/posix_opt.h \
@@ -660,10 +670,12 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o: /home/tymur52
   /usr/include/bits/wordsize.h \
   /usr/include/bits/xopen_lim.h \
   /usr/include/byteswap.h \
+  /usr/include/c++/15.2.1/algorithm \
   /usr/include/c++/15.2.1/array \
   /usr/include/c++/15.2.1/backward/auto_ptr.h \
   /usr/include/c++/15.2.1/backward/binders.h \
   /usr/include/c++/15.2.1/bit \
+  /usr/include/c++/15.2.1/bits/algorithmfwd.h \
   /usr/include/c++/15.2.1/bits/align.h \
   /usr/include/c++/15.2.1/bits/alloc_traits.h \
   /usr/include/c++/15.2.1/bits/allocated_ptr.h \
@@ -711,7 +723,10 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o: /home/tymur52
   /usr/include/c++/15.2.1/bits/postypes.h \
   /usr/include/c++/15.2.1/bits/predefined_ops.h \
   /usr/include/c++/15.2.1/bits/ptr_traits.h \
+  /usr/include/c++/15.2.1/bits/random.h \
+  /usr/include/c++/15.2.1/bits/random.tcc \
   /usr/include/c++/15.2.1/bits/range_access.h \
+  /usr/include/c++/15.2.1/bits/ranges_algo.h \
   /usr/include/c++/15.2.1/bits/ranges_algobase.h \
   /usr/include/c++/15.2.1/bits/ranges_base.h \
   /usr/include/c++/15.2.1/bits/ranges_cmp.h \
@@ -722,16 +737,20 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o: /home/tymur52
   /usr/include/c++/15.2.1/bits/shared_ptr.h \
   /usr/include/c++/15.2.1/bits/shared_ptr_atomic.h \
   /usr/include/c++/15.2.1/bits/shared_ptr_base.h \
+  /usr/include/c++/15.2.1/bits/specfun.h \
   /usr/include/c++/15.2.1/bits/std_abs.h \
   /usr/include/c++/15.2.1/bits/std_function.h \
   /usr/include/c++/15.2.1/bits/std_mutex.h \
+  /usr/include/c++/15.2.1/bits/stl_algo.h \
   /usr/include/c++/15.2.1/bits/stl_algobase.h \
   /usr/include/c++/15.2.1/bits/stl_bvector.h \
   /usr/include/c++/15.2.1/bits/stl_construct.h \
   /usr/include/c++/15.2.1/bits/stl_function.h \
+  /usr/include/c++/15.2.1/bits/stl_heap.h \
   /usr/include/c++/15.2.1/bits/stl_iterator.h \
   /usr/include/c++/15.2.1/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/15.2.1/bits/stl_iterator_base_types.h \
+  /usr/include/c++/15.2.1/bits/stl_numeric.h \
   /usr/include/c++/15.2.1/bits/stl_pair.h \
   /usr/include/c++/15.2.1/bits/stl_raw_storage_iter.h \
   /usr/include/c++/15.2.1/bits/stl_tempbuf.h \
@@ -741,6 +760,7 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o: /home/tymur52
   /usr/include/c++/15.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/15.2.1/bits/string_view.tcc \
   /usr/include/c++/15.2.1/bits/stringfwd.h \
+  /usr/include/c++/15.2.1/bits/uniform_int_dist.h \
   /usr/include/c++/15.2.1/bits/unique_ptr.h \
   /usr/include/c++/15.2.1/bits/unordered_map.h \
   /usr/include/c++/15.2.1/bits/uses_allocator.h \
@@ -752,6 +772,7 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o: /home/tymur52
   /usr/include/c++/15.2.1/cerrno \
   /usr/include/c++/15.2.1/climits \
   /usr/include/c++/15.2.1/clocale \
+  /usr/include/c++/15.2.1/cmath \
   /usr/include/c++/15.2.1/compare \
   /usr/include/c++/15.2.1/concepts \
   /usr/include/c++/15.2.1/cstddef \
@@ -774,18 +795,35 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o: /home/tymur52
   /usr/include/c++/15.2.1/initializer_list \
   /usr/include/c++/15.2.1/ios \
   /usr/include/c++/15.2.1/iosfwd \
+  /usr/include/c++/15.2.1/limits \
   /usr/include/c++/15.2.1/memory \
   /usr/include/c++/15.2.1/new \
   /usr/include/c++/15.2.1/numbers \
+  /usr/include/c++/15.2.1/numeric \
   /usr/include/c++/15.2.1/pstl/execution_defs.h \
+  /usr/include/c++/15.2.1/pstl/glue_algorithm_defs.h \
   /usr/include/c++/15.2.1/pstl/glue_memory_defs.h \
+  /usr/include/c++/15.2.1/pstl/glue_numeric_defs.h \
   /usr/include/c++/15.2.1/pstl/pstl_config.h \
+  /usr/include/c++/15.2.1/random \
   /usr/include/c++/15.2.1/stdexcept \
   /usr/include/c++/15.2.1/stdlib.h \
   /usr/include/c++/15.2.1/streambuf \
   /usr/include/c++/15.2.1/string \
   /usr/include/c++/15.2.1/string_view \
   /usr/include/c++/15.2.1/system_error \
+  /usr/include/c++/15.2.1/tr1/bessel_function.tcc \
+  /usr/include/c++/15.2.1/tr1/beta_function.tcc \
+  /usr/include/c++/15.2.1/tr1/ell_integral.tcc \
+  /usr/include/c++/15.2.1/tr1/exp_integral.tcc \
+  /usr/include/c++/15.2.1/tr1/gamma.tcc \
+  /usr/include/c++/15.2.1/tr1/hypergeometric.tcc \
+  /usr/include/c++/15.2.1/tr1/legendre_function.tcc \
+  /usr/include/c++/15.2.1/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/15.2.1/tr1/poly_hermite.tcc \
+  /usr/include/c++/15.2.1/tr1/poly_laguerre.tcc \
+  /usr/include/c++/15.2.1/tr1/riemann_zeta.tcc \
+  /usr/include/c++/15.2.1/tr1/special_function_util.h \
   /usr/include/c++/15.2.1/tuple \
   /usr/include/c++/15.2.1/type_traits \
   /usr/include/c++/15.2.1/typeinfo \
@@ -801,6 +839,7 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o: /home/tymur52
   /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/error_constants.h \
   /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
   /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/gthr.h \
+  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/opt_random.h \
   /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
   /usr/include/ctype.h \
   /usr/include/curses.h \
@@ -819,6 +858,7 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o: /home/tymur52
   /usr/include/linux/stddef.h \
   /usr/include/linux/types.h \
   /usr/include/locale.h \
+  /usr/include/math.h \
   /usr/include/ncurses_dll.h \
   /usr/include/netinet/in.h \
   /usr/include/notcurses/nckeys.h \
@@ -2838,6 +2878,46 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /usr/lib32/libdbus-1.so.3:
 
+/usr/lib32/libcrypto.so.3:
+
+/usr/lib32/libcap.so.2:
+
+/usr/lib32/libbrotlienc.so.1:
+
+/usr/lib32/libbrotlicommon.so.1:
+
+/usr/lib32/libblkid.so.1:
+
+/usr/lib32/libasound.so.2:
+
+/usr/lib32/libXext.so.6:
+
+/usr/lib32/libXdmcp.so.6:
+
+/usr/lib32/libX11.so.6:
+
+/usr/lib32/libX11-xcb.so.1:
+
+/usr/lib32/libSPIRV-Tools.so:
+
+/usr/lib32/libGLX.so.0:
+
+/usr/lib/pulseaudio/libpulsecommon-17.0.so:
+
+/usr/lib/libzmq.so.5:
+
+/usr/lib/libzimg.so.2:
+
+/usr/lib/libxcb.so.1:
+
+/usr/lib/libxcb-shm.so.0:
+
+/usr/lib/libxcb-shape.so.0:
+
+/usr/lib/libxcb-render.so.0:
+
+/usr/lib/libx265.so.215:
+
 /usr/include/c++/15.2.1/bits/cxxabi_forced.h:
 
 /usr/include/c++/15.2.1/bits/ranges_cmp.h:
@@ -2872,8 +2952,6 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:
 
-/usr/lib32/libbrotlicommon.so.1:
-
 /usr/lib/libswresample.so.5:
 
 /usr/include/c++/15.2.1/bits/ranges_util.h:
@@ -2886,7 +2964,11 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /usr/include/asm-generic/errno-base.h:
 
-/usr/lib32/libasound.so.2:
+/usr/lib32/libsystemd.so.0:
+
+/usr/lib/libxml2.so.16:
+
+/home/tymur52/Samosbor/core/managers/scenemanager/scenemanager.hpp:
 
 /usr/include/c++/15.2.1/bits/locale_facets.h:
 
@@ -2896,7 +2978,17 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /usr/include/sys/types.h:
 
+/usr/include/c++/15.2.1/numeric:
+
+/usr/lib/libzstd.so.1:
+
+/usr/include/sys/cdefs.h:
+
 /usr/include/c++/15.2.1/bits/allocated_ptr.h:
+
+/usr/lib/libxvidcore.so.4:
+
+/usr/include/strings.h:
 
 /usr/include/string.h:
 
@@ -2936,7 +3028,9 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /usr/include/ncurses_dll.h:
 
-/usr/include/c++/15.2.1/typeinfo:
+/usr/lib32/libbrotlidec.so.1:
+
+/usr/include/stdlib.h:
 
 /usr/include/c++/15.2.1/initializer_list:
 
@@ -2952,15 +3046,15 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /usr/lib/libX11-xcb.so.1:
 
-/usr/lib/libxcb-render.so.0:
-
-/usr/lib/pulseaudio/libpulsecommon-17.0.so:
-
 /usr/include/c++/15.2.1/ext/alloc_traits.h:
 
 /usr/include/bits/unistd_ext.h:
 
 /usr/include/c++/15.2.1/new:
+
+/usr/lib/libz.so.1:
+
+/usr/include/c++/15.2.1/bits/shared_ptr_base.h:
 
 /usr/include/c++/15.2.1/cstddef:
 
@@ -2992,11 +3086,17 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /home/tymur52/Samosbor/src/main.cpp:
 
+/usr/lib32/libGL.so.1:
+
+/usr/lib/libXdmcp.so.6:
+
 /usr/include/c++/15.2.1/bits/std_function.h:
 
-/usr/include/c++/15.2.1/bits/std_abs.h:
-
 /usr/include/c++/15.2.1/bits/iterator_concepts.h:
+
+/usr/lib32/libXfixes.so.3:
+
+/usr/lib/libjack.so.0:
 
 /usr/include/c++/15.2.1/bits/atomic_lockfree_defines.h:
 
@@ -3007,8 +3107,6 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 /usr/include/bits/types/error_t.h:
 
 /usr/lib/libglslang-default-resource-limits.so.15:
-
-/usr/include/c++/15.2.1/bits/requires_hosted.h:
 
 /usr/include/bits/ss_flags.h:
 
@@ -3044,13 +3142,15 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /usr/include/asm/posix_types_64.h:
 
+/usr/lib/libxcb-xfixes.so.0:
+
+/usr/include/asm/errno.h:
+
 /usr/include/bits/stdint-uintn.h:
 
 /usr/include/c++/15.2.1/system_error:
 
 /usr/include/bits/types/struct_osockaddr.h:
-
-/usr/include/c++/15.2.1/bits/erase_if.h:
 
 /usr/lib/libXau.so.6:
 
@@ -3075,6 +3175,8 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 /usr/include/c++/15.2.1/bits/cxxabi_init_exception.h:
 
 /usr/include/bits/types/struct_sigstack.h:
+
+/usr/include/c++/15.2.1/tr1/legendre_function.tcc:
 
 /usr/include/stdc-predef.h:
 
@@ -3114,6 +3216,8 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /usr/include/c++/15.2.1/bits/stl_construct.h:
 
+/usr/include/c++/15.2.1/limits:
+
 /usr/include/c++/15.2.1/bits/istream.tcc:
 
 /usr/include/c++/15.2.1/bits/new_allocator.h:
@@ -3126,9 +3230,9 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /usr/include/bits/select.h:
 
-/usr/include/bits/types/struct_timespec.h:
-
 /usr/include/bits/pthreadtypes.h:
+
+/usr/include/c++/15.2.1/tr1/beta_function.tcc:
 
 /usr/include/c++/15.2.1/bits/basic_string.h:
 
@@ -3140,13 +3244,15 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 
 /usr/include/bits/pthreadtypes-arch.h:
 
-/usr/lib32/libSPIRV-Tools.so:
+/usr/lib32/libbz2.so.1.0:
+
+/usr/lib32/libSPIRV-Tools-opt.so:
+
+/usr/include/c++/15.2.1/bits/atomic_base.h:
 
 /usr/lib/libnettle.so.8:
 
 /usr/include/asm/sockios.h:
-
-/usr/lib/libxcb-shape.so.0:
 
 /home/tymur52/Samosbor/core/managers/resourcemanager.tpp:
 
@@ -3159,6 +3265,8 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o:
 /usr/include/alloca.h:
 
 /usr/include/bits/sigstksz.h:
+
+/usr/include/bits/mathcalls-helper-functions.h:
 
 /usr/include/asm/socket.h:
 
@@ -3202,10 +3310,6 @@ CMakeFiles/Samosbor.dir/src/game.cpp.o:
 
 /usr/lib/libOpenCL.so.1:
 
-/usr/include/stdlib.h:
-
-/usr/lib32/libbrotlidec.so.1:
-
 /usr/include/c++/15.2.1/bits/max_size_type.h:
 
 /usr/include/c++/15.2.1/ext/atomicity.h:
@@ -3220,10 +3324,6 @@ CMakeFiles/Samosbor.dir/src/game.cpp.o:
 
 /usr/include/c++/15.2.1/stdlib.h:
 
-/usr/include/c++/15.2.1/bits/shared_ptr_base.h:
-
-/usr/lib/libz.so.1:
-
 /usr/include/c++/15.2.1/bits/stl_iterator.h:
 
 /usr/include/bits/environments.h:
@@ -3235,6 +3335,8 @@ CMakeFiles/Samosbor.dir/src/game.cpp.o:
 /usr/include/bits/types/cookie_io_functions_t.h:
 
 /usr/include/c++/15.2.1/bits/functional_hash.h:
+
+/usr/include/c++/15.2.1/bits/stl_numeric.h:
 
 /usr/include/linux/limits.h:
 
@@ -3262,6 +3364,8 @@ CMakeFiles/Samosbor.dir/src/game.cpp.o:
 
 /usr/include/asm/unistd_64.h:
 
+/usr/include/c++/15.2.1/tr1/riemann_zeta.tcc:
+
 /usr/include/bits/long-double.h:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h:
@@ -3281,8 +3385,6 @@ CMakeFiles/Samosbor.dir/src/game.cpp.o:
 /usr/include/ctype.h:
 
 /usr/include/c++/15.2.1/bits/stl_pair.h:
-
-/usr/include/c++/15.2.1/bits/exception_defines.h:
 
 /usr/include/c++/15.2.1/vector:
 
@@ -3312,8 +3414,6 @@ CMakeFiles/Samosbor.dir/src/game.cpp.o:
 
 /usr/include/bits/types/__locale_t.h:
 
-/usr/lib/libswscale.so.8:
-
 /home/tymur52/Samosbor/core/managers/input/inputmanager.hpp:
 
 /usr/include/c++/15.2.1/ext/concurrence.h:
@@ -3333,6 +3433,8 @@ CMakeFiles/Samosbor.dir/src/game.cpp.o:
 /usr/include/c++/15.2.1/ext/numeric_traits.h:
 
 /usr/include/bits/xopen_lim.h:
+
+/usr/include/c++/15.2.1/tr1/ell_integral.tcc:
 
 /usr/include/asm-generic/sockios.h:
 
@@ -3376,7 +3478,7 @@ CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o:
 
 /usr/include/bits/types/timer_t.h:
 
-/usr/lib32/libblkid.so.1:
+/usr/include/c++/15.2.1/tr1/poly_hermite.tcc:
 
 /usr/include/signal.h:
 
@@ -3386,9 +3488,13 @@ CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o:
 
 /usr/include/c++/15.2.1/bits/enable_special_members.h:
 
+/usr/include/c++/15.2.1/cmath:
+
 /usr/include/c++/15.2.1/bits/stringfwd.h:
 
 /usr/include/bits/uio_lim.h:
+
+/usr/include/bits/math-vector.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h:
 
@@ -3402,8 +3508,6 @@ CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o:
 
 /usr/include/byteswap.h:
 
-/usr/lib32/libbrotlienc.so.1:
-
 /usr/include/c++/15.2.1/bits/concept_check.h:
 
 /home/tymur52/Samosbor/core/scene/map_utils.hpp:
@@ -3416,11 +3520,11 @@ CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o:
 
 /usr/include/bits/endian.h:
 
-/usr/lib/libxcb.so.1:
-
 /usr/lib32/libdrm.so.2:
 
 /usr/include/c++/15.2.1/bits/invoke.h:
+
+/usr/include/math.h:
 
 /usr/include/time.h:
 
@@ -3462,8 +3566,6 @@ CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o:
 
 /usr/include/c++/15.2.1/streambuf:
 
-/usr/lib/libxcb-shm.so.0:
-
 /usr/include/c++/15.2.1/bits/shared_ptr.h:
 
 /usr/include/asm-generic/errno.h:
@@ -3472,13 +3574,9 @@ CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o:
 
 /usr/include/c++/15.2.1/bits/std_mutex.h:
 
-/usr/lib32/libX11-xcb.so.1:
-
 /usr/lib32/libxcb-shape.so.0:
 
 /usr/include/c++/15.2.1/bits/stl_raw_storage_iter.h:
-
-/usr/lib32/libcrypto.so.3:
 
 /usr/include/c++/15.2.1/bits/streambuf_iterator.h:
 
@@ -3534,6 +3632,10 @@ CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/gthr.h:
 
+/usr/lib/libxcb-dri3.so.0:
+
+/home/tymur52/Samosbor/core/scene/gamescenes/level1/level1.cpp:
+
 /usr/lib32/libicudata.so.76:
 
 /usr/lib/libhogweed.so.6:
@@ -3560,11 +3662,35 @@ CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o:
 
 /usr/include/syscall.h:
 
-/usr/lib/libncursesw.so.6:
+/usr/include/bits/flt-eval-method.h:
 
-/usr/include/curses.h:
+/home/tymur52/Samosbor/src/player/player.cpp:
 
-/home/tymur52/Samosbor/src/game.cpp:
+/usr/include/bits/iscanonical.h:
+
+/usr/lib/librav1e.so.0.7:
+
+/usr/include/c++/15.2.1/bits/requires_hosted.h:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
+
+/usr/lib/libgraphite2.so.3:
+
+/usr/include/bits/mathcalls-macros.h:
+
+/usr/include/c++/15.2.1/bits/erase_if.h:
+
+/usr/include/bits/mathcalls-narrow.h:
+
+/usr/lib32/libidn2.so.0:
+
+/usr/lib32/libGLdispatch.so.0:
+
+/usr/lib/libavfilter.so.10:
+
+/usr/lib/libswscale.so.8:
+
+/usr/include/bits/mathcalls.h:
 
 /home/tymur52/Samosbor/includes/game.hpp:
 
@@ -3576,6 +3702,62 @@ CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o:
 
 /usr/lib/libpgm-5.3.so.0:
 
+/usr/include/c++/15.2.1/algorithm:
+
+/usr/include/c++/15.2.1/bits/shared_ptr_atomic.h:
+
+/usr/lib/libtheoradec.so.2:
+
+/usr/include/c++/15.2.1/bits/exception_defines.h:
+
+/usr/include/c++/15.2.1/bits/random.h:
+
+/usr/include/c++/15.2.1/bits/random.tcc:
+
+/usr/include/c++/15.2.1/bits/ranges_algo.h:
+
+/usr/include/c++/15.2.1/typeinfo:
+
+/usr/include/c++/15.2.1/bits/specfun.h:
+
+/usr/include/c++/15.2.1/pstl/glue_algorithm_defs.h:
+
+/usr/include/c++/15.2.1/pstl/glue_numeric_defs.h:
+
+/usr/include/c++/15.2.1/tr1/bessel_function.tcc:
+
+/usr/include/c++/15.2.1/tr1/exp_integral.tcc:
+
+/usr/include/c++/15.2.1/tr1/gamma.tcc:
+
+/usr/include/bits/types/struct_timespec.h:
+
+/usr/include/c++/15.2.1/tr1/hypergeometric.tcc:
+
+/usr/include/c++/15.2.1/tr1/poly_laguerre.tcc:
+
+/usr/include/c++/15.2.1/tr1/modified_bessel_func.tcc:
+
+/usr/include/c++/15.2.1/bits/std_abs.h:
+
+/usr/include/c++/15.2.1/tr1/special_function_util.h:
+
+/usr/include/bits/types/sig_atomic_t.h:
+
+/usr/lib/librom1394.so.0:
+
+/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/opt_random.h:
+
+/usr/include/c++/15.2.1/bits/stl_algo.h:
+
+/usr/lib/libass.so.9:
+
+/usr/lib/libncursesw.so.6:
+
+/usr/include/curses.h:
+
+/home/tymur52/Samosbor/src/game.cpp:
+
 /usr/include/c++/15.2.1/istream:
 
 /usr/include/bits/waitflags.h:
@@ -3583,18 +3765,6 @@ CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o:
 /usr/lib/libopencore-amrnb.so.0:
 
 /usr/include/c++/15.2.1/ostream:
-
-/usr/include/c++/15.2.1/algorithm:
-
-/usr/include/c++/15.2.1/bits/shared_ptr_atomic.h:
-
-/usr/lib/libtheoradec.so.2:
-
-/usr/include/c++/15.2.1/bits/ranges_algo.h:
-
-/usr/include/c++/15.2.1/pstl/glue_algorithm_defs.h:
-
-/home/tymur52/Samosbor/src/player/player.cpp:
 
 /usr/lib/Scrt1.o:
 
@@ -3615,8 +3785,6 @@ CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o:
 /usr/lib/libgcc_s.so.1:
 
 /usr/lib/libm.so:
-
-/usr/lib/libx265.so.215:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o:
 
@@ -3672,10 +3840,6 @@ CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o:
 
 /usr/lib/libasound.so.2:
 
-/usr/include/c++/15.2.1/bits/stl_algo.h:
-
-/usr/lib/libass.so.9:
-
 /usr/include/c++/15.2.1/ext/aligned_buffer.h:
 
 /usr/lib/libavc1394.so.0:
@@ -3714,6 +3878,8 @@ CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o:
 
 /usr/lib/libbz2.so.1.0:
 
+/usr/include/bits/fp-fast.h:
+
 /usr/lib/libc.so.6:
 
 /usr/lib/libc_nonshared.a:
@@ -3750,6 +3916,8 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o:
 
 /usr/lib/libfreetype.so.6:
 
+/usr/include/c++/15.2.1/random:
+
 /usr/lib/libsnappy.so.1:
 
 /usr/lib/libgdk_pixbuf-2.0.so.0:
@@ -3778,15 +3946,7 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o:
 
 /usr/lib/libgobject-2.0.so.0:
 
-/usr/lib32/libXext.so.6:
-
-/usr/lib/libgraphite2.so.3:
-
 /usr/lib/libhwy.so.1:
-
-/home/tymur52/Samosbor/core/scene/gamescenes/level1/level1.cpp:
-
-/usr/lib/libxcb-dri3.so.0:
 
 /usr/lib/libicudata.so.76:
 
@@ -3804,6 +3964,10 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o:
 
 /usr/lib/libspeex.so.1:
 
+/usr/lib32/libXau.so.6:
+
+/usr/lib/liblcms2.so.2:
+
 /usr/lib/liblzma.so.5:
 
 /usr/lib/libm.so.6:
@@ -3818,13 +3982,11 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o:
 
 /usr/include/linux/stddef.h:
 
+/usr/include/bits/fp-logb.h:
+
 /usr/lib/libmvec.so.1:
 
 /usr/lib/libopencore-amrwb.so.0:
-
-/usr/include/asm/errno.h:
-
-/usr/lib/libxcb-xfixes.so.0:
 
 /usr/include/bits/uintn-identity.h:
 
@@ -3846,25 +4008,23 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o:
 
 /usr/lib/libpostproc.so.58:
 
-/usr/lib/librav1e.so.0.7:
-
-/usr/include/bits/types/sig_atomic_t.h:
-
-/usr/lib/librom1394.so.0:
-
 /usr/lib/librsvg-2.so.2:
 
 /usr/lib/librubberband.so.3:
 
 /usr/lib/libshaderc_shared.so.1:
 
-/usr/lib32/libXdmcp.so.6:
-
 /usr/lib/libsharpyuv.so.0:
 
 /usr/lib/libssh.so.4:
 
 /usr/lib/libsystemd.so.0:
+
+/usr/include/bits/cpu-set.h:
+
+/usr/lib/libvidstab.so.1.2:
+
+/usr/lib/libva-drm.so.2:
 
 /usr/include/c++/15.2.1/compare:
 
@@ -3879,12 +4039,6 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o:
 /usr/lib/libunistring.so.5:
 
 /usr/lib/libvdpau.so.1:
-
-/usr/include/bits/cpu-set.h:
-
-/usr/lib/libva-drm.so.2:
-
-/usr/lib/libvidstab.so.1.2:
 
 /usr/lib/libvorbis.so.0:
 
@@ -3903,51 +4057,3 @@ CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o:
 /usr/include/c++/15.2.1/bits/hashtable_policy.h:
 
 /usr/lib/libx264.so.164:
-
-/usr/lib32/libsystemd.so.0:
-
-/home/tymur52/Samosbor/core/managers/scenemanager/scenemanager.hpp:
-
-/usr/lib/libxml2.so.16:
-
-/usr/lib/libXdmcp.so.6:
-
-/usr/lib32/libGL.so.1:
-
-/usr/include/strings.h:
-
-/usr/lib/libxvidcore.so.4:
-
-/usr/lib/libzimg.so.2:
-
-/usr/lib/libzmq.so.5:
-
-/usr/include/sys/cdefs.h:
-
-/usr/lib/libzstd.so.1:
-
-/usr/lib32/libGLX.so.0:
-
-/usr/lib32/libidn2.so.0:
-
-/usr/lib/libavfilter.so.10:
-
-/usr/lib32/libGLdispatch.so.0:
-
-/usr/lib32/libbz2.so.1.0:
-
-/usr/include/c++/15.2.1/bits/atomic_base.h:
-
-/usr/lib32/libSPIRV-Tools-opt.so:
-
-/usr/lib32/libX11.so.6:
-
-/usr/lib/liblcms2.so.2:
-
-/usr/lib32/libXau.so.6:
-
-/usr/lib/libjack.so.0:
-
-/usr/lib32/libXfixes.so.3:
-
-/usr/lib32/libcap.so.2:
