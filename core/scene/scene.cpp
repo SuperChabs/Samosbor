@@ -48,10 +48,17 @@ void Scene::Render()
         for (int x = 0; x < mapWidth; x++) 
         {
             wchar_t c = level[y][x];
-            if (c == '@') ncplane_set_fg_rgb8(map, 53, 62, 67);
-            else if (c == '%') ncplane_set_fg_rgb8(map, 125, 213, 60);
-            else if (c == L'\u2581' || c == L'\u258F') ncplane_set_fg_rgb8(map, 61, 60, 60);
-            else ncplane_set_fg_rgb8(map, 60, 60, 60);
+            if (c == '@') ncplane_set_fg_rgb8(map, 1, 4, 88);
+            else if (c == '%') 
+                ncplane_set_fg_rgb8(map, 125, 213, 60);
+            else if (c == L'\u2501' || c == L'\u2503' || 
+                    c == L'\u2517' || c == L'\u251B' ||
+                    c == L'\u250F' || c == L'\u2513') 
+                ncplane_set_fg_rgb8(map, 61, 240, 60);   
+            else if (c == L'░') 
+                ncplane_set_fg_rgb8(map, 107, 63, 105);
+            else 
+                ncplane_set_fg_rgb8(map, 60, 60, 60);
 
             ncplane_putwc_yx(map, y, x, c);
         }

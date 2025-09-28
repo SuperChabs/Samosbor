@@ -13,34 +13,34 @@ Monster::Monster(int x, int y) : Entity(x, y, 'M', 200, 0, 0) {}
 // по лінії є прохідними '.'), і false якщо зустрічається стіна чи вихід за межі.
 static bool HasLineOfSight(int sx, int sy, int tx, int ty, const std::vector<std::wstring>& level)
 {
-    int dx = tx - sx;
-    int dy = ty - sy;
-    int nx = std::abs(dx);
-    int ny = std::abs(dy);
-    int sign_x = dx > 0 ? 1 : (dx < 0 ? -1 : 0);
-    int sign_y = dy > 0 ? 1 : (dy < 0 ? -1 : 0);
+    int deltaX = tx - sx;
+    int deltaY = ty - sy;
+    int absDx = std::abs(deltaX);
+    int absDy = std::abs(deltaY);
+    int signX = deltaX > 0 ? 1 : (deltaX < 0 ? -1 : 0);
+    int signY = deltaY > 0 ? 1 : (deltaY < 0 ? -1 : 0);
 
     int x = sx;
     int y = sy;
 
     // TODO: оптимізація — обмежити дальність огляду, якщо потрібно
-    if (nx > ny) {
-        int px = nx / 2;
-        for (int i = 0; i < nx; ++i) {
-            x += sign_x;
-            px += ny;
-            if (px >= nx) { px -= nx; y += sign_y; }
+    if (absDx > absDy) {
+        int err = absDx / 2;
+        for (int i = 0; i < absDx; ++i) {
+            x += signX;
+            err += absDy;
+            if (err >= absDx) { err -= absDx; y += signY; }
             // Перевіряємо, що координати в межах рівня та клітинка прохідна
             if (y >= 0 && y < (int)level.size() && x >= 0 && x < (int)level[0].size()) {
                 if (level[y][x] != L'.') return false; // зустріли перешкоду
             } else return false; // поза межами — не бачимо
         }
     } else {
-        int py = ny / 2;
-        for (int i = 0; i < ny; ++i) {
-            y += sign_y;
-            py += nx;
-            if (py >= ny) { py -= ny; x += sign_x; }
+        int err = absDy / 2;
+        for (int i = 0; i < absDy; ++i) {
+            y += signY;
+            err += absDx;
+            if (err >= absDy) { err -= absDy; x += signX; }
             if (y >= 0 && y < (int)level.size() && x >= 0 && x < (int)level[0].size()) {
                 if (level[y][x] != L'.') return false;
             } else return false;
@@ -52,10 +52,10 @@ static bool HasLineOfSight(int sx, int sy, int tx, int ty, const std::vector<std
 // HACK: Функція спроби переміститися в клітинку (nx,ny).
 // Якщо клітинка прохідна ('.') — оновлює координати (x,y) та повертає true.
 // Інакше повертає false і нічого не змінює.
-static bool TryMove(int &x, int &y, int nx, int ny, const std::vector<std::wstring>& level)
+static bool TryMove(int &x, int &y, int newX, int newY, const std::vector<std::wstring>& level)
 {
-    if (ny < 0 || ny >= (int)level.size() || nx < 0 || nx >= (int)level[0].size()) return false; // поза межами
-    if (level[ny][nx] == L'.') { x = nx; y = ny; return true; }
+    if (newY < 0 || newY >= (int)level.size() || newX < 0 || newX >= (int)level[0].size()) return false; // поза межами
+    if (level[newY][newX] == L'.') { x = newX; y = newY; return true; }
     return false; // стіна або інша непрохідна річ
 }
 
@@ -71,38 +71,38 @@ void Monster::Update(int targetX, int targetY, const std::vector<std::wstring>& 
 
     // Якщо монстр бачить гравця — пересуваємось до нього
     if (HasLineOfSight(x, y, targetX, targetY, level)) {
-        int dx = (targetX > x) ? 1 : ((targetX < x) ? -1 : 0);
-        int dy = (targetY > y) ? 1 : ((targetY < y) ? -1 : 0);
+        int deltaX = (targetX > x) ? 1 : ((targetX < x) ? -1 : 0);
+        int deltaY = (targetY > y) ? 1 : ((targetY < y) ? -1 : 0);
 
         // Крок діагонально, якщо можливо
-        if (dx != 0 && dy != 0) {
-            if (TryMove(x, y, x + dx, y + dy, level)) return;
+        if (deltaX != 0 && deltaY != 0) {
+            if (TryMove(x, y, x + deltaX, y + deltaY, level)) return;
         }
         // Інакше горизонтально або вертикально
-        if (dx != 0 && TryMove(x, y, x + dx, y, level)) return;
-        if (dy != 0 && TryMove(x, y, x, y + dy, level)) return;
+        if (deltaX != 0 && TryMove(x, y, x + deltaX, y, level)) return;
+        if (deltaY != 0 && TryMove(x, y, x, y + deltaY, level)) return;
 
         // Якщо прямо в шляху стіна — пробуємо відступити на 2 клітини назад
-        int backx = x - dx * 2;
-        int backy = y - dy * 2;
-        if (TryMove(x, y, backx, backy, level)) return;
+        int backX = x - deltaX * 2;
+        int backY = y - deltaY * 2;
+        if (TryMove(x, y, backX, backY, level)) return;
     }
 
     // Якщо не бачить гравця — випадковий рух
-    int dirs[4][2] = {{1,0},{-1,0},{0,1},{0,-1}};
+    int directions[4][2] = {{1,0},{-1,0},{0,1},{0,-1}};
     // Перемішуємо масив напрямків (рандомний порядок перевірки)
     for (int i = 0; i < 4; ++i) {
         int j = std::rand() % 4; // ! Рекомендується ініціалізувати srand у main()
-        std::swap(dirs[i], dirs[j]);
+        std::swap(directions[i], directions[j]);
     }
 
     for (int i = 0; i < 4; ++i) {
-        int nx = x + dirs[i][0];
-        int ny = y + dirs[i][1];
-        if (TryMove(x, y, nx, ny, level)) return; // вдалося зробити крок
+        int candidateX = x + directions[i][0];
+        int candidateY = y + directions[i][1];
+        if (TryMove(x, y, candidateX, candidateY, level)) return; // вдалося зробити крок
         // Якщо зустріли стіну — спробувати відступити на 2 клітини від неї
-        int oppx = x - dirs[i][0] * 2;
-        int oppy = y - dirs[i][1] * 2;
-        if (TryMove(x, y, oppx, oppy, level)) return;
+        int oppX = x - directions[i][0] * 2;
+        int oppY = y - directions[i][1] * 2;
+        if (TryMove(x, y, oppX, oppY, level)) return;
     }
 }
