@@ -4,9 +4,13 @@
 #include "inputmanager.hpp"
 
 #include <ncurses.h>
+#include <string>
 
 class Level1 : public Scene 
 {
+private:
+    std::string hud;
+
 public:
     Level1(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
 

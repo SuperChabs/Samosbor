@@ -13,8 +13,14 @@ class Player : public Entity
 {
 public: 
     Player(int x, int y);
+    ~Player();
 
-    void Move(int dx, int dy, const std::vector<std::wstring>& level);
+    void Move(int dx, int dy, std::vector<std::wstring>& level);
+
+    int GetCoinsValue();
+
+private:
+    int coins;
 };
 
 #endif

@@ -57,6 +57,8 @@ void Scene::Render()
                 ncplane_set_fg_rgb8(map, 61, 240, 60);   
             else if (c == L'░') 
                 ncplane_set_fg_rgb8(map, 107, 63, 105);
+            else if (c == L'v' || c == L'^')
+                ncplane_set_fg_rgb8(map, 250, 177, 47);
             else 
                 ncplane_set_fg_rgb8(map, 60, 60, 60);
 
