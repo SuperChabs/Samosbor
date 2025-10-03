@@ -1,24 +1,22 @@
-#include "level1.hpp"
+#include "gamescene.hpp"
 
 #include <memory>
-// <random> використовується для процедурної генерації (рандомні кімнати, коридори, розміщення монстрів)
 #include <random>
-// <algorithm> потрібен для сортування ребер та інших допоміжних операцій
 #include <algorithm>
-#include "../../map_utils.hpp"
 
-Level1::Level1(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input)
+#include "../map_utils.hpp"
+
+GameScene::GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input)
                 : Scene(nc, stdn, rows, cols, input) 
 {
-    // prepare base level buffer and entities
+
     level.resize(rows, std::wstring(mapWidth, L'.'));
-    // Викликаємо процедурний генератор рівня: число кімнат передається як параметр.
-    // Змінюйте аргумент, щоб отримати більше/менше кімнат.
-    GenerateAutoDungeon(3);
+
+    GenerateAutoDungeon(100);
     InitEntitys();
 }
 
-void Level1::InitEntitys()
+void GameScene::InitEntitys()
 {
     // Очищаємо список монстрів перед (повторним) розміщенням
     monsters.clear();
@@ -74,7 +72,7 @@ void Level1::InitEntitys()
 //   9) Ставимо сходи (вхід/вихід)
 //   10) Додаємо дрібний декор (точки, коми)
 // -----------------------------------------------------------------------------
-void Level1::GenerateAutoDungeon(int roomCount)
+void GameScene::GenerateAutoDungeon(int roomCount)
 {
     // -------------------------------
     // 1) Початкова очистка карти
@@ -280,14 +278,14 @@ void Level1::GenerateAutoDungeon(int roomCount)
     // -------------------------------
     // 12) Декоративні деталі
     // -------------------------------
-    for (int i=0; i<(int)roomCenters.size()*2; ++i) {
-        int rx = rng() % (int)mapWidth;
-        int ry = rng() % (int)rows;
+    // for (int i=0; i<(int)roomCenters.size()*2; ++i) {
+    //     int rx = rng() % (int)mapWidth;
+    //     int ry = rng() % (int)rows;
 
-        if (level[ry][rx] == L'.') {
-            level[ry][rx] = (i%4==0 ? L'•' : L',');
-        }
-    }
+    //     if (level[ry][rx] == L'.') {
+    //         level[ry][rx] = (i%4==0 ? L'•' : L',');
+    //     }
+    // }
 
     for (auto &center : roomCenters) 
     {
@@ -309,12 +307,12 @@ void Level1::GenerateAutoDungeon(int roomCount)
     }
 }
 
-void Level1::DrawMap()
+void GameScene::DrawMap()
 {
     return;
 }
 
-void Level1::PanelDraw()
+void GameScene::PanelDraw()
 {
     ncplane_set_fg_rgb8(panel, 255, 0, 255);
     ncplane_putstr_yx(panel, 1, 1, "Bro just typing shit😂😂😂");
@@ -325,7 +323,7 @@ void Level1::PanelDraw()
 
 }
 
-void Level1::Update(ncplane *map)
+void GameScene::Update(ncplane *map)
 {
     player->Render(map);
     for (auto monster : monsters) 

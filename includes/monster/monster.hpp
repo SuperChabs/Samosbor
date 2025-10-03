@@ -14,8 +14,7 @@ class Monster : public Entity
 public:
     Monster(int x, int y);
 
-    // Updated AI: receives player's position and the level map to avoid walls
-    void Update(int targetX, int targetY, const std::vector<std::wstring>& level) override;
+    virtual void Update(int targetX, int targetY, const std::vector<std::wstring>& level) override;
 };
 
 #endif

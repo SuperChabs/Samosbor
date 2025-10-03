@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <memory>
 
-#include "level1.hpp"
+#include "gamescene.hpp"
 
 Game::Game()
         : running(true)
@@ -17,9 +17,9 @@ Game::Game()
         stdn = notcurses_stddim_yx(nc, NULL, NULL);
         ncplane_dim_yx(stdn, &rows, &cols);
 
-        sm.Add("level1", std::make_shared<Level1>(nc, stdn, rows, cols, input));
+        sm.Add("level", std::make_shared<GameScene>(nc, stdn, rows, cols, input));
 
-        sm.SetActiveScene("level1");
+        sm.SetActiveScene("level");
 
     }
 

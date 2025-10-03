@@ -4,7 +4,6 @@
 #include <string>
 #include <stdexcept>
 
-// Шаблонний клас менеджера ресурсів
 template <typename T>
 class ResourceManager {
 protected:

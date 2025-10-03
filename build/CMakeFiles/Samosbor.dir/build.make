@@ -184,19 +184,19 @@ CMakeFiles/Samosbor.dir/core/scene/scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Samosbor.dir/core/scene/scene.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tymur52/Samosbor/core/scene/scene.cpp -o CMakeFiles/Samosbor.dir/core/scene/scene.cpp.s
 
-CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o: CMakeFiles/Samosbor.dir/flags.make
-CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o: /home/tymur52/Samosbor/core/scene/gamescenes/level1/level1.cpp
-CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o: CMakeFiles/Samosbor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o -MF CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o.d -o CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o -c /home/tymur52/Samosbor/core/scene/gamescenes/level1/level1.cpp
+CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o: CMakeFiles/Samosbor.dir/flags.make
+CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o: /home/tymur52/Samosbor/core/scene/gamescene/gamescene.cpp
+CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o: CMakeFiles/Samosbor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o -MF CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o.d -o CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o -c /home/tymur52/Samosbor/core/scene/gamescene/gamescene.cpp
 
-CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tymur52/Samosbor/core/scene/gamescenes/level1/level1.cpp > CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.i
+CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tymur52/Samosbor/core/scene/gamescene/gamescene.cpp > CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.i
 
-CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tymur52/Samosbor/core/scene/gamescenes/level1/level1.cpp -o CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.s
+CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tymur52/Samosbor/core/scene/gamescene/gamescene.cpp -o CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.s
 
 # Object files for target Samosbor
 Samosbor_OBJECTS = \
@@ -208,7 +208,7 @@ Samosbor_OBJECTS = \
 "CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o" \
 "CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o" \
 "CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o" \
-"CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o"
+"CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o"
 
 # External object files for target Samosbor
 Samosbor_EXTERNAL_OBJECTS =
@@ -221,7 +221,7 @@ Samosbor: CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o
 Samosbor: CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o
 Samosbor: CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o
 Samosbor: CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o
-Samosbor: CMakeFiles/Samosbor.dir/core/scene/gamescenes/level1/level1.cpp.o
+Samosbor: CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o
 Samosbor: CMakeFiles/Samosbor.dir/build.make
 Samosbor: CMakeFiles/Samosbor.dir/compiler_depend.ts
 Samosbor: /usr/lib/libnotcurses-core.so

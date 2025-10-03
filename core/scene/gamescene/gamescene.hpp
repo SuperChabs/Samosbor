@@ -6,13 +6,13 @@
 #include <ncurses.h>
 #include <string>
 
-class Level1 : public Scene 
+class GameScene : public Scene 
 {
 private:
     std::string hud;
 
 public:
-    Level1(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
+    GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
 
     void Update(ncplane* map) override;
 
