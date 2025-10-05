@@ -9,10 +9,9 @@
 GameScene::GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input)
                 : Scene(nc, stdn, rows, cols, input) 
 {
-
     level.resize(rows, std::wstring(mapWidth, L'.'));
 
-    GenerateAutoDungeon(100);
+    GenerateAutoDungeon(5);
     InitEntitys();
 }
 
@@ -278,14 +277,6 @@ void GameScene::GenerateAutoDungeon(int roomCount)
     // -------------------------------
     // 12) Декоративні деталі
     // -------------------------------
-    // for (int i=0; i<(int)roomCenters.size()*2; ++i) {
-    //     int rx = rng() % (int)mapWidth;
-    //     int ry = rng() % (int)rows;
-
-    //     if (level[ry][rx] == L'.') {
-    //         level[ry][rx] = (i%4==0 ? L'•' : L',');
-    //     }
-    // }
 
     for (auto &center : roomCenters) 
     {
@@ -306,6 +297,26 @@ void GameScene::GenerateAutoDungeon(int roomCount)
         }
     }
 }
+
+//void GameScene::ChangeLevel()
+//{
+    // bool validPlacement = false;
+
+    // while (!validPlacement)
+    // {
+    //     GenerateAutoDungeon(2);  
+    //     InitEntitys();            
+
+    //     int px = player->GetX();
+    //     int py = player->GetY();
+
+    //     if (level[py][px] == L'v')
+    //     {
+    //         validPlacement = true;
+    //         debugText = "Level must been changed";
+    //     }
+    // } 
+//}
 
 void GameScene::DrawMap()
 {
@@ -329,5 +340,14 @@ void GameScene::Update(ncplane *map)
     for (auto monster : monsters) 
     {
         monster->Render(map);
-    } 
+    }
+
+    int px = player->GetX();
+    int py = player->GetY();
+
+    if (level[py][px] == L'v') 
+    {
+        GenerateAutoDungeon(10);
+        InitEntitys();
+    }
 }

@@ -119,7 +119,6 @@ void Scene::HandleInput()
 			}
 		}
 	});
-
 }
 
 void Scene::DrawMap()

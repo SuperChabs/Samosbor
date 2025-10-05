@@ -26,8 +26,21 @@ add_executable(Samosbor
 
 target_include_directories(Samosbor PRIVATE
     ${CMAKE_SOURCE_DIR}/includes
+    ${CMAKE_SOURCE_DIR}/includes/entity
+    ${CMAKE_SOURCE_DIR}/includes/player
+    ${CMAKE_SOURCE_DIR}/includes/monster
+
     ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_SOURCE_DIR}/core
+    ${CMAKE_SOURCE_DIR}/src/entity
+    ${CMAKE_SOURCE_DIR}/src/player
+    ${CMAKE_SOURCE_DIR}/src/monster
+
+    ${CMAKE_SOURCE_DIR}/core/scene
+    ${CMAKE_SOURCE_DIR}/core/scene/gamescene
+
+    ${CMAKE_SOURCE_DIR}/core/managers
+    ${CMAKE_SOURCE_DIR}/core/managers/input
+    ${CMAKE_SOURCE_DIR}/core/managers/scenemanager
 )
 
 
