@@ -11,7 +11,7 @@ GameScene::GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int ro
 {
     level.resize(rows, std::wstring(mapWidth, L'.'));
 
-    GenerateAutoDungeon(5);
+    GenerateAutoDungeon(10);
     InitEntitys();
 }
 
@@ -19,13 +19,30 @@ void GameScene::InitEntitys()
 {
     // Очищаємо список монстрів перед (повторним) розміщенням
     monsters.clear();
-    // Розміщуємо гравця у центрі першої згенерованої кімнати (якщо вона є)
-    if (!roomCenters.empty()) {
-        auto c = roomCenters.front();
-        player = std::make_shared<Player>(c.first, c.second); // center.x, center.y
-    } else {
-        // якщо кімнат не знайдено — ставимо в центр екрану
-        player = std::make_shared<Player>(cols / 2, rows / 2);
+
+    if (player) 
+    { 
+        if (!roomCenters.empty()) 
+        {
+            auto c = roomCenters.front();
+            player->SetPosition(c.first, c.second); // center.x, center.y
+        } 
+        else 
+        {
+            player->SetPosition(cols / 2, rows / 2);
+        }
+    }
+    else if (!player) 
+    {
+        if (!roomCenters.empty()) 
+        {
+            auto c = roomCenters.front();
+            player = std::make_shared<Player>(c.first, c.second); // center.x, center.y
+        } 
+        else 
+        {
+            player = std::make_shared<Player>(cols / 2, rows / 2);
+        }
     }
 
     // Налаштовуємо генератор випадкових чисел для розміщення монстрів

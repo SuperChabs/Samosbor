@@ -21,3 +21,9 @@ void Entity::Move(int dx, int dy, int maxX, int maxY)
     if (newX >= 0 && newX < maxX) x = newX;
     if (newY >= 0 && newY < maxY) y = newY;
 }
+
+void Entity::SetPosition(int x, int y)
+{
+    this->x = x;
+    this->y = y;
+}

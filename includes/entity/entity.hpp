@@ -31,6 +31,8 @@ public:
 
     int GetX() const { return x; }
     int GetY() const { return y; }
+
+    void SetPosition(int x, int y);
 };
 
 #endif
