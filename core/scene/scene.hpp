@@ -6,6 +6,7 @@
 #include <vector>
 #include <string>
 #include <memory>
+#include <notcurses/notcurses.h>
 
 #include "inputmanager.hpp"
 #include "monster.hpp"
@@ -22,7 +23,7 @@ protected:
     unsigned int mapWidth, panelWidth;
 
     std::shared_ptr<Player> player;
-    //Monster monster;
+
     InputManager& input;
 
     std::vector<std::wstring> level;
@@ -39,7 +40,7 @@ public:
 protected:
     virtual void DrawMap();
     virtual void PanelDraw();
-    virtual void Update(ncplane* map) = 0;
+    virtual void Update(ncplane* map);
 };
 
 #endif

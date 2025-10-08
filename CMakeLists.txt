@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(Samosbor   VERSION 0.1
+project(Samosbor   VERSION 0.2
                     DESCRIPTION ""
                     LANGUAGES CXX)
 
@@ -11,17 +11,18 @@ include_directories(include)
 
 add_executable(Samosbor
     src/main.cpp
-    src/game.cpp includes/game.hpp 
-    src/entity/entity.cpp includes/entity/entity.hpp 
-    src/player/player.cpp includes/player/player.hpp 
-    src/monster/monster.cpp includes/monster/monster.hpp 
+    src/game.cpp                                includes/game.hpp 
+    src/entity/entity.cpp                       includes/entity/entity.hpp 
+    src/player/player.cpp                       includes/player/player.hpp 
+    src/monster/monster.cpp                     includes/monster/monster.hpp 
 
-    core/managers/resourcemanager.hpp core/managers/resourcemanager.tpp 
-    core/managers/input/inputmanager.hpp core/managers/input/inputmanager.cpp 
+    core/managers/resourcemanager.hpp           core/managers/resourcemanager.tpp 
+    core/managers/input/inputmanager.hpp        core/managers/input/inputmanager.cpp 
     core/managers/scenemanager/scenemanager.hpp core/managers/scenemanager/scenemanager.cpp
      
-    core/scene/scene.hpp core/scene/scene.cpp 
-    core/scene/gamescene/gamescene.hpp core/scene/gamescene/gamescene.cpp
+    core/scene/scene.hpp                        core/scene/scene.cpp 
+    core/scene/gamescene/gamescene.hpp          core/scene/gamescene/gamescene.cpp
+    core/scene/menu/menu.hpp                    core/scene/menu/menu.cpp
 )
 
 target_include_directories(Samosbor PRIVATE
@@ -37,6 +38,7 @@ target_include_directories(Samosbor PRIVATE
 
     ${CMAKE_SOURCE_DIR}/core/scene
     ${CMAKE_SOURCE_DIR}/core/scene/gamescene
+    ${CMAKE_SOURCE_DIR}/core/scene/menu
 
     ${CMAKE_SOURCE_DIR}/core/managers
     ${CMAKE_SOURCE_DIR}/core/managers/input
@@ -44,8 +46,8 @@ target_include_directories(Samosbor PRIVATE
 )
 
 
-find_library(NOTCURSES_LIB notcurses)
-find_library(NOTCURSES_CORE_LIB notcurses-core)
+find_library(NOTCURSES_LIB libnotcurses)
+find_library(NOTCURSES_CORE_LIB libnotcurses-core)
 
 target_link_libraries(Samosbor ${NOTCURSES_CORE_LIB})
 target_link_libraries(Samosbor ${NOTCURSES_LIB})

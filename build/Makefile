@@ -246,6 +246,30 @@ core/scene/gamescene/gamescene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.s
 .PHONY : core/scene/gamescene/gamescene.cpp.s
 
+core/scene/menu/menu.o: core/scene/menu/menu.cpp.o
+.PHONY : core/scene/menu/menu.o
+
+# target to build an object file
+core/scene/menu/menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.o
+.PHONY : core/scene/menu/menu.cpp.o
+
+core/scene/menu/menu.i: core/scene/menu/menu.cpp.i
+.PHONY : core/scene/menu/menu.i
+
+# target to preprocess a source file
+core/scene/menu/menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.i
+.PHONY : core/scene/menu/menu.cpp.i
+
+core/scene/menu/menu.s: core/scene/menu/menu.cpp.s
+.PHONY : core/scene/menu/menu.s
+
+# target to generate assembly for a file
+core/scene/menu/menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.s
+.PHONY : core/scene/menu/menu.cpp.s
+
 core/scene/scene.o: core/scene/scene.cpp.o
 .PHONY : core/scene/scene.o
 
@@ -412,6 +436,9 @@ help:
 	@echo "... core/scene/gamescene/gamescene.o"
 	@echo "... core/scene/gamescene/gamescene.i"
 	@echo "... core/scene/gamescene/gamescene.s"
+	@echo "... core/scene/menu/menu.o"
+	@echo "... core/scene/menu/menu.i"
+	@echo "... core/scene/menu/menu.s"
 	@echo "... core/scene/scene.o"
 	@echo "... core/scene/scene.i"
 	@echo "... core/scene/scene.s"

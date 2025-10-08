@@ -9,7 +9,10 @@
 GameScene::GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input)
                 : Scene(nc, stdn, rows, cols, input) 
 {
-    level.resize(rows, std::wstring(mapWidth, L'.'));
+    ncplane_erase(map);
+    ncplane_erase(panel);
+
+    level.resize(rows, std::wstring(mapWidth, L' '));
 
     GenerateAutoDungeon(10);
     InitEntitys();
@@ -314,26 +317,6 @@ void GameScene::GenerateAutoDungeon(int roomCount)
         }
     }
 }
-
-//void GameScene::ChangeLevel()
-//{
-    // bool validPlacement = false;
-
-    // while (!validPlacement)
-    // {
-    //     GenerateAutoDungeon(2);  
-    //     InitEntitys();            
-
-    //     int px = player->GetX();
-    //     int py = player->GetY();
-
-    //     if (level[py][px] == L'v')
-    //     {
-    //         validPlacement = true;
-    //         debugText = "Level must been changed";
-    //     }
-    // } 
-//}
 
 void GameScene::DrawMap()
 {

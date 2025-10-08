@@ -33,7 +33,6 @@ Scene::Scene(notcurses *nc, ncplane *stdn, unsigned int rows, unsigned int cols,
 
 Scene::~Scene()
 {
-
 }
 
 void Scene::Render()
@@ -129,3 +128,6 @@ void Scene::PanelDraw()
 {
 }
 
+void Scene::Update(ncplane *map)
+{
+}

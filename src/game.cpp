@@ -6,6 +6,7 @@
 #include <memory>
 
 #include "gamescene.hpp"
+#include "menu.hpp"
 
 Game::Game()
         : running(true)
@@ -18,8 +19,9 @@ Game::Game()
         ncplane_dim_yx(stdn, &rows, &cols);
 
         sm.Add("level", std::make_shared<GameScene>(nc, stdn, rows, cols, input));
+        sm.Add("menu", std::make_shared<Menu>(nc, stdn, rows, cols, input, sm));
 
-        sm.SetActiveScene("level");
+        sm.SetActiveScene("menu");
 
     }
 

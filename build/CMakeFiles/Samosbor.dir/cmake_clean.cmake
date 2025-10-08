@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o.d"
   "CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o"
   "CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o.d"
+  "CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.o"
+  "CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.o.d"
   "CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o"
   "CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o.d"
   "CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o"
