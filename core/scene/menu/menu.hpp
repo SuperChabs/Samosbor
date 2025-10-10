@@ -15,7 +15,7 @@ class Menu : public Scene
 public:
     Menu(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input, SceneManager& sm);
 
-    void Update(ncplane *nc) override;
+    void Update() override;
 
 
 private:

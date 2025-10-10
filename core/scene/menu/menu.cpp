@@ -19,7 +19,7 @@ Menu::Menu(notcurses *nc, ncplane *stdn, unsigned int rows, unsigned int cols, I
     L" ▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒ ▒▒▒▒▒ ▒▒▒ ▒▒▒▒▒  ▒▒▒▒▒▒  ▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒  ▒▒▒▒▒     \n";
 }
 
-void Menu::Update(ncplane *nc)
+void Menu::Update()
 {
     return;
 }

@@ -28,7 +28,7 @@ Scene::Scene(notcurses *nc, ncplane *stdn, unsigned int rows, unsigned int cols,
     };
     map = ncplane_create(stdn, &map_opts);
     
-    level.resize(rows, std::wstring(mapWidth, L'.'));
+    level.resize(rows, std::wstring(mapWidth, L' '));
 }
 
 Scene::~Scene()
@@ -42,34 +42,40 @@ void Scene::Render()
 
     DrawMap();
 
+    ncplane_set_styles(map, NCSTYLE_BOLD);
+
     for (int y = 0; y < rows; y++) 
     {
         for (int x = 0; x < mapWidth; x++) 
         {
             wchar_t c = level[y][x];
-            if (c == '@') ncplane_set_fg_rgb8(map, 1, 4, 88);
+            uint8_t r=60, g=60, b=60; 
+
+            if (c == '@') 
+                r=1, g=4, b=88;
             else if (c == '%') 
-                ncplane_set_fg_rgb8(map, 125, 213, 60);
+                r=125, g=213, b=60;
             else if (c == L'\u2501' || c == L'\u2503' || 
                      c == L'\u2517' || c == L'\u251B' ||
                      c == L'\u250F' || c == L'\u2513') 
-                ncplane_set_fg_rgb8(map, 61, 240, 60);   
+                r=61, g=240, b=60;
             else if (c == L'░') 
-                ncplane_set_fg_rgb8(map, 107, 63, 105);
+                r=107, g=63, b=105;
             else if (c == L'v' || c == L'^')
-                ncplane_set_fg_rgb8(map, 250, 177, 47);
+                r=250, g=177, b=47;
             else if (c == L'¢') 
-                ncplane_set_fg_rgb8(map, 31, 69, 41);
-            else 
-                ncplane_set_fg_rgb8(map, 60, 60, 60);
+                r=31, g=69, b=41;
+
+            ncplane_set_fg_rgb8(map, r, g, b);
 
             ncplane_putwc_yx(map, y, x, c);
         }
     }
 
-    Update(map);
+    Update();
 
     PanelDraw();
+
 
     notcurses_render(nc);
 }
@@ -120,14 +126,12 @@ void Scene::HandleInput()
 	});
 }
 
-void Scene::DrawMap()
+ncplane* Scene::GetMap()
 {
+    return map;
 }
 
-void Scene::PanelDraw()
+ncplane *Scene::GetPanel()
 {
-}
-
-void Scene::Update(ncplane *map)
-{
+    return panel;
 }

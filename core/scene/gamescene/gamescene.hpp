@@ -15,7 +15,10 @@ private:
 public:
     GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
 
-    void Update(ncplane* map) override;
+    void Update() override;
+
+    ncplane* GetMap() override;
+    ncplane* GetPanel() override;
 
 private:
     void InitEntitys();

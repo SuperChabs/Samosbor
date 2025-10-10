@@ -21,7 +21,7 @@ Game::Game()
         sm.Add("level", std::make_shared<GameScene>(nc, stdn, rows, cols, input));
         sm.Add("menu", std::make_shared<Menu>(nc, stdn, rows, cols, input, sm));
 
-        sm.SetActiveScene("menu");
+        sm.SetActiveScene("level");
 
     }
 
@@ -58,5 +58,7 @@ void Game::HandleInput()
 }
 
 void Game::Update()
-{}
+{
+    //sm.Update();
+}
 

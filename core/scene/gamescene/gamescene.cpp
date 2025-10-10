@@ -334,12 +334,12 @@ void GameScene::PanelDraw()
 
 }
 
-void GameScene::Update(ncplane *map)
+void GameScene::Update()
 {
-    player->Render(map);
+    player->Render(GetMap());
     for (auto monster : monsters) 
     {
-        monster->Render(map);
+        monster->Render(GetMap());
     }
 
     int px = player->GetX();
@@ -350,4 +350,14 @@ void GameScene::Update(ncplane *map)
         GenerateAutoDungeon(10);
         InitEntitys();
     }
+}
+
+ncplane *GameScene::GetMap()
+{
+    return map;
+}
+
+ncplane *GameScene::GetPanel()
+{
+    return panel;
 }

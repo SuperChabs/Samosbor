@@ -35,12 +35,16 @@ public:
     virtual ~Scene();
 
     void Render();
-    virtual void HandleInput(); 
+    virtual void HandleInput();
+    virtual void Update() = 0;
+    
+    virtual ncplane* GetMap();
+    virtual ncplane* GetPanel();
 
 protected:
-    virtual void DrawMap();
-    virtual void PanelDraw();
-    virtual void Update(ncplane* map);
+    virtual void DrawMap() = 0;
+    virtual void PanelDraw() = 0;
+    
 };
 
 #endif
