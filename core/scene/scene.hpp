@@ -29,6 +29,7 @@ protected:
     std::vector<std::wstring> level;
 
     std::vector<std::shared_ptr<Monster>> monsters;
+    bool inputBound = false;
 
 public:
     Scene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
@@ -40,6 +41,14 @@ public:
     
     virtual ncplane* GetMap();
     virtual ncplane* GetPanel();
+
+    // Show/hide lifecycle
+    virtual void Show();
+    virtual void Hide();
+
+protected:
+    virtual void BindInput();
+    virtual void UnbindInput();
 
 protected:
     virtual void DrawMap() = 0;

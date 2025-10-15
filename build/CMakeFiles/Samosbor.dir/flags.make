@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/scene/gamescene -I/home/tymur52/Samosbor/core/scene/menu -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/scenemanager
+CXX_INCLUDES = -I/home/tymur52/Samosbor/include -I/home/tymur52/Samosbor/includes -I/home/tymur52/Samosbor/includes/entity -I/home/tymur52/Samosbor/includes/player -I/home/tymur52/Samosbor/includes/monster -I/home/tymur52/Samosbor/includes/item -I/home/tymur52/Samosbor/includes/inventory -I/home/tymur52/Samosbor/src -I/home/tymur52/Samosbor/src/entity -I/home/tymur52/Samosbor/src/player -I/home/tymur52/Samosbor/src/monster -I/home/tymur52/Samosbor/src/item -I/home/tymur52/Samosbor/core/scene -I/home/tymur52/Samosbor/core/scene/gamescene -I/home/tymur52/Samosbor/core/scene/menu -I/home/tymur52/Samosbor/core/managers -I/home/tymur52/Samosbor/core/managers/input -I/home/tymur52/Samosbor/core/managers/scenemanager
 
 CXX_FLAGS = -g -std=gnu++20
 

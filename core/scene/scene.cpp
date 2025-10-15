@@ -126,6 +126,33 @@ void Scene::HandleInput()
 	});
 }
 
+void Scene::Show()
+{
+    if (map) ncplane_move_top(map);
+    if (panel) ncplane_move_top(panel);
+    BindInput();
+}
+
+void Scene::Hide()
+{
+    if (map) ncplane_move_bottom(map);
+    if (panel) ncplane_move_bottom(panel);
+    UnbindInput();
+}
+
+
+void Scene::BindInput()
+{
+    if (inputBound) return;
+    HandleInput();
+    inputBound = true;
+}
+
+void Scene::UnbindInput()
+{
+    inputBound = false;
+}
+
 ncplane* Scene::GetMap()
 {
     return map;

@@ -37,7 +37,7 @@ private:
     InputManager input;
     SceneManager sm;
 
-    bool running;
+    // bool running;
 
 };
 

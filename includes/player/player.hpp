@@ -19,8 +19,7 @@ public:
 
     int GetCoinsValue();
 
-private:
-    int coins;
+    // ВИДАЛИТИ: private: int coins;
 };
 
 #endif

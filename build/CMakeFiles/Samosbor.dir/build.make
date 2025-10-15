@@ -100,10 +100,24 @@ CMakeFiles/Samosbor.dir/src/game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Samosbor.dir/src/game.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tymur52/Samosbor/src/game.cpp -o CMakeFiles/Samosbor.dir/src/game.cpp.s
 
+CMakeFiles/Samosbor.dir/src/settings.cpp.o: CMakeFiles/Samosbor.dir/flags.make
+CMakeFiles/Samosbor.dir/src/settings.cpp.o: /home/tymur52/Samosbor/src/settings.cpp
+CMakeFiles/Samosbor.dir/src/settings.cpp.o: CMakeFiles/Samosbor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Samosbor.dir/src/settings.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Samosbor.dir/src/settings.cpp.o -MF CMakeFiles/Samosbor.dir/src/settings.cpp.o.d -o CMakeFiles/Samosbor.dir/src/settings.cpp.o -c /home/tymur52/Samosbor/src/settings.cpp
+
+CMakeFiles/Samosbor.dir/src/settings.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Samosbor.dir/src/settings.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tymur52/Samosbor/src/settings.cpp > CMakeFiles/Samosbor.dir/src/settings.cpp.i
+
+CMakeFiles/Samosbor.dir/src/settings.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Samosbor.dir/src/settings.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tymur52/Samosbor/src/settings.cpp -o CMakeFiles/Samosbor.dir/src/settings.cpp.s
+
 CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o: CMakeFiles/Samosbor.dir/flags.make
 CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o: /home/tymur52/Samosbor/src/entity/entity.cpp
 CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o: CMakeFiles/Samosbor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o -MF CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o.d -o CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o -c /home/tymur52/Samosbor/src/entity/entity.cpp
 
 CMakeFiles/Samosbor.dir/src/entity/entity.cpp.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/Samosbor.dir/src/entity/entity.cpp.s: cmake_force
 CMakeFiles/Samosbor.dir/src/player/player.cpp.o: CMakeFiles/Samosbor.dir/flags.make
 CMakeFiles/Samosbor.dir/src/player/player.cpp.o: /home/tymur52/Samosbor/src/player/player.cpp
 CMakeFiles/Samosbor.dir/src/player/player.cpp.o: CMakeFiles/Samosbor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Samosbor.dir/src/player/player.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Samosbor.dir/src/player/player.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Samosbor.dir/src/player/player.cpp.o -MF CMakeFiles/Samosbor.dir/src/player/player.cpp.o.d -o CMakeFiles/Samosbor.dir/src/player/player.cpp.o -c /home/tymur52/Samosbor/src/player/player.cpp
 
 CMakeFiles/Samosbor.dir/src/player/player.cpp.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/Samosbor.dir/src/player/player.cpp.s: cmake_force
 CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o: CMakeFiles/Samosbor.dir/flags.make
 CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o: /home/tymur52/Samosbor/src/monster/monster.cpp
 CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o: CMakeFiles/Samosbor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o -MF CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o.d -o CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o -c /home/tymur52/Samosbor/src/monster/monster.cpp
 
 CMakeFiles/Samosbor.dir/src/monster/monster.cpp.i: cmake_force
@@ -142,10 +156,52 @@ CMakeFiles/Samosbor.dir/src/monster/monster.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Samosbor.dir/src/monster/monster.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tymur52/Samosbor/src/monster/monster.cpp -o CMakeFiles/Samosbor.dir/src/monster/monster.cpp.s
 
+CMakeFiles/Samosbor.dir/src/item/item.cpp.o: CMakeFiles/Samosbor.dir/flags.make
+CMakeFiles/Samosbor.dir/src/item/item.cpp.o: /home/tymur52/Samosbor/src/item/item.cpp
+CMakeFiles/Samosbor.dir/src/item/item.cpp.o: CMakeFiles/Samosbor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Samosbor.dir/src/item/item.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Samosbor.dir/src/item/item.cpp.o -MF CMakeFiles/Samosbor.dir/src/item/item.cpp.o.d -o CMakeFiles/Samosbor.dir/src/item/item.cpp.o -c /home/tymur52/Samosbor/src/item/item.cpp
+
+CMakeFiles/Samosbor.dir/src/item/item.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Samosbor.dir/src/item/item.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tymur52/Samosbor/src/item/item.cpp > CMakeFiles/Samosbor.dir/src/item/item.cpp.i
+
+CMakeFiles/Samosbor.dir/src/item/item.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Samosbor.dir/src/item/item.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tymur52/Samosbor/src/item/item.cpp -o CMakeFiles/Samosbor.dir/src/item/item.cpp.s
+
+CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.o: CMakeFiles/Samosbor.dir/flags.make
+CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.o: /home/tymur52/Samosbor/src/item/itemregistry.cpp
+CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.o: CMakeFiles/Samosbor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.o -MF CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.o.d -o CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.o -c /home/tymur52/Samosbor/src/item/itemregistry.cpp
+
+CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tymur52/Samosbor/src/item/itemregistry.cpp > CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.i
+
+CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tymur52/Samosbor/src/item/itemregistry.cpp -o CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.s
+
+CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.o: CMakeFiles/Samosbor.dir/flags.make
+CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.o: /home/tymur52/Samosbor/src/inventory/inventory.cpp
+CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.o: CMakeFiles/Samosbor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.o -MF CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.o.d -o CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.o -c /home/tymur52/Samosbor/src/inventory/inventory.cpp
+
+CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tymur52/Samosbor/src/inventory/inventory.cpp > CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.i
+
+CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tymur52/Samosbor/src/inventory/inventory.cpp -o CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.s
+
 CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o: CMakeFiles/Samosbor.dir/flags.make
 CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o: /home/tymur52/Samosbor/core/managers/input/inputmanager.cpp
 CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o: CMakeFiles/Samosbor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o -MF CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o.d -o CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o -c /home/tymur52/Samosbor/core/managers/input/inputmanager.cpp
 
 CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.i: cmake_force
@@ -159,7 +215,7 @@ CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.s: cmake_force
 CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o: CMakeFiles/Samosbor.dir/flags.make
 CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o: /home/tymur52/Samosbor/core/managers/scenemanager/scenemanager.cpp
 CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o: CMakeFiles/Samosbor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o -MF CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o.d -o CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o -c /home/tymur52/Samosbor/core/managers/scenemanager/scenemanager.cpp
 
 CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.i: cmake_force
@@ -173,7 +229,7 @@ CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.s: cmake_for
 CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o: CMakeFiles/Samosbor.dir/flags.make
 CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o: /home/tymur52/Samosbor/core/scene/scene.cpp
 CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o: CMakeFiles/Samosbor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o -MF CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o.d -o CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o -c /home/tymur52/Samosbor/core/scene/scene.cpp
 
 CMakeFiles/Samosbor.dir/core/scene/scene.cpp.i: cmake_force
@@ -187,7 +243,7 @@ CMakeFiles/Samosbor.dir/core/scene/scene.cpp.s: cmake_force
 CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o: CMakeFiles/Samosbor.dir/flags.make
 CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o: /home/tymur52/Samosbor/core/scene/gamescene/gamescene.cpp
 CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o: CMakeFiles/Samosbor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o -MF CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o.d -o CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.o -c /home/tymur52/Samosbor/core/scene/gamescene/gamescene.cpp
 
 CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.i: cmake_force
@@ -201,7 +257,7 @@ CMakeFiles/Samosbor.dir/core/scene/gamescene/gamescene.cpp.s: cmake_force
 CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.o: CMakeFiles/Samosbor.dir/flags.make
 CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.o: /home/tymur52/Samosbor/core/scene/menu/menu.cpp
 CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.o: CMakeFiles/Samosbor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.o -MF CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.o.d -o CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.o -c /home/tymur52/Samosbor/core/scene/menu/menu.cpp
 
 CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.i: cmake_force
@@ -216,9 +272,13 @@ CMakeFiles/Samosbor.dir/core/scene/menu/menu.cpp.s: cmake_force
 Samosbor_OBJECTS = \
 "CMakeFiles/Samosbor.dir/src/main.cpp.o" \
 "CMakeFiles/Samosbor.dir/src/game.cpp.o" \
+"CMakeFiles/Samosbor.dir/src/settings.cpp.o" \
 "CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o" \
 "CMakeFiles/Samosbor.dir/src/player/player.cpp.o" \
 "CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o" \
+"CMakeFiles/Samosbor.dir/src/item/item.cpp.o" \
+"CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.o" \
+"CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.o" \
 "CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o" \
 "CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o" \
 "CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o" \
@@ -230,9 +290,13 @@ Samosbor_EXTERNAL_OBJECTS =
 
 Samosbor: CMakeFiles/Samosbor.dir/src/main.cpp.o
 Samosbor: CMakeFiles/Samosbor.dir/src/game.cpp.o
+Samosbor: CMakeFiles/Samosbor.dir/src/settings.cpp.o
 Samosbor: CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o
 Samosbor: CMakeFiles/Samosbor.dir/src/player/player.cpp.o
 Samosbor: CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o
+Samosbor: CMakeFiles/Samosbor.dir/src/item/item.cpp.o
+Samosbor: CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.o
+Samosbor: CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.o
 Samosbor: CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.o
 Samosbor: CMakeFiles/Samosbor.dir/core/managers/scenemanager/scenemanager.cpp.o
 Samosbor: CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o
@@ -243,7 +307,7 @@ Samosbor: CMakeFiles/Samosbor.dir/compiler_depend.ts
 Samosbor: /usr/lib/libnotcurses-core.so
 Samosbor: /usr/lib/libnotcurses.so
 Samosbor: CMakeFiles/Samosbor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Samosbor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tymur52/Samosbor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable Samosbor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Samosbor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -7,10 +7,13 @@
 
 #include "gamescene.hpp"
 #include "menu.hpp"
+#include "../includes/settings.hpp"
 
 Game::Game()
-        : running(true)
     {
+        // load settings
+        Settings::Instance().LoadFromFile("./json/settings.json");
+
         struct notcurses_options opts = {};
         nc = notcurses_init(&opts, NULL);
         if(!nc) throw std::runtime_error("Не вдалося ініціалізувати notcurses");
@@ -27,6 +30,8 @@ Game::Game()
 
 Game::~Game(void)
 {
+    Settings::Instance().SaveProgress();  // ДОДАТИ
+    
     if(nc) 
     {
         notcurses_stop(nc);
@@ -37,7 +42,7 @@ void Game::Run(void)
 {
     HandleInput();
 
-    while(running) 
+    while(Settings::Instance().IsRunning()) 
     {
         Render();
         input.UpdateOnce(nc);
@@ -52,7 +57,7 @@ void Game::Render()
 
 void Game::HandleInput()
 {
-    input.Bind('q', [&](){ running = false; });
+    input.Bind('q', [&](){Settings::Instance().SetRunning(false);});
     sm.HandleInput();
 
 }

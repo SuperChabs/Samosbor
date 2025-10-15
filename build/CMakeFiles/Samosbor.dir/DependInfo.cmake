@@ -15,9 +15,13 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/tymur52/Samosbor/core/scene/scene.cpp" "CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/core/scene/scene.cpp.o.d"
   "/home/tymur52/Samosbor/src/entity/entity.cpp" "CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/src/entity/entity.cpp.o.d"
   "/home/tymur52/Samosbor/src/game.cpp" "CMakeFiles/Samosbor.dir/src/game.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/src/game.cpp.o.d"
+  "/home/tymur52/Samosbor/src/inventory/inventory.cpp" "CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.o.d"
+  "/home/tymur52/Samosbor/src/item/item.cpp" "CMakeFiles/Samosbor.dir/src/item/item.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/src/item/item.cpp.o.d"
+  "/home/tymur52/Samosbor/src/item/itemregistry.cpp" "CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.o.d"
   "/home/tymur52/Samosbor/src/main.cpp" "CMakeFiles/Samosbor.dir/src/main.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/src/main.cpp.o.d"
   "/home/tymur52/Samosbor/src/monster/monster.cpp" "CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/src/monster/monster.cpp.o.d"
   "/home/tymur52/Samosbor/src/player/player.cpp" "CMakeFiles/Samosbor.dir/src/player/player.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/src/player/player.cpp.o.d"
+  "/home/tymur52/Samosbor/src/settings.cpp" "CMakeFiles/Samosbor.dir/src/settings.cpp.o" "gcc" "CMakeFiles/Samosbor.dir/src/settings.cpp.o.d"
   "" "Samosbor" "gcc" "CMakeFiles/Samosbor.dir/link.d"
   )
 

@@ -342,6 +342,78 @@ src/game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
 
+src/inventory/inventory.o: src/inventory/inventory.cpp.o
+.PHONY : src/inventory/inventory.o
+
+# target to build an object file
+src/inventory/inventory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.o
+.PHONY : src/inventory/inventory.cpp.o
+
+src/inventory/inventory.i: src/inventory/inventory.cpp.i
+.PHONY : src/inventory/inventory.i
+
+# target to preprocess a source file
+src/inventory/inventory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.i
+.PHONY : src/inventory/inventory.cpp.i
+
+src/inventory/inventory.s: src/inventory/inventory.cpp.s
+.PHONY : src/inventory/inventory.s
+
+# target to generate assembly for a file
+src/inventory/inventory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/src/inventory/inventory.cpp.s
+.PHONY : src/inventory/inventory.cpp.s
+
+src/item/item.o: src/item/item.cpp.o
+.PHONY : src/item/item.o
+
+# target to build an object file
+src/item/item.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/src/item/item.cpp.o
+.PHONY : src/item/item.cpp.o
+
+src/item/item.i: src/item/item.cpp.i
+.PHONY : src/item/item.i
+
+# target to preprocess a source file
+src/item/item.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/src/item/item.cpp.i
+.PHONY : src/item/item.cpp.i
+
+src/item/item.s: src/item/item.cpp.s
+.PHONY : src/item/item.s
+
+# target to generate assembly for a file
+src/item/item.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/src/item/item.cpp.s
+.PHONY : src/item/item.cpp.s
+
+src/item/itemregistry.o: src/item/itemregistry.cpp.o
+.PHONY : src/item/itemregistry.o
+
+# target to build an object file
+src/item/itemregistry.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.o
+.PHONY : src/item/itemregistry.cpp.o
+
+src/item/itemregistry.i: src/item/itemregistry.cpp.i
+.PHONY : src/item/itemregistry.i
+
+# target to preprocess a source file
+src/item/itemregistry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.i
+.PHONY : src/item/itemregistry.cpp.i
+
+src/item/itemregistry.s: src/item/itemregistry.cpp.s
+.PHONY : src/item/itemregistry.s
+
+# target to generate assembly for a file
+src/item/itemregistry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.s
+.PHONY : src/item/itemregistry.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -414,6 +486,30 @@ src/player/player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/src/player/player.cpp.s
 .PHONY : src/player/player.cpp.s
 
+src/settings.o: src/settings.cpp.o
+.PHONY : src/settings.o
+
+# target to build an object file
+src/settings.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/src/settings.cpp.o
+.PHONY : src/settings.cpp.o
+
+src/settings.i: src/settings.cpp.i
+.PHONY : src/settings.i
+
+# target to preprocess a source file
+src/settings.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/src/settings.cpp.i
+.PHONY : src/settings.cpp.i
+
+src/settings.s: src/settings.cpp.s
+.PHONY : src/settings.s
+
+# target to generate assembly for a file
+src/settings.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/src/settings.cpp.s
+.PHONY : src/settings.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -448,6 +544,15 @@ help:
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"
+	@echo "... src/inventory/inventory.o"
+	@echo "... src/inventory/inventory.i"
+	@echo "... src/inventory/inventory.s"
+	@echo "... src/item/item.o"
+	@echo "... src/item/item.i"
+	@echo "... src/item/item.s"
+	@echo "... src/item/itemregistry.o"
+	@echo "... src/item/itemregistry.i"
+	@echo "... src/item/itemregistry.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -457,6 +562,9 @@ help:
 	@echo "... src/player/player.o"
 	@echo "... src/player/player.i"
 	@echo "... src/player/player.s"
+	@echo "... src/settings.o"
+	@echo "... src/settings.i"
+	@echo "... src/settings.s"
 .PHONY : help
 
 
