@@ -8,10 +8,10 @@ public:
     InputManager() = default;
     ~InputManager() = default;
 
-    // Призначаємо функцію на конкретну клавішу
-    void Bind(int key, std::function<void()> action);
 
-    // Читаємо введення і викликаємо функції
+    void Bind(int key, std::function<void()> action);
+    void Bind(int key);
+
     void Update(struct notcurses* nc);
     void UpdateOnce(struct notcurses* nc);
 

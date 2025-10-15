@@ -6,13 +6,18 @@ void InputManager::Bind(int key, std::function<void()> action){
     bindings[key] = action;
 }
 
+void InputManager::Bind(int key)
+{
+    //bindings[key] = 
+}
+
 void InputManager::Update(struct notcurses* nc){
     struct ncinput ni;
     int ret = notcurses_get(nc, nullptr, &ni);
     if(ret > 0){
         auto it = bindings.find(ni.id);
         if(it != bindings.end()){
-            it->second(); // викликаємо прив’язану функцію
+            it->second(); 
         }
     }
 }

@@ -124,6 +124,24 @@ void Scene::HandleInput()
 			}
 		}
 	});
+
+    input.Bind('[', [this](){
+        if (player) {
+            player->GetInventory().SelectPrevious();
+        }
+    });
+    
+    input.Bind(']', [this](){
+        if (player) {
+            player->GetInventory().SelectNext();
+        }
+    });
+    
+    input.Bind('f', [this](){
+        if (player) {
+            player->GetInventory().UseSelectedItem(player.get());
+        }
+    });
 }
 
 void Scene::Show()

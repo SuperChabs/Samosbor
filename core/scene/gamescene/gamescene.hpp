@@ -10,7 +10,6 @@ class GameScene : public Scene
 {
 private:
     std::string hud;
-    //std::string debugText;
 
 public:
     GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
@@ -25,8 +24,7 @@ private:
     void DrawMap() override;
     void PanelDraw() override;
     void GenerateAutoDungeon(int roomCount = 12);
-    //void ChangeLevel();
-    // centers of rooms generated in GenerateComplexMap (x,y) pairs
+ 
     std::vector<std::pair<int,int>> roomCenters;
 
 };

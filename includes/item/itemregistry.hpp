@@ -27,6 +27,10 @@ public:
         return nullptr;
     }
 
+    static const std::unordered_map<std::string, std::shared_ptr<Item>>& GetAllItems() {
+        return items;
+    }
+
     static void InitializeItems();
 };
 

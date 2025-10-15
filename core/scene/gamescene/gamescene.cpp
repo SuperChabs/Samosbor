@@ -342,36 +342,73 @@ void GameScene::DrawMap()
 
 void GameScene::PanelDraw()
 {
-    ncplane_set_fg_rgb8(panel, 255, 0, 255);
-    ncplane_putstr_yx(panel, 1, 1, "Bro just typing shit😂😂😂");
-
-    hud = "Coins = " + std::to_string(player->GetCoinsValue());
-    ncplane_set_fg_rgb8(panel, 255, 200, 0);
-    ncplane_putstr_yx(panel, 3, 1, hud.c_str());
-
-    // Draw inventory
-    if (player) {
-        auto &inv = player->GetInventory();
-        const auto &slots = inv.GetSlots();
-        int startY = 6;
-        ncplane_set_fg_rgb8(panel, 200, 200, 200);
-        ncplane_putstr_yx(panel, startY - 1, 1, "Inventory:");
-        for (int i = 0; i < (int)slots.size() && i < 8; ++i) {
-            const auto &s = slots[i];
-            std::wstring line;
-            if (s.item) {
-                wchar_t sym = s.item->GetSymbol();
-                std::string name = std::string(s.item->GetName().begin(), s.item->GetName().end());
-                char buf[64];
-                snprintf(buf, sizeof(buf), "%lc %s x%d", (long)sym, name.c_str(), s.count);
-                ncplane_putstr_yx(panel, startY + i, 1, buf);
-            } else {
-                ncplane_putstr_yx(panel, startY + i, 1, "- empty -");
-            }
+    // ========== ОЧИЩЕННЯ ПАНЕЛІ ==========
+    ncplane_set_bg_rgb8(panel, 0, 0, 0);
+    unsigned int h, w;
+    ncplane_dim_yx(panel, &h, &w);
+    
+    for (unsigned int y = 0; y < h; ++y) {
+        for (unsigned int x = 0; x < w; ++x) {
+            ncplane_putchar_yx(panel, y, x, ' ');
         }
     }
-
+    
+    // ========== HUD ==========
+    ncplane_set_fg_rgb8(panel, 255, 200, 0);
+    std::string coinText = "Монети: " + std::to_string(player->GetCoinsValue());
+    ncplane_putstr_yx(panel, 1, 1, coinText.c_str());
+    
+    ncplane_set_fg_rgb8(panel, 255, 100, 100);
+    std::string healthText = "HP: " + std::to_string(player->GetHealth()) + "/" + std::to_string(player->GetMaxHealth());
+    ncplane_putstr_yx(panel, 2, 1, healthText.c_str());
+    
+    ncplane_set_fg_rgb8(panel, 150, 150, 255);
+    std::string levelText = "Рівень: " + std::to_string(Settings::Instance().GetCurrentLevel());
+    ncplane_putstr_yx(panel, 3, 1, levelText.c_str());
+    
+    // ========== ІНВЕНТАР ==========
+    ncplane_set_fg_rgb8(panel, 255, 255, 255);
+    ncplane_putstr_yx(panel, 5, 1, "Інвентар ([/] вибір, F використати):");
+    
+    auto& inv = player->GetInventory();
+    const auto& slots = inv.GetSlots();
+    int selectedIdx = inv.GetSelectedIndex();
+    
+    int startY = 7;
+    int maxDisplay = std::min(10, (int)slots.size());
+    
+    for (int i = 0; i < maxDisplay; ++i) {
+        int y = startY + i;
+        const auto& slot = slots[i];
+        
+        // Підсвічування вибраного ЗЕЛЕНИМ
+        if (i == selectedIdx) {
+            ncplane_set_fg_rgb8(panel, 0, 255, 0);  // ЗЕЛЕНИЙ
+            ncplane_putstr_yx(panel, y, 1, ">");
+        } else {
+            ncplane_putstr_yx(panel, y, 1, " ");
+        }
+        
+        // Малювання предмета
+        if (slot.item) {
+            if (i == selectedIdx) {
+                ncplane_set_fg_rgb8(panel, 0, 255, 0); 
+            } else {
+                ncplane_set_fg_rgb8(panel, 200, 200, 200);  
+            }
+            
+            wchar_t sym = slot.item->GetSymbol();
+            std::string name = slot.item->GetName();
+            char buf[64];
+            snprintf(buf, sizeof(buf), "%lc %s x%d", (wint_t)sym, name.c_str(), slot.count);
+            ncplane_putstr_yx(panel, y, 3, buf);
+        } else {
+            ncplane_set_fg_rgb8(panel, 60, 60, 60); 
+            ncplane_putstr_yx(panel, y, 3, "[порожньо]");
+        }
+    }
 }
+
 
 void GameScene::Update()
 {
@@ -383,6 +420,19 @@ void GameScene::Update()
 
     int px = player->GetX();
     int py = player->GetY();
+    
+    wchar_t tile = level[py][px];
+    if (tile == L'♿' || tile == L'⚿' || tile == L'☠' || tile == L'⚠' || tile == L'♯' || tile == L'‣') {
+        auto& items = ItemRegistry::GetAllItems(); 
+        for (auto& [id, item] : items) {
+            if (item->GetSymbol() == tile) {
+                if (player->GetInventory().AddItem(item, 1)) {
+                    level[py][px] = L'.'; 
+                }
+                break;
+            }
+        }
+    }
 
     if (level[py][px] == L'v') 
     {
