@@ -8,6 +8,7 @@
 #include <string>
 
 #include "entity.hpp"
+#include "inventory/inventory.hpp"
 
 class Player : public Entity
 {
@@ -18,8 +19,16 @@ public:
     void Move(int dx, int dy, std::vector<std::wstring>& level);
 
     int GetCoinsValue();
+    int GetHealth() const;
+    int GetMaxHealth() const;
 
-    // ВИДАЛИТИ: private: int coins;
+    void ModifyHealth(int amount);
+
+    Inventory& GetInventory() { return inventory; }
+
+private:
+    Inventory inventory{16};
+
 };
 
 #endif

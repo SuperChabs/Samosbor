@@ -9,6 +9,8 @@ void Settings::LoadDefaults()
     encodedCoins = EncodeCoins(0);
     currentLevel = 1;
     hasActiveSave = false;
+    health = 100;        // ДОДАТИ
+    maxHealth = 100;     // ДОДАТИ
 }
 
 void Settings::ResetProgress()
@@ -16,6 +18,8 @@ void Settings::ResetProgress()
     encodedCoins = EncodeCoins(0);
     currentLevel = 1;
     hasActiveSave = false;
+    health = 100;        // ДОДАТИ
+    maxHealth = 100;     // ДОДАТИ
 }
 
 void Settings::SaveProgress()
@@ -48,6 +52,8 @@ bool Settings::LoadFromFile(const std::string& filename)
         else if (key == "coins") encodedCoins = std::stoi(value);
         else if (key == "level") currentLevel = std::stoi(value);
         else if (key == "has_save") hasActiveSave = (value == "true" || value == "1");
+        else if (key == "health") health = std::stoi(value);          // ДОДАТИ
+        else if (key == "max_health") maxHealth = std::stoi(value);   // ДОДАТИ
     }
     
     file.close();
@@ -65,6 +71,8 @@ bool Settings::SaveToFile(const std::string& filename)
     file << "# Progress\n";
     file << "coins = " << encodedCoins << "\n";
     file << "level = " << currentLevel << "\n";
+    file << "health = " << health << "\n";              // ДОДАТИ
+    file << "max_health = " << maxHealth << "\n";       // ДОДАТИ
     file << "has_save = " << (hasActiveSave ? "true" : "false") << "\n";
     
     file.close();

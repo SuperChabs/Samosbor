@@ -7,24 +7,27 @@
 
 #include "gamescene.hpp"
 #include "menu.hpp"
-#include "../includes/settings.hpp"
+#include "settings.hpp"
+#include "itemregistry.hpp"
 
 Game::Game()
     {
-        // load settings
-        Settings::Instance().LoadFromFile("./json/settings.json");
+        //Settings::Instance().LoadFromFile("./json/settings.json");
+        Settings::Instance().LoadDefaults();
 
         struct notcurses_options opts = {};
         nc = notcurses_init(&opts, NULL);
         if(!nc) throw std::runtime_error("Не вдалося ініціалізувати notcurses");
 
-        stdn = notcurses_stddim_yx(nc, NULL, NULL);
+        stdn = notcurses_stdplane(nc); 
         ncplane_dim_yx(stdn, &rows, &cols);
+
+        ItemRegistry::InitializeItems();
 
         sm.Add("level", std::make_shared<GameScene>(nc, stdn, rows, cols, input));
         sm.Add("menu", std::make_shared<Menu>(nc, stdn, rows, cols, input, sm));
 
-        sm.SetActiveScene("level");
+        sm.SetActiveScene("menu");
 
     }
 

@@ -4,6 +4,9 @@
 #include <random>
 #include <algorithm>
 
+#include "settings.hpp" 
+#include "../../includes/item/itemregistry.hpp"
+
 #include "../map_utils.hpp"
 
 GameScene::GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input)
@@ -28,11 +31,11 @@ void GameScene::InitEntitys()
         if (!roomCenters.empty()) 
         {
             auto c = roomCenters.front();
-            player->SetPosition(c.first, c.second); // center.x, center.y
+            player->SetPosition(c.first, c.second);
         } 
         else 
         {
-            player->SetPosition(cols / 2, rows / 2);
+            player->SetPosition(this->mapWidth / 2, this->rows / 2);  // ВИПРАВИТИ
         }
     }
     else if (!player) 
@@ -40,11 +43,11 @@ void GameScene::InitEntitys()
         if (!roomCenters.empty()) 
         {
             auto c = roomCenters.front();
-            player = std::make_shared<Player>(c.first, c.second); // center.x, center.y
+            player = std::make_shared<Player>(c.first, c.second);
         } 
         else 
         {
-            player = std::make_shared<Player>(cols / 2, rows / 2);
+            player = std::make_shared<Player>(this->mapWidth / 2, this->rows / 2);  // ВИПРАВИТИ
         }
     }
 
@@ -316,6 +319,20 @@ void GameScene::GenerateAutoDungeon(int roomCount)
             }
         }
     }
+
+    // Place a few registered items randomly in rooms (non-stackable decorative items)
+    // We'll put one item per room at an available floor tile if possible
+    for (auto &center : roomCenters) {
+        int ix = center.first;
+        int iy = center.second;
+        if (iy > 0 && iy < (int)rows && ix > 0 && ix < (int)mapWidth && level[iy][ix] == L'.') {
+            // pick a sample item id from registry (if available)
+            auto it = ItemRegistry::GetItem("key");
+            if (it) {
+                level[iy][ix] = it->GetSymbol();
+            }
+        }
+    }
 }
 
 void GameScene::DrawMap()
@@ -332,6 +349,28 @@ void GameScene::PanelDraw()
     ncplane_set_fg_rgb8(panel, 255, 200, 0);
     ncplane_putstr_yx(panel, 3, 1, hud.c_str());
 
+    // Draw inventory
+    if (player) {
+        auto &inv = player->GetInventory();
+        const auto &slots = inv.GetSlots();
+        int startY = 6;
+        ncplane_set_fg_rgb8(panel, 200, 200, 200);
+        ncplane_putstr_yx(panel, startY - 1, 1, "Inventory:");
+        for (int i = 0; i < (int)slots.size() && i < 8; ++i) {
+            const auto &s = slots[i];
+            std::wstring line;
+            if (s.item) {
+                wchar_t sym = s.item->GetSymbol();
+                std::string name = std::string(s.item->GetName().begin(), s.item->GetName().end());
+                char buf[64];
+                snprintf(buf, sizeof(buf), "%lc %s x%d", (long)sym, name.c_str(), s.count);
+                ncplane_putstr_yx(panel, startY + i, 1, buf);
+            } else {
+                ncplane_putstr_yx(panel, startY + i, 1, "- empty -");
+            }
+        }
+    }
+
 }
 
 void GameScene::Update()
@@ -347,6 +386,9 @@ void GameScene::Update()
 
     if (level[py][px] == L'v') 
     {
+        Settings::Instance().SetCurrentLevel(Settings::Instance().GetCurrentLevel() + 1);
+        Settings::Instance().SaveProgress();
+        
         GenerateAutoDungeon(10);
         InitEntitys();
     }

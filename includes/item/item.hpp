@@ -7,20 +7,20 @@
 #include <functional>
 #include <memory>
 
-// Forward declaration
 class Player;
 
-class Item {
+class Item 
+{
 public:
     using UseCallback = std::function<void(Player*)>;
 
 private:
-    std::string id;           // unique id
-    std::string name;         // display name
-    wchar_t symbol;           // symbol for rendering
-    int maxStack;             // maximum stack size
-    UseCallback onUse;        // callback when used
-    bool consumable;          // whether it's consumed on use
+    std::string id;         
+    std::string name;       
+    wchar_t symbol;           
+    int maxStack;          
+    UseCallback onUse;      
+    bool consumable;         
 
 public:
     Item(const std::string& id, 

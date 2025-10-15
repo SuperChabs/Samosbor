@@ -49,8 +49,7 @@ public:
 protected:
     virtual void BindInput();
     virtual void UnbindInput();
-
-protected:
+    
     virtual void DrawMap() = 0;
     virtual void PanelDraw() = 0;
     
