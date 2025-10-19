@@ -7,7 +7,7 @@
 #include <functional>
 #include <memory>
 
-class Player;
+#include "player.hpp"
 
 class Item 
 {
@@ -23,26 +23,19 @@ private:
     bool consumable;         
 
 public:
-    Item(const std::string& id, 
-         const std::string& name, 
-         wchar_t symbol,
-         int maxStack = 16,
-         bool consumable = true)
-        : id(id), name(name), symbol(symbol), maxStack(maxStack), consumable(consumable), onUse(nullptr) {}
+    Item(const std::string& id, const std::string& name, wchar_t symbol,
+         int maxStack = 16, bool consumable = true);
 
-    void SetUseCallback(UseCallback callback) { onUse = callback; }
 
-    void Use(Player* player) {
-        if (onUse) {
-            onUse(player);
-        }
-    }
+    void SetUseCallback(UseCallback callback);
 
-    const std::string& GetId() const { return id; }
-    const std::string& GetName() const { return name; }
-    wchar_t GetSymbol() const { return symbol; }
-    int GetMaxStack() const { return maxStack; }
-    bool IsConsumable() const { return consumable; }
+    void Use(Player* player);
+
+    const std::string& GetId() const;
+    const std::string& GetName() const;
+    wchar_t GetSymbol() const ;
+    int GetMaxStack() const;
+    bool IsConsumable() const;
 };
 
 #endif

@@ -5,9 +5,8 @@
 
 std::unordered_map<std::string, std::shared_ptr<Item>> ItemRegistry::items;
 
-void ItemRegistry::InitializeItems() {
-    std::cout << "Ініціалізація предметів..." << std::endl;
-
+void ItemRegistry::InitializeItems() 
+{
     auto healthPotion = std::make_shared<Item>(
         "health_potion",
         "Зілля здоров'я",
@@ -15,9 +14,11 @@ void ItemRegistry::InitializeItems() {
         16,
         true
     );
-    healthPotion->SetUseCallback([](Player* player) {
+    healthPotion->SetUseCallback([](Player* player) 
+    {
         player->ModifyHealth(20);
-        std::cout << "Використано зілля! +20 HP" << std::endl;
+        //std::cout << "Використано зілля! +20 HP" << std::endl;
+        //panelManager.SetHUDLine(18, "", 255, 255, 255);
     });
     RegisterItem(healthPotion);
 
@@ -28,9 +29,10 @@ void ItemRegistry::InitializeItems() {
         8,
         true
     );
-    bigHealthPotion->SetUseCallback([](Player* player) {
+    bigHealthPotion->SetUseCallback([](Player* player) 
+    {
         player->ModifyHealth(50);
-        std::cout << "Використано велике зілля! +50 HP" << std::endl;
+        //std::cout << "Використано велике зілля! +50 HP" << std::endl;
     });
     RegisterItem(bigHealthPotion);
 
@@ -43,7 +45,7 @@ void ItemRegistry::InitializeItems() {
     );
     poisonPotion->SetUseCallback([](Player* player) {
         player->ModifyHealth(-10);
-        std::cout << "Використано отруту! -10 HP" << std::endl;
+        //std::cout << "Використано отруту! -10 HP" << std::endl;
     });
     RegisterItem(poisonPotion);
 
@@ -55,8 +57,8 @@ void ItemRegistry::InitializeItems() {
         false
     );
     exitBook->SetUseCallback([](Player* player) {
-        std::cout << "Ви використали книгу виходу! Гра завершується..." << std::endl;
-        std::exit(0);
+        //std::cout << "Ви використали книгу виходу! Гра завершується..." << std::endl;
+        //std::exit(0);
     });
     RegisterItem(exitBook);
 
@@ -68,7 +70,7 @@ void ItemRegistry::InitializeItems() {
         false
     );
     key->SetUseCallback([](Player* player) {
-        std::cout << "Використано ключ! (поки нічого не відбувається)" << std::endl;
+        //std::cout << "Використано ключ! (поки нічого не відбувається)" << std::endl;
     });
     RegisterItem(key);
 
@@ -79,10 +81,10 @@ void ItemRegistry::InitializeItems() {
         16,
         false
     );
-    trash->SetUseCallback([](Player* player) {
-        std::cout << "Ви нюхнули мусор... Фу!" << std::endl;
+    trash->SetUseCallback([](Player* player) 
+    {
+        //std::cout << "Ви нюхнули мусор... Фу!" << std::endl;
     });
     RegisterItem(trash);
 
-    std::cout << "Завантажено " << items.size() << " предметів" << std::endl;
 }

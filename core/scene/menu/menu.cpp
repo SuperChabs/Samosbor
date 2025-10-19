@@ -1,5 +1,5 @@
 #include "menu.hpp"
-#include "settings.hpp"  // ДОДАТИ
+#include "settings.hpp"  
 
 #include <string>
 #include <sstream>

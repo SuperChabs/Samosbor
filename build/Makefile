@@ -198,6 +198,30 @@ core/managers/input/inputmanager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/managers/input/inputmanager.cpp.s
 .PHONY : core/managers/input/inputmanager.cpp.s
 
+core/managers/panel/panelmanager.o: core/managers/panel/panelmanager.cpp.o
+.PHONY : core/managers/panel/panelmanager.o
+
+# target to build an object file
+core/managers/panel/panelmanager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/managers/panel/panelmanager.cpp.o
+.PHONY : core/managers/panel/panelmanager.cpp.o
+
+core/managers/panel/panelmanager.i: core/managers/panel/panelmanager.cpp.i
+.PHONY : core/managers/panel/panelmanager.i
+
+# target to preprocess a source file
+core/managers/panel/panelmanager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/managers/panel/panelmanager.cpp.i
+.PHONY : core/managers/panel/panelmanager.cpp.i
+
+core/managers/panel/panelmanager.s: core/managers/panel/panelmanager.cpp.s
+.PHONY : core/managers/panel/panelmanager.s
+
+# target to generate assembly for a file
+core/managers/panel/panelmanager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Samosbor.dir/build.make CMakeFiles/Samosbor.dir/core/managers/panel/panelmanager.cpp.s
+.PHONY : core/managers/panel/panelmanager.cpp.s
+
 core/managers/scenemanager/scenemanager.o: core/managers/scenemanager/scenemanager.cpp.o
 .PHONY : core/managers/scenemanager/scenemanager.o
 
@@ -526,6 +550,9 @@ help:
 	@echo "... core/managers/input/inputmanager.o"
 	@echo "... core/managers/input/inputmanager.i"
 	@echo "... core/managers/input/inputmanager.s"
+	@echo "... core/managers/panel/panelmanager.o"
+	@echo "... core/managers/panel/panelmanager.i"
+	@echo "... core/managers/panel/panelmanager.s"
 	@echo "... core/managers/scenemanager/scenemanager.o"
 	@echo "... core/managers/scenemanager/scenemanager.i"
 	@echo "... core/managers/scenemanager/scenemanager.s"

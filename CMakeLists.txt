@@ -23,6 +23,7 @@ add_executable(Samosbor
     core/managers/resourcemanager.hpp           core/managers/resourcemanager.tpp 
     core/managers/input/inputmanager.hpp        core/managers/input/inputmanager.cpp 
     core/managers/scenemanager/scenemanager.hpp core/managers/scenemanager/scenemanager.cpp
+    core/managers/panel/panelmanager.cpp        core/managers/panel/panelmanager.hpp 
      
     core/scene/scene.hpp                        core/scene/scene.cpp 
     core/scene/gamescene/gamescene.hpp          core/scene/gamescene/gamescene.cpp
@@ -50,6 +51,7 @@ target_include_directories(Samosbor PRIVATE
     ${CMAKE_SOURCE_DIR}/core/managers
     ${CMAKE_SOURCE_DIR}/core/managers/input
     ${CMAKE_SOURCE_DIR}/core/managers/scenemanager
+    ${CMAKE_SOURCE_DIR}/core/managers/panel
 )
 
 
