@@ -10,8 +10,8 @@
 
 #include "../map_utils.hpp"
 
-GameScene::GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input)
-                : Scene(nc, stdn, rows, cols, input) 
+GameScene::GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input, PanelManager& panelManager)
+                : Scene(nc, stdn, rows, cols, input), panelManager(panelManager) 
 {
     ncplane_erase(map);
     ncplane_erase(panel);
@@ -399,7 +399,8 @@ void GameScene::Update()
         auto& items = ItemRegistry::GetAllItems(); 
 
         for (auto& [id, item] : items) 
-            if (item->GetSymbol() == tile) {
+            if (item->GetSymbol() == tile) 
+            {
                 if (player->GetInventory().AddItem(item, 1)) 
                     level[py][px] = L'.'; 
                 break;

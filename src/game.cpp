@@ -9,6 +9,7 @@
 #include "menu.hpp"
 #include "settings.hpp"
 #include "itemregistry.hpp"
+#include "panelmanager.hpp"
 
 Game::Game()
     {
@@ -22,9 +23,9 @@ Game::Game()
         stdn = notcurses_stdplane(nc); 
         ncplane_dim_yx(stdn, &rows, &cols);
 
-        ItemRegistry::InitializeItems();
+        ItemRegistry::InitializeItems(panel);
 
-        sm.Add("level", std::make_shared<GameScene>(nc, stdn, rows, cols, input));
+        sm.Add("level", std::make_shared<GameScene>(nc, stdn, rows, cols, input, panel));
         sm.Add("menu", std::make_shared<Menu>(nc, stdn, rows, cols, input, sm));
 
         sm.SetActiveScene("menu");

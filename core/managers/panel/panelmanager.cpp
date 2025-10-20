@@ -53,9 +53,8 @@ void PanelManager::RenderInventory(const std::vector<std::string>& lines, int se
         {
             ncplane_set_fg_rgb8(panel_, 0, 255, 0);
             PutStr(y, 1, ">");
-        } else {
+        } else 
             PutStr(y, 1, " ");
-        }
 
         if (!lines[i].empty()) 
         {

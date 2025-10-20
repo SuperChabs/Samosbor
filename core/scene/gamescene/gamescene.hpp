@@ -11,10 +11,10 @@ class GameScene : public Scene
 {
 private:
     std::string hud;
-    PanelManager panelManager;
+    PanelManager& panelManager;
 
 public:
-    GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
+    GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input, PanelManager& panelManager);
 
     void Update() override;
 

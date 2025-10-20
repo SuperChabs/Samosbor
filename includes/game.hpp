@@ -15,6 +15,7 @@
 
 #include "inputmanager.hpp"
 #include "scenemanager.hpp"
+#include "panelmanager.hpp"
 
 class Game 
 {
@@ -36,6 +37,7 @@ private:
 
     InputManager input;
     SceneManager sm;
+    PanelManager panel;
 
     // bool running;
 

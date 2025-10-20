@@ -3004,6 +3004,7 @@ CMakeFiles/Samosbor.dir/src/item/item.cpp.o: /home/tymur52/Samosbor/src/item/ite
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h
 
 CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.o: /home/tymur52/Samosbor/src/item/itemregistry.cpp \
+  /home/tymur52/Samosbor/core/managers/panel/panelmanager.hpp \
   /home/tymur52/Samosbor/includes/entity/entity.hpp \
   /home/tymur52/Samosbor/includes/inventory/inventory.hpp \
   /home/tymur52/Samosbor/includes/item/item.hpp \
@@ -3325,6 +3326,7 @@ CMakeFiles/Samosbor.dir/src/item/itemregistry.cpp.o: /home/tymur52/Samosbor/src/
 
 CMakeFiles/Samosbor.dir/src/main.cpp.o: /home/tymur52/Samosbor/src/main.cpp \
   /home/tymur52/Samosbor/core/managers/input/inputmanager.hpp \
+  /home/tymur52/Samosbor/core/managers/panel/panelmanager.hpp \
   /home/tymur52/Samosbor/core/managers/resourcemanager.hpp \
   /home/tymur52/Samosbor/core/managers/resourcemanager.tpp \
   /home/tymur52/Samosbor/core/managers/scenemanager/scenemanager.hpp \
