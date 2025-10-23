@@ -108,18 +108,19 @@ void GameScene::GenerateAutoDungeon(int roomCount)
     // -------------------------------
     // 2) RNG і розподіли для кімнат
     // -------------------------------
-    std::mt19937 rng((unsigned)time(nullptr));
-    std::uniform_int_distribution<int> rw(5, 20); 
-    std::uniform_int_distribution<int> rh(4, 8);  
-    std::uniform_int_distribution<int> rx(2, std::max(2, (int)mapWidth - 14)); 
-    std::uniform_int_distribution<int> ry(2, std::max(2, (int)rows - 10));    
+    std::mt19937 rng((unsigned)time(nullptr));  // ну тіпа сід карти
+
+    std::uniform_int_distribution<int> roomWidth(5, 20);    // генератор випадкової ширини кімнати                               
+    std::uniform_int_distribution<int> roomHeight(4, 8);    // генератор випадкової висоти кімнати   
+    std::uniform_int_distribution<int> roomPositionX(2, std::max(2, (int)mapWidth - 14));   //генератор випадкової позиції по Х координаті 
+    std::uniform_int_distribution<int> roomPositionY(2, std::max(2, (int)rows - 10));   // генератор випадкової позиції по У координаті    
 
 
-    struct Room 
+    struct Room //структура кімнати 
     {
         int top, left; 
-        int h, w;      
-        int cx, cy;    
+        int height, width;      
+        int centreX, centreY;    
     };
 
     std::vector<Room> rooms;
@@ -128,32 +129,35 @@ void GameScene::GenerateAutoDungeon(int roomCount)
     // 3) Створення кімнат
     // -------------------------------
     int attempts = 0;
+
     while ((int)rooms.size() < roomCount && attempts < roomCount * 8) 
     {
         ++attempts;
 
-        int w   = rw(rng);
-        int h   = rh(rng);
-        int left= rx(rng);
-        int top = ry(rng);
+        int width = roomWidth(rng);
+        int height = roomHeight(rng);
+        int left = roomPositionX(rng);
+        int top = roomPositionY(rng);
 
-        if (left + w + 2 >= (int)mapWidth || top + h + 2 >= (int)rows)
+        if (left + width + 2 >= (int)mapWidth || top + height + 2 >= (int)rows)
             continue;
 
         bool ok = true;
+
         for (auto &r : rooms) 
         {
-            bool noOverlap = (left + w + 2 < r.left || r.left + r.w + 2 < left ||
-                              top + h + 2 < r.top  || r.top  + r.h + 2 < top);
+            bool noOverlap = (left + width + 2 < r.left || r.left + r.width + 2 < left ||
+                              top + height + 2 < r.top  || r.top  + r.height + 2 < top);
             if (!noOverlap) 
             {
                 ok = false;
+
                 break;
             }
         }
         if (!ok) continue;
 
-        Room rr { top, left, h, w, left + w / 2, top + h / 2 };
+        Room rr { top, left, height, width, left + width / 2, top + height / 2 };
         rooms.push_back(rr);
     }
 
@@ -161,50 +165,58 @@ void GameScene::GenerateAutoDungeon(int roomCount)
     // 4) Малювання кімнат
     // -------------------------------
     roomCenters.clear(); 
-    for (auto &r : rooms) 
+
+    for (auto &room : rooms) 
     {
 
-        auto tpl = MapUtils::MakeRectRoom(r.h, r.w, L'░', L'.', false);
+        auto tpl = MapUtils::MakeRectRoom(room.height, room.width, L'░', L'.', false);
 
-        tpl[0][0]         = L'┏'; tpl[0][r.w-1]     = L'┓';
-        tpl[r.h-1][0]     = L'┗'; tpl[r.h-1][r.w-1] = L'┛';
+        tpl[0][0] = L'┏'; 
+        tpl[0][room.width-1] = L'┓';
+        tpl[room.height-1][0] = L'┗'; 
+        tpl[room.height-1][room.width-1] = L'┛';
 
-        for (int x=1; x<r.w-1; ++x) 
+        for (int x=1; x<room.width-1; ++x) 
         {
             tpl[0][x] = L'━'; 
-            tpl[r.h-1][x] = L'━';
+            tpl[room.height-1][x] = L'━';
         }
 
-        for (int y=1; y<r.h-1; ++y) 
+        for (int y=1; y<room.height-1; ++y) 
         {
             tpl[y][0] = L'┃'; 
-            tpl[y][r.w-1] = L'┃';
+            tpl[y][room.width-1] = L'┃';
         }
 
-        MapUtils::InsertTemplate(level, rows, mapWidth, tpl, r.top, r.left);
+        MapUtils::InsertTemplate(level, rows, mapWidth, tpl, room.top, room.left);
 
-        roomCenters.emplace_back(r.cx, r.cy);
+        roomCenters.emplace_back(room.centreX, room.centreY);
     }
 
     // -------------------------------
     // 5) Створюємо граф кімнат (ребра між центрами)
     // -------------------------------
-    struct Edge { int a, b; double d; };
+    struct Edge 
+    { 
+        int a, b; 
+        double d;
+    };
     std::vector<Edge> edges;
 
     for (int i=0; i<(int)rooms.size(); ++i) 
-    {
         for (int j=i+1; j<(int)rooms.size(); ++j) 
         {
-            int dx = rooms[i].cx - rooms[j].cx;
-            int dy = rooms[i].cy - rooms[j].cy;
+            int dx = rooms[i].centreX - rooms[j].centreX ;
+            int dy = rooms[i].centreY - rooms[j].centreY;
             double dist = std::sqrt((double)dx*dx + (double)dy*dy);
             edges.push_back({i, j, dist});
         }
-    }
+    
 
-    std::sort(edges.begin(), edges.end(),
-              [](const Edge &a, const Edge &b){ return a.d < b.d; });
+    std::sort(edges.begin(), edges.end(),[](const Edge &a, const Edge &b)
+    { 
+        return a.d < b.d; 
+    });
 
     // -------------------------------
     // 6) Union-Find для MST
@@ -248,8 +260,8 @@ void GameScene::GenerateAutoDungeon(int roomCount)
         {
             parent[pa] = pb; 
 
-            int x1 = rooms[e.a].cx, y1 = rooms[e.a].cy;
-            int x2 = rooms[e.b].cx, y2 = rooms[e.b].cy;
+            int x1 = rooms[e.a].centreX , y1 = rooms[e.a].centreY;
+            int x2 = rooms[e.b].centreX , y2 = rooms[e.b].centreY;
 
 
             if (rng()%2) 
@@ -272,8 +284,8 @@ void GameScene::GenerateAutoDungeon(int roomCount)
         int j = rng()%rooms.size();
         if (i == j) continue;
 
-        int x1 = rooms[i].cx, y1 = rooms[i].cy;
-        int x2 = rooms[j].cx, y2 = rooms[j].cy;
+        int x1 = rooms[i].centreX , y1 = rooms[i].centreY;
+        int x2 = rooms[j].centreX , y2 = rooms[j].centreY;
 
         hcorr((y1+y2)/2, std::min(x1, x2), std::max(x1, x2));
     }

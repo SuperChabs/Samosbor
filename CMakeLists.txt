@@ -55,16 +55,27 @@ target_include_directories(Samosbor PRIVATE
 )
 
 
-find_library(NOTCURSES_LIB libnotcurses)
-find_library(NOTCURSES_CORE_LIB libnotcurses-core)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(NOTCURSES REQUIRED notcurses)
+pkg_check_modules(NOTCURSES_CORE REQUIRED notcurses-core)
+
 find_package(nlohmann_json REQUIRED)
 
-target_link_libraries(Samosbor ${NOTCURSES_CORE_LIB})
-target_link_libraries(Samosbor ${NOTCURSES_LIB})
-target_link_libraries(Samosbor nlohmann_json::nlohmann_json)
+# Лінкування бібліотек
+target_link_libraries(Samosbor 
+    ${NOTCURSES_CORE_LIBRARIES}
+    ${NOTCURSES_LIBRARIES}
+    nlohmann_json::nlohmann_json
+)
+
+# Додаємо необхідні флаги
+target_compile_options(Samosbor PRIVATE 
+    -D_DEFAULT_SOURCE 
+    -D_XOPEN_SOURCE=600
+)
 
 include(GNUInstallDirs)
 install(TARGETS Samosbor
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
