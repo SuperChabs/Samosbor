@@ -17,18 +17,22 @@ void PanelManager::Clear()
             ncplane_putchar_yx(panel_, y, x, ' ');
 }
 
+
+// Вставлення Рядку у панель
 void PanelManager::PutStr(unsigned int y, unsigned int x, const std::string& s)
 {
     if (!panel_) return;
     ncplane_putstr_yx(panel_, y, x, s.c_str());
 }
 
+// Вставлення символу у панель
 void PanelManager::PutWChar(unsigned int y, unsigned int x, wchar_t wc)
 {
     if (!panel_) return;
     ncplane_putwc_yx(panel_, y, x, wc);
 }
 
+//хз
 void PanelManager::SetHUDLine(unsigned int y, const std::string& text, unsigned char r, unsigned char g, unsigned char b)
 {
     if (!panel_) return;
@@ -49,6 +53,7 @@ void PanelManager::RenderInventory(const std::vector<std::string>& lines, int se
     for (int i = 0; i < maxDisplay; ++i) 
     {
         int y = startY + i;
+
         if (i == selectedIdx) 
         {
             ncplane_set_fg_rgb8(panel_, 0, 255, 0);

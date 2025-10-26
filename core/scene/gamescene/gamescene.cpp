@@ -371,7 +371,7 @@ void GameScene::PanelDraw()
     std::string levelText = "Рівень: " + std::to_string(Settings::Instance().GetCurrentLevel());
     panelManager.SetHUDLine(3, levelText, 150, 150, 255);
 
-    panelManager.SetHUDLine(5, "Інвентар ([/] вибір, F використати):", 255, 255, 255);
+    panelManager.SetHUDLine(5, "Інвентар ([ - вверх / ]- вниз вибір, F використати):", 255, 255, 255);
 
     auto& inv = player->GetInventory();
     const auto& slots = inv.GetSlots();
@@ -391,6 +391,14 @@ void GameScene::PanelDraw()
             lines.emplace_back("");
     
     panelManager.RenderInventory(lines, selectedIdx);
+
+    panelManager.SetHUDLine(18, "Гайд як грати:", 255, 255, 255);
+    panelManager.SetHUDLine(19, "   Керування:", 255, 255, 255);
+    panelManager.SetHUDLine(20, "       WASD", 255, 255, 255);
+    panelManager.SetHUDLine(21, "   Вбивання монстрів:", 255, 255, 255);
+    panelManager.SetHUDLine(22, "       Біля монстру нажимайте 'E'", 255, 255, 255);
+    panelManager.SetHUDLine(23, "   Переход на наступний рівень:", 255, 255, 255);
+    panelManager.SetHUDLine(24, "       Щоб перейти на новий рівень, підйдіть до 'v'", 255, 255, 255);
 }
 
 
