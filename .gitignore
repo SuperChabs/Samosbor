@@ -41,3 +41,7 @@
 *.dwo
 
 *.json
+
+build/
+.vscode/
+.idea/
