@@ -65,6 +65,8 @@ void Scene::Render()
                 r=250, g=177, b=47;
             else if (c == L'¢') 
                 r=31, g=69, b=41;
+            else if (c == L'♥' || c == L'⚿' || c == L'☠' || c == L'⚠' || c == L'♯' || c == L'‣')
+                r=183, g=116, b=102; 
 
             ncplane_set_fg_rgb8(map, r, g, b);
 

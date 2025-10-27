@@ -93,7 +93,7 @@ void ItemRegistry::InitializeItems(PanelManager& panelManager)
     );
     key->SetUseCallback([pm = &panelManager](Player* player) {
         pm->Clear();
-        pm->SetHUDLine(18, "Використано ключ! (поки нічого не відбувається)", 255, 255, 255);
+        pm->SetHUDLine(26, "Використано ключ! (поки нічого не відбувається)", 255, 255, 255);
     });
     RegisterItem(key);
 

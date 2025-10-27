@@ -10,8 +10,9 @@
 
 #include "../map_utils.hpp"
 
-GameScene::GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input, PanelManager& panelManager)
-                : Scene(nc, stdn, rows, cols, input), panelManager(panelManager) 
+GameScene::GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, 
+                    InputManager& input, PanelManager& panelManager, SceneManager& sm)
+                : Scene(nc, stdn, rows, cols, input), panelManager(panelManager), sm(sm) 
 {
     ncplane_erase(map);
     ncplane_erase(panel);
@@ -340,15 +341,99 @@ void GameScene::GenerateAutoDungeon(int roomCount)
         }
     }
 
-    for (auto &center : roomCenters) 
-    {
-        int ix = center.first;
-        int iy = center.second;
+    struct SpawnRule {
+        std::string id;
+        int maxPerLevel;       // maximum total placements for this item on the level (0 = ignore)
+        double chancePerRoom;  // probability to spawn in a given eligible room (0.0 - 1.0)
+        bool singlePlacement;  // if true, place at most once (ignores maxPerLevel semantics)
+    };
 
-        if (iy > 0 && iy < (int)rows && ix > 0 && ix < (int)mapWidth && level[iy][ix] == L'.') 
+    std::vector<SpawnRule> spawnRules = {
+        // id, maxPerLevel, chancePerRoom, singlePlacement
+        { "key", 1, 1.0, true },                 // single key (as before)
+        { "health_potion", 3, 0.10, false },     // ~2% chance per room
+        { "big_health_potion", 1, 0.01, false }, // ~1% chance per room
+        { "exit_book", 1, 0.05, true },          // small chance to have an exit book in one room
+        { "trash", 1, 0.10, false }              // 10% chance per room for trash
+    };
+
+    std::uniform_real_distribution<double> probDist(0.0, 1.0);
+
+    std::unordered_map<std::string,int> placedCount;
+
+    for (const auto &rule : spawnRules) placedCount[rule.id] = 0;
+
+    for (const auto &rule : spawnRules) {
+        if (!rule.singlePlacement) continue;
+
+        if (rule.maxPerLevel == 1 || rule.chancePerRoom > 0.0) 
         {
-            auto it = ItemRegistry::GetItem("key");
-            if (it) level[iy][ix] = it->GetSymbol();
+            bool placed = false;
+            if (rule.chancePerRoom <= 0.0) 
+            {
+                if (!roomCenters.empty()) 
+                {
+                    int idx = rng() % roomCenters.size();
+                    int ix = roomCenters[idx].first;
+                    int iy = roomCenters[idx].second;
+
+                    if (iy > 0 && iy < (int)rows && ix > 0 && ix < (int)mapWidth && level[iy][ix] == L'.') 
+                    {
+                        auto it = ItemRegistry::GetItem(rule.id);
+                        if (it) 
+                        { 
+                            level[iy][ix] = it->GetSymbol(); 
+                            placed = true; 
+                        }
+                    }
+                }
+            } else 
+            {
+                for (size_t attempt = 0; attempt < roomCenters.size() && !placed; ++attempt) 
+                {
+                    int ri = rng() % roomCenters.size();
+                    int ix = roomCenters[ri].first;
+                    int iy = roomCenters[ri].second;
+
+                    if (iy > 0 && iy < (int)rows && ix > 0 && ix < (int)mapWidth && level[iy][ix] == L'.') 
+                    {
+                        if (probDist(rng) <= rule.chancePerRoom) 
+                        {
+                            auto it = ItemRegistry::GetItem(rule.id);
+                            if (it) 
+                            { 
+                                level[iy][ix] = it->GetSymbol(); 
+                                placed = true; 
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (placed) placedCount[rule.id]++;
+        }
+    }
+
+    // Then handle non-single items: for each room, roll chance and respect maxPerLevel
+    for (size_t i = 0; i < roomCenters.size(); ++i) {
+        int ix = roomCenters[i].first;
+        int iy = roomCenters[i].second;
+        if (!(iy > 0 && iy < (int)rows && ix > 0 && ix < (int)mapWidth)) continue;
+        if (level[iy][ix] != L'.') continue;
+
+        for (const auto &rule : spawnRules) {
+            if (rule.singlePlacement) continue; // already handled
+            if (rule.maxPerLevel > 0 && placedCount[rule.id] >= rule.maxPerLevel) continue;
+            if (rule.chancePerRoom <= 0.0) continue;
+
+            if (probDist(rng) <= rule.chancePerRoom) {
+                auto it = ItemRegistry::GetItem(rule.id);
+                if (it) {
+                    level[iy][ix] = it->GetSymbol();
+                    placedCount[rule.id]++;
+                    break; // one item per room center
+                }
+            }
         }
     }
 }
@@ -410,11 +495,19 @@ void GameScene::Update()
         monster->Render(GetMap());
     }
 
+    // Remove dead monsters from the list so they are destroyed and no longer kept in memory.
+    monsters.erase(
+        std::remove_if(monsters.begin(), monsters.end(), [](const std::shared_ptr<Monster>& m){
+            return m == nullptr || !m->IsAlive();
+        }),
+        monsters.end()
+    );
+
     int px = player->GetX();
     int py = player->GetY();
     
     wchar_t tile = level[py][px];
-    if (tile == L'♿' || tile == L'⚿' || tile == L'☠' || tile == L'⚠' || tile == L'♯' || tile == L'‣') 
+    if (tile == L'♥' || tile == L'⚿' || tile == L'☠' || tile == L'⚠' || tile == L'♯' || tile == L'‣') 
     {
         auto& items = ItemRegistry::GetAllItems(); 
 
@@ -425,6 +518,15 @@ void GameScene::Update()
                     level[py][px] = L'.'; 
                 break;
             }
+    }
+
+    for (auto monster : monsters)
+    {
+        int mx = monster->GetX();
+        int my = monster->GetY();
+
+        if (px == mx && py == my)
+            sm.SetActiveScene("dead");
     }
 
     if (level[py][px] == L'v') 
@@ -445,4 +547,17 @@ ncplane *GameScene::GetMap()
 ncplane *GameScene::GetPanel()
 {
     return panel;
+}
+
+void GameScene::Show()
+{
+    Scene::Show();
+
+    if (!player || !player->IsAlive() || !Settings::Instance().HasActiveSave()) {
+        ncplane_erase(map);
+        ncplane_erase(panel);
+        GenerateAutoDungeon(10);
+        InitEntitys();
+        panelManager.SetPanel(panel);
+    }
 }

@@ -7,6 +7,8 @@
 
 #include "gamescene.hpp"
 #include "menu.hpp"
+#include "dead.hpp"
+
 #include "settings.hpp"
 #include "itemregistry.hpp"
 #include "panelmanager.hpp"
@@ -25,8 +27,9 @@ Game::Game()
 
         ItemRegistry::InitializeItems(panel);
 
-        sm.Add("level", std::make_shared<GameScene>(nc, stdn, rows, cols, input, panel));
+        sm.Add("level", std::make_shared<GameScene>(nc, stdn, rows, cols, input, panel, sm));
         sm.Add("menu", std::make_shared<Menu>(nc, stdn, rows, cols, input, sm));
+        sm.Add("dead", std::make_shared<Dead>(nc, stdn, rows, cols, input, sm));
 
         sm.SetActiveScene("menu");
 

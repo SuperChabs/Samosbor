@@ -2,19 +2,25 @@
 
 #include "scene.hpp"
 #include "inputmanager.hpp"
+#include "panelmanager.hpp"
+#include "scenemanager.hpp"
 
 #include <ncurses.h>
 #include <string>
-#include "panelmanager.hpp"
+
 
 class GameScene : public Scene 
 {
 private:
     std::string hud;
     PanelManager& panelManager;
+    SceneManager& sm;
 
 public:
-    GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input, PanelManager& panelManager);
+    GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, 
+            InputManager& input, PanelManager& panelManager, SceneManager& sm);
+
+    void Show() override;
 
     void Update() override;
 
