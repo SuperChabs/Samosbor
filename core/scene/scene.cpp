@@ -146,6 +146,11 @@ void Scene::HandleInput()
     });
 }
 
+void Scene::Update()
+{
+
+}
+
 void Scene::Show()
 {
     if (map) ncplane_move_top(map);

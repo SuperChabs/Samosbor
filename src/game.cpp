@@ -37,9 +37,9 @@ Game::Game()
 
 Game::~Game(void)
 {
-    Settings::Instance().SaveProgress();  // ДОДАТИ
+    Settings::Instance().SaveProgress(); 
     
-    if(nc) 
+    if(Settings::Instance().IsRunning() == false) 
     {
         notcurses_stop(nc);
     }

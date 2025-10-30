@@ -34,15 +34,13 @@ protected:
 public:
     Scene(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input);
     virtual ~Scene();
-
     void Render();
     virtual void HandleInput();
-    virtual void Update() = 0;
+    virtual void Update();
     
     virtual ncplane* GetMap();
     virtual ncplane* GetPanel();
 
-    // Show/hide lifecycle
     virtual void Show();
     virtual void Hide();
 

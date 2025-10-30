@@ -19,7 +19,7 @@ GameScene::GameScene(struct notcurses* nc, struct ncplane* stdn, unsigned int ro
 
     level.resize(rows, std::wstring(mapWidth, L' '));
 
-    GenerateAutoDungeon(10);
+    GenerateAutoDungeon(15);
     InitEntitys();
 
     panelManager.SetPanel(panel);
@@ -341,20 +341,21 @@ void GameScene::GenerateAutoDungeon(int roomCount)
         }
     }
 
-    struct SpawnRule {
+    struct SpawnRule 
+    {
         std::string id;
-        int maxPerLevel;       // maximum total placements for this item on the level (0 = ignore)
-        double chancePerRoom;  // probability to spawn in a given eligible room (0.0 - 1.0)
-        bool singlePlacement;  // if true, place at most once (ignores maxPerLevel semantics)
+        int maxPerLevel;     
+        double chancePerRoom;  
+        bool singlePlacement; 
     };
 
-    std::vector<SpawnRule> spawnRules = {
-        // id, maxPerLevel, chancePerRoom, singlePlacement
-        { "key", 1, 1.0, true },                 // single key (as before)
-        { "health_potion", 3, 0.10, false },     // ~2% chance per room
-        { "big_health_potion", 1, 0.01, false }, // ~1% chance per room
-        { "exit_book", 1, 0.05, true },          // small chance to have an exit book in one room
-        { "trash", 1, 0.10, false }              // 10% chance per room for trash
+    std::vector<SpawnRule> spawnRules = 
+    {
+        { "key",                1, 1.00, true   },                
+        { "health_potion",      2, 0.30, false },    
+        { "big_health_potion",  1, 0.05, false },
+        { "exit_book",          1, 0.25, true  },          
+        { "trash",              3, 0.80, false }             
     };
 
     std::uniform_real_distribution<double> probDist(0.0, 1.0);
@@ -363,7 +364,8 @@ void GameScene::GenerateAutoDungeon(int roomCount)
 
     for (const auto &rule : spawnRules) placedCount[rule.id] = 0;
 
-    for (const auto &rule : spawnRules) {
+    for (const auto &rule : spawnRules) 
+    {
         if (!rule.singlePlacement) continue;
 
         if (rule.maxPerLevel == 1 || rule.chancePerRoom > 0.0) 
@@ -377,7 +379,8 @@ void GameScene::GenerateAutoDungeon(int roomCount)
                     int ix = roomCenters[idx].first;
                     int iy = roomCenters[idx].second;
 
-                    if (iy > 0 && iy < (int)rows && ix > 0 && ix < (int)mapWidth && level[iy][ix] == L'.') 
+                    if (iy > 0 && iy < (int)rows && ix > 0 && 
+                        ix < (int)mapWidth && level[iy][ix] == L'.') 
                     {
                         auto it = ItemRegistry::GetItem(rule.id);
                         if (it) 
@@ -395,7 +398,8 @@ void GameScene::GenerateAutoDungeon(int roomCount)
                     int ix = roomCenters[ri].first;
                     int iy = roomCenters[ri].second;
 
-                    if (iy > 0 && iy < (int)rows && ix > 0 && ix < (int)mapWidth && level[iy][ix] == L'.') 
+                    if (iy > 0 && iy < (int)rows && ix > 0 && 
+                        ix < (int)mapWidth && level[iy][ix] == L'.') 
                     {
                         if (probDist(rng) <= rule.chancePerRoom) 
                         {
@@ -495,9 +499,9 @@ void GameScene::Update()
         monster->Render(GetMap());
     }
 
-    // Remove dead monsters from the list so they are destroyed and no longer kept in memory.
     monsters.erase(
-        std::remove_if(monsters.begin(), monsters.end(), [](const std::shared_ptr<Monster>& m){
+        std::remove_if(monsters.begin(), monsters.end(), [](const std::shared_ptr<Monster>& m)
+        {
             return m == nullptr || !m->IsAlive();
         }),
         monsters.end()
@@ -534,7 +538,7 @@ void GameScene::Update()
         Settings::Instance().SetCurrentLevel(Settings::Instance().GetCurrentLevel() + 1);
         Settings::Instance().SaveProgress();
         
-        GenerateAutoDungeon(10);
+        GenerateAutoDungeon(15);
         InitEntitys();
     }
 }

@@ -5,12 +5,14 @@
 
 #include "item.hpp"
 #include "panelmanager.hpp"
+#include "settings.hpp"
 
 #include <unordered_map>
 #include <memory>
 #include <string>
 
-class ItemRegistry {
+class ItemRegistry 
+{
 private:
     static std::unordered_map<std::string, std::shared_ptr<Item>> items;
 
