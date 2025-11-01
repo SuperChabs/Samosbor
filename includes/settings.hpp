@@ -8,7 +8,7 @@
 class Settings 
 {
 private:
-    Settings() = default;
+    Settings();
     
     // Налаштування гри
     bool isRunning;
@@ -64,6 +64,9 @@ public:
     void LoadDefaults();
     bool LoadFromFile(const std::string& filename);
     bool SaveToFile(const std::string& filename);
+
+    // Return a sensible default config path (XDG or HOME): ~/.config/Samosbor/config.json
+    static std::string DefaultConfigPath();
 };
 
 #endif

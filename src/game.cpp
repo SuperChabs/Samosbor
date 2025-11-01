@@ -16,8 +16,8 @@
 
 Game::Game()
     {
-        //Settings::Instance().LoadFromFile("./json/settings.json");
-        Settings::Instance().LoadDefaults();
+    Settings::Instance().LoadFromFile(Settings::DefaultConfigPath());
+        //Settings::Instance().LoadDefaults();
 
         struct notcurses_options opts = {};
         nc = notcurses_init(&opts, NULL);
@@ -66,7 +66,11 @@ void Game::Render()
 
 void Game::HandleInput()
 {
-    input.Bind('q', [&](){Settings::Instance().SetRunning(false);});
+    input.Bind('q', [&]()
+    {
+        Settings::Instance().SaveToFile(Settings::DefaultConfigPath());
+        Settings::Instance().SetRunning(false);
+    });
     sm.HandleInput();
 
 }
