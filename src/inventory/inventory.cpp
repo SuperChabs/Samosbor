@@ -1,6 +1,6 @@
-#include "../../includes/inventory/inventory.hpp"
-#include "../../includes/item/item.hpp"
-#include "../../includes/player/player.hpp"
+#include "inventory.hpp"
+#include "item.hpp"
+#include "player.hpp"
 
 #include <algorithm>
 
@@ -16,8 +16,10 @@ bool Inventory::AddItem(const std::shared_ptr<Item>& item, int count)
 {
     if (!item || count <= 0) return false;
 
-    for (auto &s : slots) {
-        if (s.item && s.item->GetId() == item->GetId() && s.count < s.item->GetMaxStack()) {
+    for (auto &s : slots) 
+    {
+        if (s.item && s.item->GetId() == item->GetId() && s.count < s.item->GetMaxStack()) 
+        {
             int space = s.item->GetMaxStack() - s.count;
             int toAdd = std::min(space, count);
             s.count += toAdd;
@@ -26,8 +28,10 @@ bool Inventory::AddItem(const std::shared_ptr<Item>& item, int count)
         }
     }
 
-    for (auto &s : slots) {
-        if (!s.item) {
+    for (auto &s : slots) 
+    {
+        if (!s.item) 
+        {
             int toAdd = std::min(count, item->GetMaxStack());
             s.item = item;
             s.count = toAdd;
@@ -59,9 +63,11 @@ void Inventory::UseSelectedItem(Player* player)
 
     s.item->Use(player);
 
-    if (s.item->IsConsumable()) {
+    if (s.item->IsConsumable()) 
+    {
         s.count -= 1;
-        if (s.count <= 0) {
+        if (s.count <= 0) 
+        {
             s.item.reset();
             s.count = 0;
         }

@@ -29,8 +29,12 @@ public:
 
 private:
     void InitEntitys();
+
     void DrawMap() override;
     void PanelDraw() override;
+
+    void AdditinalInput() override;
+
     void GenerateAutoDungeon(int roomCount = 12);
  
     std::vector<std::pair<int,int>> roomCenters;

@@ -78,7 +78,6 @@ void Scene::Render()
 
     PanelDraw();
 
-
     notcurses_render(nc);
 }
 
@@ -144,12 +143,11 @@ void Scene::HandleInput()
             player->GetInventory().UseSelectedItem(player.get());
         }
     });
+
+    AdditinalInput();
 }
 
-void Scene::Update()
-{
-
-}
+void Scene::Update() {}
 
 void Scene::Show()
 {
@@ -173,17 +171,10 @@ void Scene::BindInput()
     inputBound = true;
 }
 
-void Scene::UnbindInput()
-{
-    inputBound = false;
-}
+void Scene::UnbindInput() { inputBound = false; }
 
-ncplane* Scene::GetMap()
-{
-    return map;
-}
+void Scene::AdditinalInput() {}
 
-ncplane *Scene::GetPanel()
-{
-    return panel;
-}
+ncplane* Scene::GetMap() { return map; }
+
+ncplane *Scene::GetPanel() {return panel;}

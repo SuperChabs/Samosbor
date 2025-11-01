@@ -43,7 +43,7 @@ void ItemRegistry::InitializeItems(PanelManager& panelManager)
         player->ModifyHealth(20);
         pm->Clear();
         pm->SetHUDLine(26, "Використано зілля здоров'я! +20 хп", 255, 255, 255);
-        std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+        //std::this_thread::sleep_for(std::chrono::milliseconds(10000));
         pm->Clear();
     });
     RegisterItem(healthPotion);
@@ -60,7 +60,7 @@ void ItemRegistry::InitializeItems(PanelManager& panelManager)
         player->ModifyHealth(50);
         pm->Clear();
         pm->SetHUDLine(26, "Використано ключ! (поки нічого не відбувається)", 255, 255, 255);
-        std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+        //std::this_thread::sleep_for(std::chrono::milliseconds(10000));
         pm->Clear();
     });
     RegisterItem(bigHealthPotion);
@@ -76,7 +76,7 @@ void ItemRegistry::InitializeItems(PanelManager& panelManager)
         player->ModifyHealth(-10);
         pm->Clear();
         pm->SetHUDLine(26, "Використано отруйне зілл'я! -10 хп", 255, 255, 255);
-        std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+        //std::this_thread::sleep_for(std::chrono::milliseconds(10000));
         pm->Clear();
     });
     RegisterItem(poisonPotion);
@@ -91,7 +91,7 @@ void ItemRegistry::InitializeItems(PanelManager& panelManager)
     exitBook->SetUseCallback([pm = &panelManager](Player* player) {
         pm->Clear();
         pm->SetHUDLine(26, "Використано книгу виходу! Виходиму з гри", 255, 255, 255);
-        std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+        //std::this_thread::sleep_for(std::chrono::milliseconds(10000));
         Settings::Instance().SetRunning(false);
     });
     RegisterItem(exitBook);
@@ -106,7 +106,7 @@ void ItemRegistry::InitializeItems(PanelManager& panelManager)
     key->SetUseCallback([pm = &panelManager](Player* player) {
         pm->Clear();
         pm->SetHUDLine(26, "Використано ключ! (поки нічого не відбувається)", 255, 255, 255);
-        std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+        //std::this_thread::sleep_for(std::chrono::milliseconds(10000));
         pm->Clear();
     });
     RegisterItem(key);
@@ -122,7 +122,7 @@ void ItemRegistry::InitializeItems(PanelManager& panelManager)
     {
         pm->Clear();
         pm->SetHUDLine(26, "Фу, лайно!", 255, 255, 255);
-        std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+        //std::this_thread::sleep_for(std::chrono::milliseconds(10000));
         pm->Clear();
     });
     RegisterItem(trash);

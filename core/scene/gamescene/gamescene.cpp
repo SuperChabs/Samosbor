@@ -351,7 +351,7 @@ void GameScene::GenerateAutoDungeon(int roomCount)
 
     std::vector<SpawnRule> spawnRules = 
     {
-        { "key",                1, 1.00, true   },                
+        { "key",                1, 1.00, true  },                
         { "health_potion",      2, 0.30, false },    
         { "big_health_potion",  1, 0.05, false },
         { "exit_book",          1, 0.25, true  },          
@@ -362,7 +362,8 @@ void GameScene::GenerateAutoDungeon(int roomCount)
 
     std::unordered_map<std::string,int> placedCount;
 
-    for (const auto &rule : spawnRules) placedCount[rule.id] = 0;
+    for (const auto &rule : spawnRules) 
+        placedCount[rule.id] = 0;
 
     for (const auto &rule : spawnRules) 
     {
@@ -418,24 +419,29 @@ void GameScene::GenerateAutoDungeon(int roomCount)
         }
     }
 
-    // Then handle non-single items: for each room, roll chance and respect maxPerLevel
-    for (size_t i = 0; i < roomCenters.size(); ++i) {
+    for (size_t i = 0; i < roomCenters.size(); ++i) 
+    {
         int ix = roomCenters[i].first;
         int iy = roomCenters[i].second;
+
         if (!(iy > 0 && iy < (int)rows && ix > 0 && ix < (int)mapWidth)) continue;
         if (level[iy][ix] != L'.') continue;
 
-        for (const auto &rule : spawnRules) {
-            if (rule.singlePlacement) continue; // already handled
+        for (const auto &rule : spawnRules) 
+        {
+            if (rule.singlePlacement) continue; 
             if (rule.maxPerLevel > 0 && placedCount[rule.id] >= rule.maxPerLevel) continue;
             if (rule.chancePerRoom <= 0.0) continue;
 
-            if (probDist(rng) <= rule.chancePerRoom) {
+            if (probDist(rng) <= rule.chancePerRoom) 
+            {
                 auto it = ItemRegistry::GetItem(rule.id);
-                if (it) {
+                
+                if (it) 
+                {
                     level[iy][ix] = it->GetSymbol();
                     placedCount[rule.id]++;
-                    break; // one item per room center
+                    break; 
                 }
             }
         }
@@ -490,6 +496,9 @@ void GameScene::PanelDraw()
     panelManager.SetHUDLine(24, "       Щоб перейти на новий рівень, підйдіть до 'v'", 255, 255, 255);
 }
 
+void GameScene::AdditinalInput()
+{
+}
 
 void GameScene::Update()
 {
@@ -511,7 +520,8 @@ void GameScene::Update()
     int py = player->GetY();
     
     wchar_t tile = level[py][px];
-    if (tile == L'♥' || tile == L'⚿' || tile == L'☠' || tile == L'⚠' || tile == L'♯' || tile == L'‣') 
+    if (tile == L'♥' || tile == L'⚿' || tile == L'☠' || 
+        tile == L'⚠' || tile == L'♯' || tile == L'‣') 
     {
         auto& items = ItemRegistry::GetAllItems(); 
 
@@ -531,6 +541,16 @@ void GameScene::Update()
 
         if (px == mx && py == my)
             sm.SetActiveScene("dead");
+    }
+
+    for(auto& m : monsters)
+    {
+        int dx = abs(player->GetX() - m->GetX());
+        int dy = abs(player->GetY() - m->GetY());
+        if(m->IsAlive() && dx + dy == 1)
+        {
+            player->ModifyHealth(-10);
+        }
     }
 
     if (level[py][px] == L'v') 
@@ -565,3 +585,4 @@ void GameScene::Show()
         panelManager.SetPanel(panel);
     }
 }
+
