@@ -1,34 +1,20 @@
 #pragma once 
 
-#ifndef DEAD_HPP
-#define DEAD_HPP
+#ifndef WIN_HPP
+#define WIN_HPP
 
-#include "scene.hpp"
+#include "menu.hpp"
 
 #include <notcurses/notcurses.h>
 #include <string>
 
 #include "scenemanager.hpp"
 
-class Win : public Scene 
+class Win : public Menu 
 {
 public:
-    Win(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, InputManager& input, SceneManager& sm);
-
-    void Update() override;
-
-
-private:
-    std::wstring MenuArt;
-    int selected;
-
-    SceneManager& sm;
-
-    void DrawMap() override;
-    void PanelDraw() override;
-    void HandleInput() override;
-
-    void DrawMenuArt();
+    Win(struct notcurses* nc, struct ncplane* stdn, unsigned int rows, unsigned int cols, 
+        InputManager& input, SceneManager& sm);
 
 }; 
 

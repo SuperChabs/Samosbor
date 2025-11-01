@@ -498,6 +498,13 @@ void GameScene::PanelDraw()
 
 void GameScene::AdditinalInput()
 {
+	input.Bind('+', [this](){ 
+        Settings::Instance().SetCurrentLevel(Settings::Instance().GetCurrentLevel() + 1);
+	});
+
+	input.Bind('-', [this](){ 
+        Settings::Instance().SetCurrentLevel(Settings::Instance().GetCurrentLevel() - 1);
+	});
 }
 
 void GameScene::Update()
@@ -554,7 +561,7 @@ void GameScene::Update()
     }
 
     if(Settings::Instance().GetCurrentLevel() == 10) 
-        sm.SetActiveScene(" "); 
+        sm.SetActiveScene("win"); 
 
     if (level[py][px] == L'v') 
     {

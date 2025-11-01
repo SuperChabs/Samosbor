@@ -18,7 +18,7 @@ public:
     void Update() override;
 
 
-private:
+protected:
     std::wstring MenuArt;
     int selected;
 

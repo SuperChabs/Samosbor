@@ -27,8 +27,6 @@ void Menu::Update()
 void Menu::DrawMap()
 {  
     DrawMenuArt();
-    
-    // ЗМІНИТИ: меню залежить від збереженої гри
     std::vector<std::wstring> items;
     if (Settings::Instance().HasActiveSave()) {
         items = {L"Продовжити", L"Нова гра", L"Вийти"};
@@ -58,7 +56,6 @@ void Menu::DrawMap()
 
 void Menu::PanelDraw()
 {
-    // Очищаємо панель
     ncplane_set_bg_rgb8(panel, 0, 0, 0);
     unsigned int h, w;
     ncplane_dim_yx(panel, &h, &w);
@@ -67,12 +64,10 @@ void Menu::PanelDraw()
         ncplane_putstr_yx(panel, y, 0, std::string(w, ' ').c_str());
     }
     
-    // Малюємо декорацію
     ncplane_set_fg_rgb8(panel, 255, 255, 60);
     for (unsigned int i = 0; i < h; i++)
         ncplane_putstr_yx(panel, i, 1, "█");
     
-    // ДОДАТИ: показати прогрес якщо є збереження
     if (Settings::Instance().HasActiveSave()) {
         ncplane_set_fg_rgb8(panel, 255, 200, 0);
         std::string coinText = "Монети: " + std::to_string(Settings::Instance().GetCoins());
