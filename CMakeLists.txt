@@ -29,6 +29,7 @@ add_executable(Samosbor
     core/scene/gamescene/gamescene.hpp          core/scene/gamescene/gamescene.cpp
     core/scene/menu/menu.hpp                    core/scene/menu/menu.cpp
     core/scene/dead/dead.hpp                    core/scene/dead/dead.cpp
+    core/scene/win/win.hpp                      core/scene/win/win.cpp
 )
 
 target_include_directories(Samosbor PRIVATE
@@ -49,6 +50,7 @@ target_include_directories(Samosbor PRIVATE
     ${CMAKE_SOURCE_DIR}/core/scene/gamescene
     ${CMAKE_SOURCE_DIR}/core/scene/menu
     ${CMAKE_SOURCE_DIR}/core/scene/dead
+    ${CMAKE_SOURCE_DIR}/core/scene/win
 
     ${CMAKE_SOURCE_DIR}/core/managers
     ${CMAKE_SOURCE_DIR}/core/managers/input

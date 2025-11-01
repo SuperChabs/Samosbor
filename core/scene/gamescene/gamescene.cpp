@@ -553,6 +553,9 @@ void GameScene::Update()
         }
     }
 
+    if(Settings::Instance().GetCurrentLevel() == 10) 
+        sm.SetActiveScene(" "); 
+
     if (level[py][px] == L'v') 
     {
         Settings::Instance().SetCurrentLevel(Settings::Instance().GetCurrentLevel() + 1);
